@@ -1,0 +1,65 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LaserSurvey.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="dstOffset" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">835</Value>
+    </Setting>
+    <Setting Name="setReverseAngels" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="srvParametersValues" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0002/0&lt;/string&gt;
+  &lt;string&gt;0004/0&lt;/string&gt;
+  &lt;string&gt;0101/1&lt;/string&gt;
+  &lt;string&gt;010F/0&lt;/string&gt;
+  &lt;string&gt;0121/1&lt;/string&gt;
+  &lt;string&gt;0124/100&lt;/string&gt;
+  &lt;string&gt;0125/25&lt;/string&gt;
+  &lt;string&gt;0126/0&lt;/string&gt;
+  &lt;string&gt;012F/202&lt;/string&gt;
+  &lt;string&gt;0130/20&lt;/string&gt;
+  &lt;string&gt;0131/20&lt;/string&gt;
+  &lt;string&gt;0136/0&lt;/string&gt;
+  &lt;string&gt;0200/30&lt;/string&gt;
+  &lt;string&gt;0202/5000&lt;/string&gt;
+  &lt;string&gt;0203/5&lt;/string&gt;
+  &lt;string&gt;0204/20000&lt;/string&gt;
+  &lt;string&gt;020A/101&lt;/string&gt;
+  &lt;string&gt;020B/108&lt;/string&gt;
+  &lt;string&gt;020D/127&lt;/string&gt;
+  &lt;string&gt;020E/102&lt;/string&gt;
+  &lt;string&gt;020F/122&lt;/string&gt;
+  &lt;string&gt;0210/123&lt;/string&gt;
+  &lt;string&gt;0211/121&lt;/string&gt;
+  &lt;string&gt;0219/2&lt;/string&gt;
+  &lt;string&gt;0220/2&lt;/string&gt;
+  &lt;string&gt;0224/20&lt;/string&gt;
+  &lt;string&gt;0306/255&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="OutputFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MovesNum" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="intServoRpm" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="distoLastCOM" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="servoLastCOM" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="projectTree" Type="System.Windows.Forms.TreeView" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="nisuyString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">nisuy</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

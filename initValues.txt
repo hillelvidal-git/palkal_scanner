@@ -1,0 +1,12 @@
+            SendCommand(ServoIOAction.Write, "020F", 122); //CCW Limit Off
+            SendCommand(ServoIOAction.Write, "0210", 123); //CW Limit Off
+            SendCommand(ServoIOAction.Write, "0211", 121); //LOAD Limit Off
+            SendCommand(ServoIOAction.Write, "0200", 30); //Gain
+            SendCommand(ServoIOAction.Write, "0204", 20000); //Gain
+            SendCommand(ServoIOAction.Write, "0101", 1); //Incremental Pos Mode
+            SendCommand(ServoIOAction.Write, "0306", 255); //Turn DI 1-8 ON
+            SendCommand(ServoIOAction.Write, "012F", 224); //Enable Homing
+            SendCommand(ServoIOAction.Write, "0130", 100); //Homing Speed
+            SendCommand(ServoIOAction.Write, "0224", 200); //Moving Speed
+            SendCommand(ServoIOAction.Write, "020B", 108); //Set DI-2 to be CTRG
+            SendCommand(ServoIOAction.Write, "020D", 127); //Set DI-4 to be SHOM
