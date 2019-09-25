@@ -182,6 +182,7 @@ namespace LaserSurvey
             this.label17 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabEmbed = new System.Windows.Forms.TabPage();
+            this.lbImportResults = new System.Windows.Forms.TextBox();
             this.btnImport = new System.Windows.Forms.Button();
             this.lbFilesFound = new System.Windows.Forms.Label();
             this.lbDrive = new System.Windows.Forms.Label();
@@ -210,7 +211,7 @@ namespace LaserSurvey
             this.SurveyTimer = new System.Windows.Forms.Timer(this.components);
             this.ptInfoToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.timerLoop = new System.Windows.Forms.Timer(this.components);
-            this.lbImportResults = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -2106,6 +2107,7 @@ namespace LaserSurvey
             // 
             // tabEmbed
             // 
+            this.tabEmbed.Controls.Add(this.button6);
             this.tabEmbed.Controls.Add(this.lbImportResults);
             this.tabEmbed.Controls.Add(this.btnImport);
             this.tabEmbed.Controls.Add(this.lbFilesFound);
@@ -2121,6 +2123,14 @@ namespace LaserSurvey
             this.tabEmbed.TabIndex = 8;
             this.tabEmbed.Text = "סורק חדש";
             this.tabEmbed.UseVisualStyleBackColor = true;
+            // 
+            // lbImportResults
+            // 
+            this.lbImportResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbImportResults.Location = new System.Drawing.Point(259, 196);
+            this.lbImportResults.Name = "lbImportResults";
+            this.lbImportResults.Size = new System.Drawing.Size(381, 13);
+            this.lbImportResults.TabIndex = 7;
             // 
             // btnImport
             // 
@@ -2317,13 +2327,14 @@ namespace LaserSurvey
             // 
             this.timerLoop.Tick += new System.EventHandler(this.timerLoop_Tick);
             // 
-            // lbImportResults
+            // button6
             // 
-            this.lbImportResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbImportResults.Location = new System.Drawing.Point(259, 196);
-            this.lbImportResults.Name = "lbImportResults";
-            this.lbImportResults.Size = new System.Drawing.Size(381, 13);
-            this.lbImportResults.TabIndex = 7;
+            this.button6.Location = new System.Drawing.Point(43, 34);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(157, 43);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "משוך סריקות";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -2596,6 +2607,7 @@ namespace LaserSurvey
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnLookForFiles;
         private System.Windows.Forms.TextBox lbImportResults;
+        private System.Windows.Forms.Button button6;
     }
 }
 
