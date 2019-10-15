@@ -182,6 +182,22 @@ namespace LaserSurvey
             this.label17 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabEmbed = new System.Windows.Forms.TabPage();
+            this.tbBtSend = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tbNewBtCom = new System.Windows.Forms.TextBox();
+            this.btnConnectNewBt = new System.Windows.Forms.Button();
+            this.lstBT = new System.Windows.Forms.ListBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tbMax = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tbSrv = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tbOr = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbFieldId = new System.Windows.Forms.TextBox();
+            this.btnRunSurveyBT = new System.Windows.Forms.Button();
             this.lbImportResults = new System.Windows.Forms.TextBox();
             this.btnImport = new System.Windows.Forms.Button();
             this.lbFilesFound = new System.Windows.Forms.Label();
@@ -211,7 +227,9 @@ namespace LaserSurvey
             this.SurveyTimer = new System.Windows.Forms.Timer(this.components);
             this.ptInfoToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.timerLoop = new System.Windows.Forms.Timer(this.components);
-            this.button6 = new System.Windows.Forms.Button();
+            this.label48 = new System.Windows.Forms.Label();
+            this.rbUpward = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -275,11 +293,12 @@ namespace LaserSurvey
             this.tabControl1.ImageList = this.imgsPages;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabControl1.RightToLeftLayout = true;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(671, 485);
+            this.tabControl1.Size = new System.Drawing.Size(1006, 758);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -295,10 +314,11 @@ namespace LaserSurvey
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.ImageIndex = 0;
             this.tabPage1.Location = new System.Drawing.Point(4, 55);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage1.Size = new System.Drawing.Size(663, 426);
+            this.tabPage1.Size = new System.Drawing.Size(998, 699);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "חיבורים";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -308,9 +328,10 @@ namespace LaserSurvey
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Controls.Add(this.label38);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(4, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(657, 28);
+            this.panel1.Size = new System.Drawing.Size(990, 43);
             this.panel1.TabIndex = 34;
             // 
             // label38
@@ -319,17 +340,19 @@ namespace LaserSurvey
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label38.ForeColor = System.Drawing.Color.Blue;
-            this.label38.Location = new System.Drawing.Point(173, 4);
+            this.label38.Location = new System.Drawing.Point(264, 6);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
             this.label38.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label38.Size = new System.Drawing.Size(310, 20);
+            this.label38.Size = new System.Drawing.Size(441, 29);
             this.label38.TabIndex = 35;
             this.label38.Text = "נהל את החיבורים בין המחשב למכשיר הסריקה";
             // 
             // dstConnectedPct
             // 
             this.dstConnectedPct.Image = ((System.Drawing.Image)(resources.GetObject("dstConnectedPct.Image")));
-            this.dstConnectedPct.Location = new System.Drawing.Point(164, 356);
+            this.dstConnectedPct.Location = new System.Drawing.Point(246, 548);
+            this.dstConnectedPct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dstConnectedPct.Name = "dstConnectedPct";
             this.dstConnectedPct.Size = new System.Drawing.Size(50, 10);
             this.dstConnectedPct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -340,7 +363,8 @@ namespace LaserSurvey
             // srvConnectedPct
             // 
             this.srvConnectedPct.Image = ((System.Drawing.Image)(resources.GetObject("srvConnectedPct.Image")));
-            this.srvConnectedPct.Location = new System.Drawing.Point(420, 356);
+            this.srvConnectedPct.Location = new System.Drawing.Point(630, 548);
+            this.srvConnectedPct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.srvConnectedPct.Name = "srvConnectedPct";
             this.srvConnectedPct.Size = new System.Drawing.Size(50, 10);
             this.srvConnectedPct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -351,7 +375,8 @@ namespace LaserSurvey
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(287, 331);
+            this.pictureBox9.Location = new System.Drawing.Point(430, 509);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(64, 64);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -361,9 +386,10 @@ namespace LaserSurvey
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(27, 312);
+            this.pictureBox5.Location = new System.Drawing.Point(40, 480);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(98, 99);
+            this.pictureBox5.Size = new System.Drawing.Size(147, 152);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 32;
             this.pictureBox5.TabStop = false;
@@ -371,9 +397,10 @@ namespace LaserSurvey
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(509, 299);
+            this.pictureBox8.Location = new System.Drawing.Point(764, 460);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(126, 125);
+            this.pictureBox8.Size = new System.Drawing.Size(189, 192);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 31;
             this.pictureBox8.TabStop = false;
@@ -394,9 +421,11 @@ namespace LaserSurvey
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.dstConnectBtn);
-            this.groupBox1.Location = new System.Drawing.Point(27, 40);
+            this.groupBox1.Location = new System.Drawing.Point(40, 62);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(230, 211);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(345, 325);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "מד טווח לייזר";
@@ -404,9 +433,10 @@ namespace LaserSurvey
             // chkDistoCom
             // 
             this.chkDistoCom.AutoSize = true;
-            this.chkDistoCom.Location = new System.Drawing.Point(62, 22);
+            this.chkDistoCom.Location = new System.Drawing.Point(93, 34);
+            this.chkDistoCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkDistoCom.Name = "chkDistoCom";
-            this.chkDistoCom.Size = new System.Drawing.Size(121, 17);
+            this.chkDistoCom.Size = new System.Drawing.Size(159, 24);
             this.chkDistoCom.TabIndex = 46;
             this.chkDistoCom.Text = "התחבר ליציאה מס\'";
             this.chkDistoCom.UseVisualStyleBackColor = true;
@@ -415,9 +445,10 @@ namespace LaserSurvey
             // 
             this.btnStopSearchDisto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStopSearchDisto.Image = ((System.Drawing.Image)(resources.GetObject("btnStopSearchDisto.Image")));
-            this.btnStopSearchDisto.Location = new System.Drawing.Point(104, 54);
+            this.btnStopSearchDisto.Location = new System.Drawing.Point(156, 83);
+            this.btnStopSearchDisto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStopSearchDisto.Name = "btnStopSearchDisto";
-            this.btnStopSearchDisto.Size = new System.Drawing.Size(39, 23);
+            this.btnStopSearchDisto.Size = new System.Drawing.Size(58, 35);
             this.btnStopSearchDisto.TabIndex = 45;
             this.toolTip1.SetToolTip(this.btnStopSearchDisto, "הפסק את החיפוש");
             this.btnStopSearchDisto.UseVisualStyleBackColor = true;
@@ -426,35 +457,39 @@ namespace LaserSurvey
             // 
             // nudDistoCom
             // 
-            this.nudDistoCom.Location = new System.Drawing.Point(9, 21);
+            this.nudDistoCom.Location = new System.Drawing.Point(14, 32);
+            this.nudDistoCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudDistoCom.Name = "nudDistoCom";
             this.nudDistoCom.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudDistoCom.Size = new System.Drawing.Size(47, 20);
+            this.nudDistoCom.Size = new System.Drawing.Size(70, 26);
             this.nudDistoCom.TabIndex = 44;
             // 
             // dstCOMlbl
             // 
             this.dstCOMlbl.AutoSize = true;
-            this.dstCOMlbl.Location = new System.Drawing.Point(11, 59);
+            this.dstCOMlbl.Location = new System.Drawing.Point(16, 91);
+            this.dstCOMlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dstCOMlbl.Name = "dstCOMlbl";
             this.dstCOMlbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dstCOMlbl.Size = new System.Drawing.Size(0, 13);
+            this.dstCOMlbl.Size = new System.Drawing.Size(0, 20);
             this.dstCOMlbl.TabIndex = 31;
             // 
             // label23
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(69, 154);
+            this.label23.Location = new System.Drawing.Point(104, 237);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(23, 13);
+            this.label23.Size = new System.Drawing.Size(35, 20);
             this.label23.TabIndex = 30;
             this.label23.Text = "mm";
             // 
             // dstOffsetNum
             // 
             this.dstOffsetNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dstOffsetNum.Location = new System.Drawing.Point(14, 152);
+            this.dstOffsetNum.Location = new System.Drawing.Point(21, 234);
+            this.dstOffsetNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dstOffsetNum.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -467,16 +502,17 @@ namespace LaserSurvey
             -2147483648});
             this.dstOffsetNum.Name = "dstOffsetNum";
             this.dstOffsetNum.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dstOffsetNum.Size = new System.Drawing.Size(53, 20);
+            this.dstOffsetNum.Size = new System.Drawing.Size(80, 26);
             this.dstOffsetNum.TabIndex = 29;
             // 
             // label21
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(155, 154);
+            this.label21.Location = new System.Drawing.Point(232, 237);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(69, 13);
+            this.label21.Size = new System.Drawing.Size(91, 20);
             this.label21.TabIndex = 28;
             this.label21.Text = "תיקון מרחק:";
             // 
@@ -484,9 +520,10 @@ namespace LaserSurvey
             // 
             this.dstConnectedLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dstConnectedLbl.AutoSize = true;
-            this.dstConnectedLbl.Location = new System.Drawing.Point(116, 90);
+            this.dstConnectedLbl.Location = new System.Drawing.Point(174, 138);
+            this.dstConnectedLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dstConnectedLbl.Name = "dstConnectedLbl";
-            this.dstConnectedLbl.Size = new System.Drawing.Size(38, 13);
+            this.dstConnectedLbl.Size = new System.Drawing.Size(49, 20);
             this.dstConnectedLbl.TabIndex = 24;
             this.dstConnectedLbl.Text = "מנותק";
             // 
@@ -494,9 +531,10 @@ namespace LaserSurvey
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(160, 90);
+            this.label16.Location = new System.Drawing.Point(240, 138);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 13);
+            this.label16.Size = new System.Drawing.Size(83, 20);
             this.label16.TabIndex = 23;
             this.label16.Text = "מצב חיבור:";
             // 
@@ -504,19 +542,21 @@ namespace LaserSurvey
             // 
             this.dstSerialLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dstSerialLbl.AutoSize = true;
-            this.dstSerialLbl.Location = new System.Drawing.Point(11, 156);
+            this.dstSerialLbl.Location = new System.Drawing.Point(16, 240);
+            this.dstSerialLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dstSerialLbl.Name = "dstSerialLbl";
             this.dstSerialLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dstSerialLbl.Size = new System.Drawing.Size(0, 13);
+            this.dstSerialLbl.Size = new System.Drawing.Size(0, 20);
             this.dstSerialLbl.TabIndex = 22;
             // 
             // label12
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(150, 184);
+            this.label12.Location = new System.Drawing.Point(225, 283);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 13);
+            this.label12.Size = new System.Drawing.Size(96, 20);
             this.label12.TabIndex = 21;
             this.label12.Text = "מספר מכשיר:";
             // 
@@ -524,18 +564,20 @@ namespace LaserSurvey
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(149, 59);
+            this.label14.Location = new System.Drawing.Point(224, 91);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 13);
+            this.label14.Size = new System.Drawing.Size(94, 20);
             this.label14.TabIndex = 18;
             this.label14.Text = "יציאה טורית:";
             // 
             // dstConnectBtn
             // 
             this.dstConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dstConnectBtn.Location = new System.Drawing.Point(8, 85);
+            this.dstConnectBtn.Location = new System.Drawing.Point(12, 131);
+            this.dstConnectBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dstConnectBtn.Name = "dstConnectBtn";
-            this.dstConnectBtn.Size = new System.Drawing.Size(75, 23);
+            this.dstConnectBtn.Size = new System.Drawing.Size(112, 35);
             this.dstConnectBtn.TabIndex = 15;
             this.dstConnectBtn.Text = "התחבר";
             this.dstConnectBtn.UseVisualStyleBackColor = true;
@@ -558,9 +600,11 @@ namespace LaserSurvey
             this.groupBox2.Controls.Add(this.srvConnectedLbl);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.srvConnectBtn);
-            this.groupBox2.Location = new System.Drawing.Point(404, 40);
+            this.groupBox2.Location = new System.Drawing.Point(606, 62);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(231, 211);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(346, 325);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "מנוע סרבו";
@@ -568,28 +612,31 @@ namespace LaserSurvey
             // chkServoCom
             // 
             this.chkServoCom.AutoSize = true;
-            this.chkServoCom.Location = new System.Drawing.Point(63, 22);
+            this.chkServoCom.Location = new System.Drawing.Point(94, 34);
+            this.chkServoCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkServoCom.Name = "chkServoCom";
-            this.chkServoCom.Size = new System.Drawing.Size(121, 17);
+            this.chkServoCom.Size = new System.Drawing.Size(159, 24);
             this.chkServoCom.TabIndex = 48;
             this.chkServoCom.Text = "התחבר ליציאה מס\'";
             this.chkServoCom.UseVisualStyleBackColor = true;
             // 
             // nudServoCom
             // 
-            this.nudServoCom.Location = new System.Drawing.Point(10, 21);
+            this.nudServoCom.Location = new System.Drawing.Point(15, 32);
+            this.nudServoCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudServoCom.Name = "nudServoCom";
             this.nudServoCom.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudServoCom.Size = new System.Drawing.Size(47, 20);
+            this.nudServoCom.Size = new System.Drawing.Size(70, 26);
             this.nudServoCom.TabIndex = 47;
             // 
             // btnStopSearchServo
             // 
             this.btnStopSearchServo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStopSearchServo.Image = ((System.Drawing.Image)(resources.GetObject("btnStopSearchServo.Image")));
-            this.btnStopSearchServo.Location = new System.Drawing.Point(106, 54);
+            this.btnStopSearchServo.Location = new System.Drawing.Point(159, 83);
+            this.btnStopSearchServo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStopSearchServo.Name = "btnStopSearchServo";
-            this.btnStopSearchServo.Size = new System.Drawing.Size(39, 23);
+            this.btnStopSearchServo.Size = new System.Drawing.Size(58, 35);
             this.btnStopSearchServo.TabIndex = 43;
             this.toolTip1.SetToolTip(this.btnStopSearchServo, "הפסק את החיפוש");
             this.btnStopSearchServo.UseVisualStyleBackColor = true;
@@ -599,9 +646,10 @@ namespace LaserSurvey
             // btnRefreshServoSpeed
             // 
             this.btnRefreshServoSpeed.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshServoSpeed.Image")));
-            this.btnRefreshServoSpeed.Location = new System.Drawing.Point(10, 149);
+            this.btnRefreshServoSpeed.Location = new System.Drawing.Point(15, 229);
+            this.btnRefreshServoSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRefreshServoSpeed.Name = "btnRefreshServoSpeed";
-            this.btnRefreshServoSpeed.Size = new System.Drawing.Size(22, 24);
+            this.btnRefreshServoSpeed.Size = new System.Drawing.Size(33, 37);
             this.btnRefreshServoSpeed.TabIndex = 34;
             this.toolTip1.SetToolTip(this.btnRefreshServoSpeed, "רענן מהירות");
             this.btnRefreshServoSpeed.UseVisualStyleBackColor = true;
@@ -611,16 +659,18 @@ namespace LaserSurvey
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 153);
+            this.label2.Location = new System.Drawing.Point(132, 235);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.Size = new System.Drawing.Size(43, 20);
             this.label2.TabIndex = 40;
             this.label2.Text = "Rpm";
             // 
             // nudServoRpm
             // 
             this.nudServoRpm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudServoRpm.Location = new System.Drawing.Point(39, 151);
+            this.nudServoRpm.Location = new System.Drawing.Point(58, 232);
+            this.nudServoRpm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudServoRpm.Maximum = new decimal(new int[] {
             50,
             0,
@@ -633,7 +683,7 @@ namespace LaserSurvey
             0});
             this.nudServoRpm.Name = "nudServoRpm";
             this.nudServoRpm.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudServoRpm.Size = new System.Drawing.Size(43, 20);
+            this.nudServoRpm.Size = new System.Drawing.Size(64, 26);
             this.nudServoRpm.TabIndex = 39;
             this.nudServoRpm.Value = new decimal(new int[] {
             5,
@@ -645,38 +695,42 @@ namespace LaserSurvey
             // 
             this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(151, 153);
+            this.label39.Location = new System.Drawing.Point(226, 235);
+            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(74, 13);
+            this.label39.Size = new System.Drawing.Size(96, 20);
             this.label39.TabIndex = 38;
             this.label39.Text = "מהירות מנוע:";
             // 
             // srvCOMlbl
             // 
             this.srvCOMlbl.AutoSize = true;
-            this.srvCOMlbl.Location = new System.Drawing.Point(11, 59);
+            this.srvCOMlbl.Location = new System.Drawing.Point(16, 91);
+            this.srvCOMlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.srvCOMlbl.Name = "srvCOMlbl";
             this.srvCOMlbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.srvCOMlbl.Size = new System.Drawing.Size(0, 13);
+            this.srvCOMlbl.Size = new System.Drawing.Size(0, 20);
             this.srvCOMlbl.TabIndex = 37;
             // 
             // srvInstrumentNum
             // 
             this.srvInstrumentNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.srvInstrumentNum.AutoSize = true;
-            this.srvInstrumentNum.Location = new System.Drawing.Point(11, 155);
+            this.srvInstrumentNum.Location = new System.Drawing.Point(16, 238);
+            this.srvInstrumentNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.srvInstrumentNum.Name = "srvInstrumentNum";
             this.srvInstrumentNum.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.srvInstrumentNum.Size = new System.Drawing.Size(0, 13);
+            this.srvInstrumentNum.Size = new System.Drawing.Size(0, 20);
             this.srvInstrumentNum.TabIndex = 36;
             // 
             // label37
             // 
             this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(151, 184);
+            this.label37.Location = new System.Drawing.Point(226, 283);
+            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(74, 13);
+            this.label37.Size = new System.Drawing.Size(96, 20);
             this.label37.TabIndex = 35;
             this.label37.Text = "מספר מכשיר:";
             // 
@@ -684,9 +738,10 @@ namespace LaserSurvey
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(151, 59);
+            this.label5.Location = new System.Drawing.Point(226, 91);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
+            this.label5.Size = new System.Drawing.Size(94, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "יציאה טורית:";
             // 
@@ -694,9 +749,10 @@ namespace LaserSurvey
             // 
             this.srvConnectedLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.srvConnectedLbl.AutoSize = true;
-            this.srvConnectedLbl.Location = new System.Drawing.Point(118, 91);
+            this.srvConnectedLbl.Location = new System.Drawing.Point(177, 140);
+            this.srvConnectedLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.srvConnectedLbl.Name = "srvConnectedLbl";
-            this.srvConnectedLbl.Size = new System.Drawing.Size(38, 13);
+            this.srvConnectedLbl.Size = new System.Drawing.Size(49, 20);
             this.srvConnectedLbl.TabIndex = 6;
             this.srvConnectedLbl.Text = "מנותק";
             // 
@@ -704,18 +760,20 @@ namespace LaserSurvey
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(162, 91);
+            this.label4.Location = new System.Drawing.Point(243, 140);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(83, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "מצב חיבור:";
             // 
             // srvConnectBtn
             // 
             this.srvConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.srvConnectBtn.Location = new System.Drawing.Point(10, 86);
+            this.srvConnectBtn.Location = new System.Drawing.Point(15, 132);
+            this.srvConnectBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.srvConnectBtn.Name = "srvConnectBtn";
-            this.srvConnectBtn.Size = new System.Drawing.Size(75, 23);
+            this.srvConnectBtn.Size = new System.Drawing.Size(112, 35);
             this.srvConnectBtn.TabIndex = 4;
             this.srvConnectBtn.Text = "התחבר";
             this.srvConnectBtn.UseVisualStyleBackColor = true;
@@ -735,24 +793,25 @@ namespace LaserSurvey
             this.tabPage3.Controls.Add(this.groupBox6);
             this.tabPage3.ImageIndex = 1;
             this.tabPage3.Location = new System.Drawing.Point(4, 55);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(663, 426);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage3.Size = new System.Drawing.Size(998, 699);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "סקר";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // nudBTtry
             // 
-            this.nudBTtry.Location = new System.Drawing.Point(331, 395);
-            this.nudBTtry.Margin = new System.Windows.Forms.Padding(1);
+            this.nudBTtry.Location = new System.Drawing.Point(496, 608);
+            this.nudBTtry.Margin = new System.Windows.Forms.Padding(2);
             this.nudBTtry.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudBTtry.Name = "nudBTtry";
-            this.nudBTtry.Size = new System.Drawing.Size(45, 20);
+            this.nudBTtry.Size = new System.Drawing.Size(68, 26);
             this.nudBTtry.TabIndex = 43;
             this.nudBTtry.Value = new decimal(new int[] {
             10,
@@ -764,11 +823,12 @@ namespace LaserSurvey
             // 
             this.lbSurveyLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSurveyLog.FormattingEnabled = true;
-            this.lbSurveyLog.Location = new System.Drawing.Point(152, 73);
-            this.lbSurveyLog.Margin = new System.Windows.Forms.Padding(1);
+            this.lbSurveyLog.ItemHeight = 20;
+            this.lbSurveyLog.Location = new System.Drawing.Point(228, 112);
+            this.lbSurveyLog.Margin = new System.Windows.Forms.Padding(2);
             this.lbSurveyLog.Name = "lbSurveyLog";
             this.lbSurveyLog.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbSurveyLog.Size = new System.Drawing.Size(228, 303);
+            this.lbSurveyLog.Size = new System.Drawing.Size(340, 464);
             this.lbSurveyLog.TabIndex = 42;
             // 
             // lblTreeTime
@@ -776,9 +836,10 @@ namespace LaserSurvey
             this.lblTreeTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTreeTime.AutoSize = true;
             this.lblTreeTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblTreeTime.Location = new System.Drawing.Point(415, 383);
+            this.lblTreeTime.Location = new System.Drawing.Point(622, 589);
+            this.lblTreeTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTreeTime.Name = "lblTreeTime";
-            this.lblTreeTime.Size = new System.Drawing.Size(16, 13);
+            this.lblTreeTime.Size = new System.Drawing.Size(27, 20);
             this.lblTreeTime.TabIndex = 40;
             this.lblTreeTime.Text = "---";
             // 
@@ -787,9 +848,10 @@ namespace LaserSurvey
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(431, 46);
+            this.label1.Location = new System.Drawing.Point(646, 71);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 16);
+            this.label1.Size = new System.Drawing.Size(291, 25);
             this.label1.TabIndex = 38;
             this.label1.Text = "בחר את השדה בו מתבצעות הסריקות:";
             // 
@@ -800,9 +862,10 @@ namespace LaserSurvey
             this.tvProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tvProjects.FullRowSelect = true;
             this.tvProjects.HideSelection = false;
-            this.tvProjects.Location = new System.Drawing.Point(415, 73);
+            this.tvProjects.Location = new System.Drawing.Point(622, 112);
+            this.tvProjects.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tvProjects.Name = "tvProjects";
-            this.tvProjects.Size = new System.Drawing.Size(228, 303);
+            this.tvProjects.Size = new System.Drawing.Size(340, 464);
             this.tvProjects.TabIndex = 37;
             this.tvProjects.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -811,9 +874,10 @@ namespace LaserSurvey
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Location = new System.Drawing.Point(4, 5);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(657, 28);
+            this.panel4.Size = new System.Drawing.Size(990, 43);
             this.panel4.TabIndex = 36;
             // 
             // label3
@@ -822,10 +886,11 @@ namespace LaserSurvey
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(231, 4);
+            this.label3.Location = new System.Drawing.Point(350, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(194, 20);
+            this.label3.Size = new System.Drawing.Size(274, 29);
             this.label3.TabIndex = 35;
             this.label3.Text = "הגדר מאפיינים, הפעל סריקה";
             // 
@@ -834,9 +899,11 @@ namespace LaserSurvey
             this.groupBox4.Controls.Add(this.nudOrientaionPt);
             this.groupBox4.Controls.Add(this.label32);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Location = new System.Drawing.Point(20, 32);
+            this.groupBox4.Location = new System.Drawing.Point(30, 49);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(298, 47);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox4.Size = new System.Drawing.Size(447, 72);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             // 
@@ -844,7 +911,8 @@ namespace LaserSurvey
             // 
             this.nudOrientaionPt.BackColor = System.Drawing.Color.Chartreuse;
             this.nudOrientaionPt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.nudOrientaionPt.Location = new System.Drawing.Point(53, 14);
+            this.nudOrientaionPt.Location = new System.Drawing.Point(80, 22);
+            this.nudOrientaionPt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudOrientaionPt.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -856,7 +924,7 @@ namespace LaserSurvey
             0,
             0});
             this.nudOrientaionPt.Name = "nudOrientaionPt";
-            this.nudOrientaionPt.Size = new System.Drawing.Size(87, 26);
+            this.nudOrientaionPt.Size = new System.Drawing.Size(130, 35);
             this.nudOrientaionPt.TabIndex = 27;
             this.nudOrientaionPt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudOrientaionPt.Value = new decimal(new int[] {
@@ -871,9 +939,10 @@ namespace LaserSurvey
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label32.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label32.Location = new System.Drawing.Point(195, 16);
+            this.label32.Location = new System.Drawing.Point(292, 25);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(91, 20);
+            this.label32.Size = new System.Drawing.Size(127, 29);
             this.label32.TabIndex = 19;
             this.label32.Text = "נקודת מכוון:";
             // 
@@ -882,9 +951,10 @@ namespace LaserSurvey
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(14, 16);
+            this.label7.Location = new System.Drawing.Point(21, 25);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 20);
+            this.label7.Size = new System.Drawing.Size(49, 29);
             this.label7.TabIndex = 18;
             this.label7.Text = "OR";
             // 
@@ -892,9 +962,10 @@ namespace LaserSurvey
             // 
             this.btnStartSurvey.ImageIndex = 0;
             this.btnStartSurvey.ImageList = this.imgsPlayStop;
-            this.btnStartSurvey.Location = new System.Drawing.Point(61, 237);
+            this.btnStartSurvey.Location = new System.Drawing.Point(92, 365);
+            this.btnStartSurvey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStartSurvey.Name = "btnStartSurvey";
-            this.btnStartSurvey.Size = new System.Drawing.Size(257, 39);
+            this.btnStartSurvey.Size = new System.Drawing.Size(386, 60);
             this.btnStartSurvey.TabIndex = 5;
             this.btnStartSurvey.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStartSurvey.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -915,7 +986,8 @@ namespace LaserSurvey
             this.nudBoreNum.Cursor = System.Windows.Forms.Cursors.Default;
             this.nudBoreNum.Font = new System.Drawing.Font("Modern No. 20", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudBoreNum.ForeColor = System.Drawing.Color.Blue;
-            this.nudBoreNum.Location = new System.Drawing.Point(20, 85);
+            this.nudBoreNum.Location = new System.Drawing.Point(30, 131);
+            this.nudBoreNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudBoreNum.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -927,7 +999,7 @@ namespace LaserSurvey
             0,
             0});
             this.nudBoreNum.Name = "nudBoreNum";
-            this.nudBoreNum.Size = new System.Drawing.Size(298, 146);
+            this.nudBoreNum.Size = new System.Drawing.Size(447, 217);
             this.nudBoreNum.TabIndex = 9;
             this.nudBoreNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ptInfoToolTip.SetToolTip(this.nudBoreNum, "מספר הקדח");
@@ -956,9 +1028,11 @@ namespace LaserSurvey
             this.groupBox6.Controls.Add(this.pictUp);
             this.groupBox6.Controls.Add(this.minDistChkBox);
             this.groupBox6.Controls.Add(this.label25);
-            this.groupBox6.Location = new System.Drawing.Point(20, 280);
+            this.groupBox6.Location = new System.Drawing.Point(30, 431);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(298, 134);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox6.Size = new System.Drawing.Size(447, 206);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "הגדרות";
@@ -967,9 +1041,10 @@ namespace LaserSurvey
             // 
             this.label59.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(158, 99);
+            this.label59.Location = new System.Drawing.Point(237, 152);
+            this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(35, 13);
+            this.label59.Size = new System.Drawing.Size(53, 20);
             this.label59.TabIndex = 42;
             this.label59.Text = "50mm";
             // 
@@ -979,11 +1054,12 @@ namespace LaserSurvey
             this.trackBar4.AutoSize = false;
             this.trackBar4.Enabled = false;
             this.trackBar4.LargeChange = 10;
-            this.trackBar4.Location = new System.Drawing.Point(29, 96);
+            this.trackBar4.Location = new System.Drawing.Point(44, 148);
+            this.trackBar4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trackBar4.Maximum = 500;
             this.trackBar4.Minimum = 50;
             this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(123, 20);
+            this.trackBar4.Size = new System.Drawing.Size(184, 31);
             this.trackBar4.SmallChange = 5;
             this.trackBar4.TabIndex = 41;
             this.trackBar4.TickStyle = System.Windows.Forms.TickStyle.None;
@@ -994,9 +1070,10 @@ namespace LaserSurvey
             // 
             this.lblSamples.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSamples.AutoSize = true;
-            this.lblSamples.Location = new System.Drawing.Point(160, 23);
+            this.lblSamples.Location = new System.Drawing.Point(240, 35);
+            this.lblSamples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSamples.Name = "lblSamples";
-            this.lblSamples.Size = new System.Drawing.Size(13, 13);
+            this.lblSamples.Size = new System.Drawing.Size(18, 20);
             this.lblSamples.TabIndex = 40;
             this.lblSamples.Text = "0";
             // 
@@ -1005,11 +1082,12 @@ namespace LaserSurvey
             this.trackBar3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.trackBar3.AutoSize = false;
             this.trackBar3.LargeChange = 20;
-            this.trackBar3.Location = new System.Drawing.Point(28, 19);
+            this.trackBar3.Location = new System.Drawing.Point(42, 29);
+            this.trackBar3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trackBar3.Maximum = 500;
             this.trackBar3.Minimum = 5;
             this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(126, 20);
+            this.trackBar3.Size = new System.Drawing.Size(189, 31);
             this.trackBar3.SmallChange = 10;
             this.trackBar3.TabIndex = 39;
             this.trackBar3.TickStyle = System.Windows.Forms.TickStyle.None;
@@ -1020,9 +1098,10 @@ namespace LaserSurvey
             // 
             this.lblDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDown.AutoSize = true;
-            this.lblDown.Location = new System.Drawing.Point(11, 48);
+            this.lblDown.Location = new System.Drawing.Point(16, 74);
+            this.lblDown.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDown.Name = "lblDown";
-            this.lblDown.Size = new System.Drawing.Size(41, 13);
+            this.lblDown.Size = new System.Drawing.Size(53, 20);
             this.lblDown.TabIndex = 38;
             this.lblDown.Text = "לרצפה";
             // 
@@ -1030,9 +1109,10 @@ namespace LaserSurvey
             // 
             this.lblUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUp.AutoSize = true;
-            this.lblUp.Location = new System.Drawing.Point(183, 48);
+            this.lblUp.Location = new System.Drawing.Point(274, 74);
+            this.lblUp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUp.Name = "lblUp";
-            this.lblUp.Size = new System.Drawing.Size(41, 13);
+            this.lblUp.Size = new System.Drawing.Size(55, 20);
             this.lblUp.TabIndex = 37;
             this.lblUp.Text = "לתקרה";
             // 
@@ -1040,10 +1120,11 @@ namespace LaserSurvey
             // 
             this.trackBar2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.trackBar2.AutoSize = false;
-            this.trackBar2.Location = new System.Drawing.Point(88, 44);
+            this.trackBar2.Location = new System.Drawing.Point(132, 68);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trackBar2.Maximum = 1;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(66, 20);
+            this.trackBar2.Size = new System.Drawing.Size(99, 31);
             this.trackBar2.TabIndex = 36;
             this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar2.ValueChanged += new System.EventHandler(this.trackBar2_ValueChanged);
@@ -1051,7 +1132,8 @@ namespace LaserSurvey
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 21);
+            this.pictureBox3.Location = new System.Drawing.Point(9, 32);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(16, 16);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1062,9 +1144,10 @@ namespace LaserSurvey
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(248, 48);
+            this.label24.Location = new System.Drawing.Point(372, 74);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(37, 13);
+            this.label24.Size = new System.Drawing.Size(43, 20);
             this.label24.TabIndex = 33;
             this.label24.Text = "כיוון:";
             // 
@@ -1072,9 +1155,10 @@ namespace LaserSurvey
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(208, 74);
+            this.label19.Location = new System.Drawing.Point(312, 114);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 13);
+            this.label19.Size = new System.Drawing.Size(97, 20);
             this.label19.TabIndex = 32;
             this.label19.Text = "גובה הסריקה:";
             // 
@@ -1082,9 +1166,10 @@ namespace LaserSurvey
             // 
             this.lblElevation.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblElevation.AutoSize = true;
-            this.lblElevation.Location = new System.Drawing.Point(11, 74);
+            this.lblElevation.Location = new System.Drawing.Point(16, 114);
+            this.lblElevation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblElevation.Name = "lblElevation";
-            this.lblElevation.Size = new System.Drawing.Size(45, 13);
+            this.lblElevation.Size = new System.Drawing.Size(59, 20);
             this.lblElevation.TabIndex = 31;
             this.lblElevation.Text = "תחתונה";
             // 
@@ -1092,10 +1177,11 @@ namespace LaserSurvey
             // 
             this.trackBar1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.trackBar1.AutoSize = false;
-            this.trackBar1.Location = new System.Drawing.Point(56, 70);
+            this.trackBar1.Location = new System.Drawing.Point(84, 108);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trackBar1.Maximum = 2;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(96, 20);
+            this.trackBar1.Size = new System.Drawing.Size(144, 31);
             this.trackBar1.TabIndex = 29;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
@@ -1104,9 +1190,10 @@ namespace LaserSurvey
             // 
             this.pictDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictDown.Image = ((System.Drawing.Image)(resources.GetObject("pictDown.Image")));
-            this.pictDown.Location = new System.Drawing.Point(58, 42);
+            this.pictDown.Location = new System.Drawing.Point(87, 65);
+            this.pictDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictDown.Name = "pictDown";
-            this.pictDown.Size = new System.Drawing.Size(24, 24);
+            this.pictDown.Size = new System.Drawing.Size(36, 37);
             this.pictDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictDown.TabIndex = 28;
             this.pictDown.TabStop = false;
@@ -1116,9 +1203,10 @@ namespace LaserSurvey
             // 
             this.pictUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictUp.Image = ((System.Drawing.Image)(resources.GetObject("pictUp.Image")));
-            this.pictUp.Location = new System.Drawing.Point(158, 42);
+            this.pictUp.Location = new System.Drawing.Point(237, 65);
+            this.pictUp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictUp.Name = "pictUp";
-            this.pictUp.Size = new System.Drawing.Size(24, 24);
+            this.pictUp.Size = new System.Drawing.Size(36, 37);
             this.pictUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictUp.TabIndex = 27;
             this.pictUp.TabStop = false;
@@ -1127,9 +1215,10 @@ namespace LaserSurvey
             // 
             this.minDistChkBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.minDistChkBox.AutoSize = true;
-            this.minDistChkBox.Location = new System.Drawing.Point(195, 98);
+            this.minDistChkBox.Location = new System.Drawing.Point(292, 151);
+            this.minDistChkBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.minDistChkBox.Name = "minDistChkBox";
-            this.minDistChkBox.Size = new System.Drawing.Size(89, 17);
+            this.minDistChkBox.Size = new System.Drawing.Size(121, 24);
             this.minDistChkBox.TabIndex = 20;
             this.minDistChkBox.Text = "מרחק מזערי:";
             this.minDistChkBox.UseVisualStyleBackColor = true;
@@ -1139,9 +1228,10 @@ namespace LaserSurvey
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(219, 23);
+            this.label25.Location = new System.Drawing.Point(328, 35);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(66, 13);
+            this.label25.Size = new System.Drawing.Size(85, 20);
             this.label25.TabIndex = 0;
             this.label25.Text = "מס\' דגימות:";
             // 
@@ -1160,9 +1250,10 @@ namespace LaserSurvey
             this.tabPage6.Controls.Add(this.ElapsedTimeLbl);
             this.tabPage6.ImageIndex = 2;
             this.tabPage6.Location = new System.Drawing.Point(4, 55);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(663, 426);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage6.Size = new System.Drawing.Size(998, 699);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "הדמיה";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1181,9 +1272,10 @@ namespace LaserSurvey
             this.panel5.Controls.Add(this.label35);
             this.panel5.Controls.Add(this.label36);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Location = new System.Drawing.Point(4, 5);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(657, 28);
+            this.panel5.Size = new System.Drawing.Size(990, 43);
             this.panel5.TabIndex = 48;
             // 
             // lbField
@@ -1192,9 +1284,10 @@ namespace LaserSurvey
             this.lbField.AutoSize = true;
             this.lbField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lbField.ForeColor = System.Drawing.Color.Blue;
-            this.lbField.Location = new System.Drawing.Point(320, 4);
+            this.lbField.Location = new System.Drawing.Point(484, 6);
+            this.lbField.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbField.Name = "lbField";
-            this.lbField.Size = new System.Drawing.Size(19, 20);
+            this.lbField.Size = new System.Drawing.Size(29, 29);
             this.lbField.TabIndex = 50;
             this.lbField.Text = "--";
             // 
@@ -1204,9 +1297,10 @@ namespace LaserSurvey
             this.lbBore.AutoSize = true;
             this.lbBore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lbBore.ForeColor = System.Drawing.Color.Blue;
-            this.lbBore.Location = new System.Drawing.Point(500, 4);
+            this.lbBore.Location = new System.Drawing.Point(754, 6);
+            this.lbBore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBore.Name = "lbBore";
-            this.lbBore.Size = new System.Drawing.Size(19, 20);
+            this.lbBore.Size = new System.Drawing.Size(29, 29);
             this.lbBore.TabIndex = 49;
             this.lbBore.Text = "--";
             // 
@@ -1216,9 +1310,10 @@ namespace LaserSurvey
             this.lblBoreNum.AutoSize = true;
             this.lblBoreNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblBoreNum.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblBoreNum.Location = new System.Drawing.Point(532, 1);
+            this.lblBoreNum.Location = new System.Drawing.Point(802, 2);
+            this.lblBoreNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBoreNum.Name = "lblBoreNum";
-            this.lblBoreNum.Size = new System.Drawing.Size(0, 20);
+            this.lblBoreNum.Size = new System.Drawing.Size(0, 29);
             this.lblBoreNum.TabIndex = 17;
             // 
             // lblFieldName
@@ -1227,9 +1322,10 @@ namespace LaserSurvey
             this.lblFieldName.AutoSize = true;
             this.lblFieldName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblFieldName.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblFieldName.Location = new System.Drawing.Point(326, 1);
+            this.lblFieldName.Location = new System.Drawing.Point(493, 2);
+            this.lblFieldName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFieldName.Name = "lblFieldName";
-            this.lblFieldName.Size = new System.Drawing.Size(0, 20);
+            this.lblFieldName.Size = new System.Drawing.Size(0, 29);
             this.lblFieldName.TabIndex = 19;
             // 
             // lblSmaplesSum
@@ -1237,10 +1333,11 @@ namespace LaserSurvey
             this.lblSmaplesSum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSmaplesSum.AutoSize = true;
             this.lblSmaplesSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblSmaplesSum.Location = new System.Drawing.Point(38, 4);
+            this.lblSmaplesSum.Location = new System.Drawing.Point(61, 6);
+            this.lblSmaplesSum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSmaplesSum.Name = "lblSmaplesSum";
             this.lblSmaplesSum.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSmaplesSum.Size = new System.Drawing.Size(18, 20);
+            this.lblSmaplesSum.Size = new System.Drawing.Size(26, 29);
             this.lblSmaplesSum.TabIndex = 23;
             this.lblSmaplesSum.Text = "0";
             // 
@@ -1250,9 +1347,10 @@ namespace LaserSurvey
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label40.ForeColor = System.Drawing.Color.Blue;
-            this.label40.Location = new System.Drawing.Point(570, 4);
+            this.label40.Location = new System.Drawing.Point(859, 6);
+            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(81, 20);
+            this.label40.Size = new System.Drawing.Size(115, 29);
             this.label40.TabIndex = 16;
             this.label40.Text = "קדח מספר:";
             // 
@@ -1261,10 +1359,11 @@ namespace LaserSurvey
             this.lblCurrentSample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentSample.AutoSize = true;
             this.lblCurrentSample.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblCurrentSample.Location = new System.Drawing.Point(128, 4);
+            this.lblCurrentSample.Location = new System.Drawing.Point(196, 6);
+            this.lblCurrentSample.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentSample.Name = "lblCurrentSample";
             this.lblCurrentSample.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCurrentSample.Size = new System.Drawing.Size(18, 20);
+            this.lblCurrentSample.Size = new System.Drawing.Size(26, 29);
             this.lblCurrentSample.TabIndex = 22;
             this.lblCurrentSample.Text = "0";
             // 
@@ -1274,9 +1373,10 @@ namespace LaserSurvey
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label42.ForeColor = System.Drawing.Color.Blue;
-            this.label42.Location = new System.Drawing.Point(410, 4);
+            this.label42.Location = new System.Drawing.Point(619, 6);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(42, 20);
+            this.label42.Size = new System.Drawing.Size(59, 29);
             this.label42.TabIndex = 18;
             this.label42.Text = "שדה:";
             // 
@@ -1285,9 +1385,10 @@ namespace LaserSurvey
             this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label35.Location = new System.Drawing.Point(80, 4);
+            this.label35.Location = new System.Drawing.Point(124, 6);
+            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(43, 20);
+            this.label35.Size = new System.Drawing.Size(61, 29);
             this.label35.TabIndex = 21;
             this.label35.Text = "מתוך";
             // 
@@ -1296,16 +1397,18 @@ namespace LaserSurvey
             this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label36.Location = new System.Drawing.Point(164, 4);
+            this.label36.Location = new System.Drawing.Point(250, 6);
+            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(53, 20);
+            this.label36.Size = new System.Drawing.Size(73, 29);
             this.label36.TabIndex = 20;
             this.label36.Text = "דגימה:";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(64, 354);
+            this.pictureBox2.Location = new System.Drawing.Point(96, 545);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1316,7 +1419,8 @@ namespace LaserSurvey
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 354);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 545);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1331,9 +1435,10 @@ namespace LaserSurvey
             this.btnStopSurvey.Enabled = false;
             this.btnStopSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.btnStopSurvey.Image = ((System.Drawing.Image)(resources.GetObject("btnStopSurvey.Image")));
-            this.btnStopSurvey.Location = new System.Drawing.Point(109, 345);
+            this.btnStopSurvey.Location = new System.Drawing.Point(164, 531);
+            this.btnStopSurvey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStopSurvey.Name = "btnStopSurvey";
-            this.btnStopSurvey.Size = new System.Drawing.Size(214, 56);
+            this.btnStopSurvey.Size = new System.Drawing.Size(321, 86);
             this.btnStopSurvey.TabIndex = 45;
             this.btnStopSurvey.Text = "הפסק סקר";
             this.btnStopSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1344,18 +1449,20 @@ namespace LaserSurvey
             // progressBar2
             // 
             this.progressBar2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar2.Location = new System.Drawing.Point(3, 408);
+            this.progressBar2.Location = new System.Drawing.Point(4, 671);
+            this.progressBar2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(657, 15);
+            this.progressBar2.Size = new System.Drawing.Size(990, 23);
             this.progressBar2.TabIndex = 44;
             // 
             // FinishTimeLbl
             // 
             this.FinishTimeLbl.AutoSize = true;
             this.FinishTimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.FinishTimeLbl.Location = new System.Drawing.Point(483, 378);
+            this.FinishTimeLbl.Location = new System.Drawing.Point(724, 582);
+            this.FinishTimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FinishTimeLbl.Name = "FinishTimeLbl";
-            this.FinishTimeLbl.Size = new System.Drawing.Size(71, 20);
+            this.FinishTimeLbl.Size = new System.Drawing.Size(103, 29);
             this.FinishTimeLbl.TabIndex = 43;
             this.FinishTimeLbl.Text = "00:00:00";
             // 
@@ -1374,9 +1481,11 @@ namespace LaserSurvey
             this.groupBox7.Controls.Add(this.label31);
             this.groupBox7.Controls.Add(this.label30);
             this.groupBox7.Controls.Add(this.label26);
-            this.groupBox7.Location = new System.Drawing.Point(13, 43);
+            this.groupBox7.Location = new System.Drawing.Point(20, 66);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(169, 286);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox7.Size = new System.Drawing.Size(254, 440);
             this.groupBox7.TabIndex = 39;
             this.groupBox7.TabStop = false;
             // 
@@ -1385,11 +1494,12 @@ namespace LaserSurvey
             this.tbFalseSamples.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFalseSamples.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbFalseSamples.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbFalseSamples.Location = new System.Drawing.Point(69, 249);
+            this.tbFalseSamples.Location = new System.Drawing.Point(104, 383);
+            this.tbFalseSamples.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbFalseSamples.Name = "tbFalseSamples";
             this.tbFalseSamples.ReadOnly = true;
             this.tbFalseSamples.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbFalseSamples.Size = new System.Drawing.Size(86, 26);
+            this.tbFalseSamples.Size = new System.Drawing.Size(127, 35);
             this.tbFalseSamples.TabIndex = 45;
             this.tbFalseSamples.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1398,9 +1508,10 @@ namespace LaserSurvey
             this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label29.Location = new System.Drawing.Point(51, 226);
+            this.label29.Location = new System.Drawing.Point(76, 348);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(108, 20);
+            this.label29.Size = new System.Drawing.Size(151, 29);
             this.label29.TabIndex = 43;
             this.label29.Text = "מדידות שגויות:";
             // 
@@ -1409,9 +1520,10 @@ namespace LaserSurvey
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(12, 129);
+            this.label6.Location = new System.Drawing.Point(18, 198);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.Size = new System.Drawing.Size(71, 29);
             this.label6.TabIndex = 42;
             this.label6.Text = "צעדים";
             // 
@@ -1420,11 +1532,12 @@ namespace LaserSurvey
             this.tbCurrentDist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbCurrentDist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbCurrentDist.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbCurrentDist.Location = new System.Drawing.Point(69, 187);
+            this.tbCurrentDist.Location = new System.Drawing.Point(104, 288);
+            this.tbCurrentDist.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbCurrentDist.Name = "tbCurrentDist";
             this.tbCurrentDist.ReadOnly = true;
             this.tbCurrentDist.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbCurrentDist.Size = new System.Drawing.Size(86, 26);
+            this.tbCurrentDist.Size = new System.Drawing.Size(127, 35);
             this.tbCurrentDist.TabIndex = 41;
             this.tbCurrentDist.Text = "----------";
             this.tbCurrentDist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1434,9 +1547,10 @@ namespace LaserSurvey
             this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label33.Location = new System.Drawing.Point(28, 190);
+            this.label33.Location = new System.Drawing.Point(42, 292);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(35, 20);
+            this.label33.Size = new System.Drawing.Size(49, 29);
             this.label33.TabIndex = 40;
             this.label33.Text = "מ\"מ";
             // 
@@ -1445,9 +1559,10 @@ namespace LaserSurvey
             this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label34.Location = new System.Drawing.Point(56, 164);
+            this.label34.Location = new System.Drawing.Point(84, 252);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(103, 20);
+            this.label34.Size = new System.Drawing.Size(144, 29);
             this.label34.TabIndex = 39;
             this.label34.Text = "מדידה נוכחית:";
             // 
@@ -1456,11 +1571,12 @@ namespace LaserSurvey
             this.tbAbsTicks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAbsTicks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbAbsTicks.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbAbsTicks.Location = new System.Drawing.Point(69, 126);
+            this.tbAbsTicks.Location = new System.Drawing.Point(104, 194);
+            this.tbAbsTicks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbAbsTicks.Name = "tbAbsTicks";
             this.tbAbsTicks.ReadOnly = true;
             this.tbAbsTicks.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbAbsTicks.Size = new System.Drawing.Size(86, 26);
+            this.tbAbsTicks.Size = new System.Drawing.Size(127, 35);
             this.tbAbsTicks.TabIndex = 38;
             this.tbAbsTicks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1469,9 +1585,10 @@ namespace LaserSurvey
             this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label53.Location = new System.Drawing.Point(60, 103);
+            this.label53.Location = new System.Drawing.Point(90, 158);
+            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(99, 20);
+            this.label53.Size = new System.Drawing.Size(141, 29);
             this.label53.TabIndex = 36;
             this.label53.Text = "מיקום מוחלט:";
             // 
@@ -1480,11 +1597,12 @@ namespace LaserSurvey
             this.tbRelTicks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbRelTicks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbRelTicks.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbRelTicks.Location = new System.Drawing.Point(69, 65);
+            this.tbRelTicks.Location = new System.Drawing.Point(104, 100);
+            this.tbRelTicks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbRelTicks.Name = "tbRelTicks";
             this.tbRelTicks.ReadOnly = true;
             this.tbRelTicks.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbRelTicks.Size = new System.Drawing.Size(86, 26);
+            this.tbRelTicks.Size = new System.Drawing.Size(127, 35);
             this.tbRelTicks.TabIndex = 35;
             this.tbRelTicks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1493,11 +1611,12 @@ namespace LaserSurvey
             this.tbRelAngle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbRelAngle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbRelAngle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbRelAngle.Location = new System.Drawing.Point(69, 33);
+            this.tbRelAngle.Location = new System.Drawing.Point(104, 51);
+            this.tbRelAngle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbRelAngle.Name = "tbRelAngle";
             this.tbRelAngle.ReadOnly = true;
             this.tbRelAngle.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbRelAngle.Size = new System.Drawing.Size(86, 26);
+            this.tbRelAngle.Size = new System.Drawing.Size(127, 35);
             this.tbRelAngle.TabIndex = 34;
             this.tbRelAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1506,9 +1625,10 @@ namespace LaserSurvey
             this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label31.Location = new System.Drawing.Point(12, 68);
+            this.label31.Location = new System.Drawing.Point(18, 105);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(51, 20);
+            this.label31.Size = new System.Drawing.Size(71, 29);
             this.label31.TabIndex = 33;
             this.label31.Text = "צעדים";
             // 
@@ -1517,9 +1637,10 @@ namespace LaserSurvey
             this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label30.Location = new System.Drawing.Point(10, 36);
+            this.label30.Location = new System.Drawing.Point(15, 55);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(53, 20);
+            this.label30.Size = new System.Drawing.Size(74, 29);
             this.label30.TabIndex = 32;
             this.label30.Text = "מעלות";
             // 
@@ -1528,9 +1649,10 @@ namespace LaserSurvey
             this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label26.Location = new System.Drawing.Point(75, 10);
+            this.label26.Location = new System.Drawing.Point(112, 15);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(84, 20);
+            this.label26.Size = new System.Drawing.Size(122, 29);
             this.label26.TabIndex = 31;
             this.label26.Text = "מיקום יחסי:";
             // 
@@ -1538,9 +1660,10 @@ namespace LaserSurvey
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label46.Location = new System.Drawing.Point(577, 378);
+            this.label46.Location = new System.Drawing.Point(866, 582);
+            this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(70, 20);
+            this.label46.Size = new System.Drawing.Size(97, 29);
             this.label46.TabIndex = 42;
             this.label46.Text = "זמן נותר:";
             // 
@@ -1549,9 +1672,10 @@ namespace LaserSurvey
             this.drawPanel.BackColor = System.Drawing.Color.White;
             this.drawPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.drawPanel.Controls.Add(this.nDemo);
-            this.drawPanel.Location = new System.Drawing.Point(198, 48);
+            this.drawPanel.Location = new System.Drawing.Point(297, 74);
+            this.drawPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.drawPanel.Name = "drawPanel";
-            this.drawPanel.Size = new System.Drawing.Size(452, 281);
+            this.drawPanel.Size = new System.Drawing.Size(676, 430);
             this.drawPanel.TabIndex = 0;
             this.drawPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPanel_Paint);
             this.drawPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawPanel_MouseMove);
@@ -1559,19 +1683,21 @@ namespace LaserSurvey
             // nDemo
             // 
             this.nDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.nDemo.Location = new System.Drawing.Point(547, 239);
+            this.nDemo.Location = new System.Drawing.Point(820, 368);
+            this.nDemo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nDemo.Name = "nDemo";
             this.nDemo.ReadOnly = true;
-            this.nDemo.Size = new System.Drawing.Size(81, 30);
+            this.nDemo.Size = new System.Drawing.Size(122, 41);
             this.nDemo.TabIndex = 4;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label43.Location = new System.Drawing.Point(560, 345);
+            this.label43.Location = new System.Drawing.Point(840, 531);
+            this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(87, 20);
+            this.label43.Size = new System.Drawing.Size(121, 29);
             this.label43.TabIndex = 40;
             this.label43.Text = "זמן מצטבר:";
             // 
@@ -1579,9 +1705,10 @@ namespace LaserSurvey
             // 
             this.ElapsedTimeLbl.AutoSize = true;
             this.ElapsedTimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.ElapsedTimeLbl.Location = new System.Drawing.Point(483, 345);
+            this.ElapsedTimeLbl.Location = new System.Drawing.Point(724, 531);
+            this.ElapsedTimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ElapsedTimeLbl.Name = "ElapsedTimeLbl";
-            this.ElapsedTimeLbl.Size = new System.Drawing.Size(71, 20);
+            this.ElapsedTimeLbl.Size = new System.Drawing.Size(103, 29);
             this.ElapsedTimeLbl.TabIndex = 41;
             this.ElapsedTimeLbl.Text = "00:00:00";
             // 
@@ -1596,9 +1723,10 @@ namespace LaserSurvey
             this.tabPage5.Controls.Add(this.panel3);
             this.tabPage5.ImageIndex = 4;
             this.tabPage5.Location = new System.Drawing.Point(4, 55);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(663, 426);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage5.Size = new System.Drawing.Size(998, 699);
             this.tabPage5.TabIndex = 7;
             this.tabPage5.Text = "נתונים";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1607,20 +1735,21 @@ namespace LaserSurvey
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(620, 39);
+            this.label10.Location = new System.Drawing.Point(930, 60);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(33, 13);
+            this.label10.Size = new System.Drawing.Size(50, 20);
             this.label10.TabIndex = 54;
             this.label10.Text = "100%";
             this.label10.Visible = false;
             // 
             // hScrollBar1
             // 
-            this.hScrollBar1.Location = new System.Drawing.Point(367, 37);
+            this.hScrollBar1.Location = new System.Drawing.Point(550, 57);
             this.hScrollBar1.Maximum = 200;
             this.hScrollBar1.Minimum = 1;
             this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(250, 17);
+            this.hScrollBar1.Size = new System.Drawing.Size(375, 17);
             this.hScrollBar1.TabIndex = 53;
             this.hScrollBar1.Value = 100;
             this.hScrollBar1.Visible = false;
@@ -1629,10 +1758,11 @@ namespace LaserSurvey
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(364, 313);
+            this.label8.Location = new System.Drawing.Point(546, 482);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.Size = new System.Drawing.Size(114, 20);
             this.label8.TabIndex = 52;
             this.label8.Text = "Survey Details:";
             // 
@@ -1641,30 +1771,34 @@ namespace LaserSurvey
             this.pnlPreview.BackColor = System.Drawing.Color.White;
             this.pnlPreview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlPreview.Controls.Add(this.numericUpDown1);
-            this.pnlPreview.Location = new System.Drawing.Point(367, 57);
+            this.pnlPreview.Location = new System.Drawing.Point(550, 88);
+            this.pnlPreview.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPreview.Name = "pnlPreview";
-            this.pnlPreview.Size = new System.Drawing.Size(288, 253);
+            this.pnlPreview.Size = new System.Drawing.Size(430, 387);
             this.pnlPreview.TabIndex = 51;
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.numericUpDown1.Location = new System.Drawing.Point(547, 239);
+            this.numericUpDown1.Location = new System.Drawing.Point(820, 368);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(81, 30);
+            this.numericUpDown1.Size = new System.Drawing.Size(122, 41);
             this.numericUpDown1.TabIndex = 4;
             // 
             // lvDiary
             // 
             this.lvDiary.ContextMenuStrip = this.cmsDiary;
             this.lvDiary.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvDiary.HideSelection = false;
             this.lvDiary.LargeImageList = this.imgsUpDown;
-            this.lvDiary.Location = new System.Drawing.Point(8, 37);
+            this.lvDiary.Location = new System.Drawing.Point(12, 57);
+            this.lvDiary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvDiary.MultiSelect = false;
             this.lvDiary.Name = "lvDiary";
             this.lvDiary.ShowItemToolTips = true;
-            this.lvDiary.Size = new System.Drawing.Size(353, 289);
+            this.lvDiary.Size = new System.Drawing.Size(528, 442);
             this.lvDiary.SmallImageList = this.imgsUpDown;
             this.lvDiary.TabIndex = 50;
             this.lvDiary.UseCompatibleStateImageBehavior = false;
@@ -1679,14 +1813,14 @@ namespace LaserSurvey
             this.שנהמספרקדחToolStripMenuItem,
             this.מחקסריקהToolStripMenuItem});
             this.cmsDiary.Name = "cmsDiary";
-            this.cmsDiary.Size = new System.Drawing.Size(184, 142);
+            this.cmsDiary.Size = new System.Drawing.Size(238, 148);
             this.cmsDiary.Opening += new System.ComponentModel.CancelEventHandler(this.cmsDiary_Opening);
             // 
             // הפוךכיווןסריקהToolStripMenuItem
             // 
             this.הפוךכיווןסריקהToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("הפוךכיווןסריקהToolStripMenuItem.Image")));
             this.הפוךכיווןסריקהToolStripMenuItem.Name = "הפוךכיווןסריקהToolStripMenuItem";
-            this.הפוךכיווןסריקהToolStripMenuItem.Size = new System.Drawing.Size(183, 46);
+            this.הפוךכיווןסריקהToolStripMenuItem.Size = new System.Drawing.Size(237, 48);
             this.הפוךכיווןסריקהToolStripMenuItem.Text = "הפוך כיוון סריקה";
             this.הפוךכיווןסריקהToolStripMenuItem.Click += new System.EventHandler(this.הפוךכיווןסריקהToolStripMenuItem_Click);
             // 
@@ -1694,7 +1828,7 @@ namespace LaserSurvey
             // 
             this.שנהמספרקדחToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("שנהמספרקדחToolStripMenuItem.Image")));
             this.שנהמספרקדחToolStripMenuItem.Name = "שנהמספרקדחToolStripMenuItem";
-            this.שנהמספרקדחToolStripMenuItem.Size = new System.Drawing.Size(183, 46);
+            this.שנהמספרקדחToolStripMenuItem.Size = new System.Drawing.Size(237, 48);
             this.שנהמספרקדחToolStripMenuItem.Text = "שנה מספר קדח";
             this.שנהמספרקדחToolStripMenuItem.Click += new System.EventHandler(this.שנהמספרקדחToolStripMenuItem_Click);
             // 
@@ -1702,7 +1836,7 @@ namespace LaserSurvey
             // 
             this.מחקסריקהToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("מחקסריקהToolStripMenuItem.Image")));
             this.מחקסריקהToolStripMenuItem.Name = "מחקסריקהToolStripMenuItem";
-            this.מחקסריקהToolStripMenuItem.Size = new System.Drawing.Size(183, 46);
+            this.מחקסריקהToolStripMenuItem.Size = new System.Drawing.Size(237, 48);
             this.מחקסריקהToolStripMenuItem.Text = "מחק סריקה";
             this.מחקסריקהToolStripMenuItem.Click += new System.EventHandler(this.מחקסריקהToolStripMenuItem_Click);
             // 
@@ -1716,9 +1850,10 @@ namespace LaserSurvey
             // btnExport
             // 
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.Location = new System.Drawing.Point(8, 340);
+            this.btnExport.Location = new System.Drawing.Point(12, 523);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(647, 77);
+            this.btnExport.Size = new System.Drawing.Size(970, 118);
             this.btnExport.TabIndex = 48;
             this.btnExport.Text = "סנכרון הנתונים";
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1732,9 +1867,10 @@ namespace LaserSurvey
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
             this.panel3.Controls.Add(this.lblNewSurveys);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Location = new System.Drawing.Point(4, 5);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(657, 28);
+            this.panel3.Size = new System.Drawing.Size(990, 43);
             this.panel3.TabIndex = 36;
             // 
             // lblNewSurveys
@@ -1743,10 +1879,11 @@ namespace LaserSurvey
             this.lblNewSurveys.AutoSize = true;
             this.lblNewSurveys.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblNewSurveys.ForeColor = System.Drawing.Color.Blue;
-            this.lblNewSurveys.Location = new System.Drawing.Point(252, 4);
+            this.lblNewSurveys.Location = new System.Drawing.Point(382, 6);
+            this.lblNewSurveys.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNewSurveys.Name = "lblNewSurveys";
             this.lblNewSurveys.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblNewSurveys.Size = new System.Drawing.Size(153, 20);
+            this.lblNewSurveys.Size = new System.Drawing.Size(219, 29);
             this.lblNewSurveys.TabIndex = 35;
             this.lblNewSurveys.Text = "קיימות סריקות חדשות";
             // 
@@ -1759,9 +1896,10 @@ namespace LaserSurvey
             this.tabPage4.Controls.Add(this.groupBox11);
             this.tabPage4.ImageIndex = 3;
             this.tabPage4.Location = new System.Drawing.Point(4, 55);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(663, 426);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage4.Size = new System.Drawing.Size(998, 699);
             this.tabPage4.TabIndex = 5;
             this.tabPage4.Text = "שליטה";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1773,9 +1911,10 @@ namespace LaserSurvey
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
             this.panel6.Controls.Add(this.label41);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Location = new System.Drawing.Point(4, 5);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(657, 28);
+            this.panel6.Size = new System.Drawing.Size(990, 43);
             this.panel6.TabIndex = 37;
             // 
             // label41
@@ -1784,19 +1923,21 @@ namespace LaserSurvey
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label41.ForeColor = System.Drawing.Color.Blue;
-            this.label41.Location = new System.Drawing.Point(201, 4);
+            this.label41.Location = new System.Drawing.Point(306, 6);
+            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
             this.label41.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label41.Size = new System.Drawing.Size(254, 20);
+            this.label41.Size = new System.Drawing.Size(356, 29);
             this.label41.TabIndex = 35;
             this.label41.Text = "כאן ניתן שלוט ישירות במנוע ובדיסטו";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(339, 300);
+            this.button7.Location = new System.Drawing.Point(508, 462);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button7.Name = "button7";
             this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button7.Size = new System.Drawing.Size(117, 24);
+            this.button7.Size = new System.Drawing.Size(176, 37);
             this.button7.TabIndex = 16;
             this.button7.Text = "Adjust...";
             this.button7.UseVisualStyleBackColor = true;
@@ -1807,9 +1948,11 @@ namespace LaserSurvey
             this.groupBox13.Controls.Add(this.label50);
             this.groupBox13.Controls.Add(this.label51);
             this.groupBox13.Enabled = false;
-            this.groupBox13.Location = new System.Drawing.Point(53, 82);
+            this.groupBox13.Location = new System.Drawing.Point(80, 126);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(243, 61);
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox13.Size = new System.Drawing.Size(364, 94);
             this.groupBox13.TabIndex = 14;
             this.groupBox13.TabStop = false;
             // 
@@ -1817,9 +1960,10 @@ namespace LaserSurvey
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label50.Location = new System.Drawing.Point(132, 17);
+            this.label50.Location = new System.Drawing.Point(198, 26);
+            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(115, 25);
+            this.label50.Size = new System.Drawing.Size(166, 36);
             this.label50.TabIndex = 2;
             this.label50.Text = "מיקום מוחלט:";
             // 
@@ -1828,9 +1972,10 @@ namespace LaserSurvey
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label51.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label51.Location = new System.Drawing.Point(7, 17);
+            this.label51.Location = new System.Drawing.Point(10, 26);
+            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(61, 25);
+            this.label51.Size = new System.Drawing.Size(85, 36);
             this.label51.TabIndex = 3;
             this.label51.Text = "-------";
             // 
@@ -1841,9 +1986,11 @@ namespace LaserSurvey
             this.groupBox14.Controls.Add(this.label47);
             this.groupBox14.Controls.Add(this.button5);
             this.groupBox14.Enabled = false;
-            this.groupBox14.Location = new System.Drawing.Point(18, 160);
+            this.groupBox14.Location = new System.Drawing.Point(27, 246);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(306, 72);
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox14.Size = new System.Drawing.Size(459, 111);
             this.groupBox14.TabIndex = 13;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "מדידה";
@@ -1851,11 +1998,12 @@ namespace LaserSurvey
             // hndMeasureTB
             // 
             this.hndMeasureTB.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.hndMeasureTB.Location = new System.Drawing.Point(103, 17);
+            this.hndMeasureTB.Location = new System.Drawing.Point(154, 26);
+            this.hndMeasureTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.hndMeasureTB.Name = "hndMeasureTB";
             this.hndMeasureTB.ReadOnly = true;
             this.hndMeasureTB.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.hndMeasureTB.Size = new System.Drawing.Size(100, 39);
+            this.hndMeasureTB.Size = new System.Drawing.Size(148, 54);
             this.hndMeasureTB.TabIndex = 17;
             // 
             // label55
@@ -1863,26 +2011,29 @@ namespace LaserSurvey
             this.label55.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label55.Location = new System.Drawing.Point(209, 31);
+            this.label55.Location = new System.Drawing.Point(314, 48);
+            this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(40, 17);
+            this.label55.Size = new System.Drawing.Size(58, 25);
             this.label55.TabIndex = 31;
             this.label55.Text = "(mm)";
             // 
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(267, 33);
+            this.label47.Location = new System.Drawing.Point(400, 51);
+            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(33, 13);
+            this.label47.Size = new System.Drawing.Size(42, 20);
             this.label47.TabIndex = 15;
             this.label47.Text = "מדוד";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 27);
+            this.button5.Location = new System.Drawing.Point(18, 42);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 24);
+            this.button5.Size = new System.Drawing.Size(112, 37);
             this.button5.TabIndex = 14;
             this.button5.Text = "Measure";
             this.button5.UseVisualStyleBackColor = true;
@@ -1908,18 +2059,21 @@ namespace LaserSurvey
             this.groupBox11.Controls.Add(this.label17);
             this.groupBox11.Controls.Add(this.button1);
             this.groupBox11.Enabled = false;
-            this.groupBox11.Location = new System.Drawing.Point(339, 40);
+            this.groupBox11.Location = new System.Drawing.Point(508, 62);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(306, 232);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox11.Size = new System.Drawing.Size(459, 357);
             this.groupBox11.TabIndex = 12;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "תזוזה";
             // 
             // btnServoResetAlarms
             // 
-            this.btnServoResetAlarms.Location = new System.Drawing.Point(99, 66);
+            this.btnServoResetAlarms.Location = new System.Drawing.Point(148, 102);
+            this.btnServoResetAlarms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnServoResetAlarms.Name = "btnServoResetAlarms";
-            this.btnServoResetAlarms.Size = new System.Drawing.Size(63, 24);
+            this.btnServoResetAlarms.Size = new System.Drawing.Size(94, 37);
             this.btnServoResetAlarms.TabIndex = 21;
             this.btnServoResetAlarms.Text = "Reset";
             this.btnServoResetAlarms.UseVisualStyleBackColor = true;
@@ -1929,9 +2083,10 @@ namespace LaserSurvey
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(138, 28);
+            this.label9.Location = new System.Drawing.Point(207, 43);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 13);
+            this.label9.Size = new System.Drawing.Size(41, 20);
             this.label9.TabIndex = 20;
             this.label9.Text = "מצב:";
             // 
@@ -1939,15 +2094,17 @@ namespace LaserSurvey
             // 
             this.hndOnOfflbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.hndOnOfflbl.AutoSize = true;
-            this.hndOnOfflbl.Location = new System.Drawing.Point(99, 28);
+            this.hndOnOfflbl.Location = new System.Drawing.Point(148, 43);
+            this.hndOnOfflbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hndOnOfflbl.Name = "hndOnOfflbl";
-            this.hndOnOfflbl.Size = new System.Drawing.Size(21, 13);
+            this.hndOnOfflbl.Size = new System.Drawing.Size(31, 20);
             this.hndOnOfflbl.TabIndex = 19;
             this.hndOnOfflbl.Text = "Off";
             // 
             // nUDtune
             // 
-            this.nUDtune.Location = new System.Drawing.Point(131, 201);
+            this.nUDtune.Location = new System.Drawing.Point(196, 309);
+            this.nUDtune.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nUDtune.Maximum = new decimal(new int[] {
             120,
             0,
@@ -1960,7 +2117,7 @@ namespace LaserSurvey
             0});
             this.nUDtune.Name = "nUDtune";
             this.nUDtune.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nUDtune.Size = new System.Drawing.Size(35, 20);
+            this.nUDtune.Size = new System.Drawing.Size(52, 26);
             this.nUDtune.TabIndex = 18;
             this.nUDtune.Value = new decimal(new int[] {
             2,
@@ -1970,10 +2127,11 @@ namespace LaserSurvey
             // 
             // revTuneBtn
             // 
-            this.revTuneBtn.Location = new System.Drawing.Point(58, 197);
+            this.revTuneBtn.Location = new System.Drawing.Point(87, 303);
+            this.revTuneBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.revTuneBtn.Name = "revTuneBtn";
             this.revTuneBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.revTuneBtn.Size = new System.Drawing.Size(29, 24);
+            this.revTuneBtn.Size = new System.Drawing.Size(44, 37);
             this.revTuneBtn.TabIndex = 17;
             this.revTuneBtn.Text = ">>";
             this.revTuneBtn.UseVisualStyleBackColor = true;
@@ -1982,18 +2140,20 @@ namespace LaserSurvey
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(237, 203);
+            this.label52.Location = new System.Drawing.Point(356, 312);
+            this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(61, 13);
+            this.label52.Size = new System.Drawing.Size(75, 20);
             this.label52.TabIndex = 15;
             this.label52.Text = "כינון עדין";
             // 
             // fwdTuneBtn
             // 
-            this.fwdTuneBtn.Location = new System.Drawing.Point(12, 197);
+            this.fwdTuneBtn.Location = new System.Drawing.Point(18, 303);
+            this.fwdTuneBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fwdTuneBtn.Name = "fwdTuneBtn";
             this.fwdTuneBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fwdTuneBtn.Size = new System.Drawing.Size(29, 24);
+            this.fwdTuneBtn.Size = new System.Drawing.Size(44, 37);
             this.fwdTuneBtn.TabIndex = 14;
             this.fwdTuneBtn.Text = "<<";
             this.fwdTuneBtn.UseVisualStyleBackColor = true;
@@ -2002,17 +2162,19 @@ namespace LaserSurvey
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(224, 28);
+            this.label44.Location = new System.Drawing.Point(336, 43);
+            this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(76, 13);
+            this.label44.Size = new System.Drawing.Size(99, 20);
             this.label44.TabIndex = 13;
             this.label44.Text = "הפעלת המנוע";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(15, 22);
+            this.button4.Location = new System.Drawing.Point(22, 34);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 24);
+            this.button4.Size = new System.Drawing.Size(112, 37);
             this.button4.TabIndex = 12;
             this.button4.Text = "Switch";
             this.button4.UseVisualStyleBackColor = true;
@@ -2021,7 +2183,8 @@ namespace LaserSurvey
             // nUDstep
             // 
             this.nUDstep.DecimalPlaces = 3;
-            this.nUDstep.Location = new System.Drawing.Point(99, 158);
+            this.nUDstep.Location = new System.Drawing.Point(148, 243);
+            this.nUDstep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nUDstep.Maximum = new decimal(new int[] {
             360,
             0,
@@ -2029,24 +2192,26 @@ namespace LaserSurvey
             0});
             this.nUDstep.Name = "nUDstep";
             this.nUDstep.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nUDstep.Size = new System.Drawing.Size(67, 20);
+            this.nUDstep.Size = new System.Drawing.Size(100, 26);
             this.nUDstep.TabIndex = 11;
             this.nUDstep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nUDstep_KeyPress);
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(177, 160);
+            this.label45.Location = new System.Drawing.Point(266, 246);
+            this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(121, 13);
+            this.label45.Size = new System.Drawing.Size(158, 20);
             this.label45.TabIndex = 10;
             this.label45.Text = "סע מספר צעדים מוגדר";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 154);
+            this.button3.Location = new System.Drawing.Point(18, 237);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 24);
+            this.button3.Size = new System.Drawing.Size(112, 37);
             this.button3.TabIndex = 7;
             this.button3.Text = "MoveOnce";
             this.button3.UseVisualStyleBackColor = true;
@@ -2055,7 +2220,8 @@ namespace LaserSurvey
             // nUDpos
             // 
             this.nUDpos.DecimalPlaces = 3;
-            this.nUDpos.Location = new System.Drawing.Point(99, 114);
+            this.nUDpos.Location = new System.Drawing.Point(148, 175);
+            this.nUDpos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nUDpos.Maximum = new decimal(new int[] {
             360,
             0,
@@ -2063,24 +2229,26 @@ namespace LaserSurvey
             0});
             this.nUDpos.Name = "nUDpos";
             this.nUDpos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nUDpos.Size = new System.Drawing.Size(67, 20);
+            this.nUDpos.Size = new System.Drawing.Size(100, 26);
             this.nUDpos.TabIndex = 6;
             this.nUDpos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nUDpos_KeyPress);
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(197, 116);
+            this.label28.Location = new System.Drawing.Point(296, 178);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(103, 13);
+            this.label28.Size = new System.Drawing.Size(132, 20);
             this.label28.TabIndex = 5;
             this.label28.Text = "סע לנקודה מסוימת";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(14, 110);
+            this.button2.Location = new System.Drawing.Point(21, 169);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 24);
+            this.button2.Size = new System.Drawing.Size(112, 37);
             this.button2.TabIndex = 4;
             this.button2.Text = "MoveTo";
             this.button2.UseVisualStyleBackColor = true;
@@ -2089,17 +2257,19 @@ namespace LaserSurvey
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(209, 72);
+            this.label17.Location = new System.Drawing.Point(314, 111);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(91, 13);
+            this.label17.Size = new System.Drawing.Size(117, 20);
             this.label17.TabIndex = 3;
             this.label17.Text = "סע לנקודת הבית";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 66);
+            this.button1.Location = new System.Drawing.Point(22, 102);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 24);
+            this.button1.Size = new System.Drawing.Size(112, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
@@ -2107,7 +2277,25 @@ namespace LaserSurvey
             // 
             // tabEmbed
             // 
+            this.tabEmbed.Controls.Add(this.radioButton2);
+            this.tabEmbed.Controls.Add(this.rbUpward);
+            this.tabEmbed.Controls.Add(this.label48);
+            this.tabEmbed.Controls.Add(this.tbBtSend);
             this.tabEmbed.Controls.Add(this.button6);
+            this.tabEmbed.Controls.Add(this.panel2);
+            this.tabEmbed.Controls.Add(this.label27);
+            this.tabEmbed.Controls.Add(this.tbNewBtCom);
+            this.tabEmbed.Controls.Add(this.btnConnectNewBt);
+            this.tabEmbed.Controls.Add(this.lstBT);
+            this.tabEmbed.Controls.Add(this.label22);
+            this.tabEmbed.Controls.Add(this.tbMax);
+            this.tabEmbed.Controls.Add(this.label20);
+            this.tabEmbed.Controls.Add(this.tbSrv);
+            this.tabEmbed.Controls.Add(this.label18);
+            this.tabEmbed.Controls.Add(this.tbOr);
+            this.tabEmbed.Controls.Add(this.label15);
+            this.tabEmbed.Controls.Add(this.tbFieldId);
+            this.tabEmbed.Controls.Add(this.btnRunSurveyBT);
             this.tabEmbed.Controls.Add(this.lbImportResults);
             this.tabEmbed.Controls.Add(this.btnImport);
             this.tabEmbed.Controls.Add(this.lbFilesFound);
@@ -2117,26 +2305,186 @@ namespace LaserSurvey
             this.tabEmbed.Controls.Add(this.btnLookForFiles);
             this.tabEmbed.ImageIndex = 5;
             this.tabEmbed.Location = new System.Drawing.Point(4, 55);
+            this.tabEmbed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabEmbed.Name = "tabEmbed";
-            this.tabEmbed.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmbed.Size = new System.Drawing.Size(663, 426);
+            this.tabEmbed.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabEmbed.Size = new System.Drawing.Size(998, 699);
             this.tabEmbed.TabIndex = 8;
             this.tabEmbed.Text = "סורק חדש";
             this.tabEmbed.UseVisualStyleBackColor = true;
             // 
+            // tbBtSend
+            // 
+            this.tbBtSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbBtSend.Location = new System.Drawing.Point(459, 492);
+            this.tbBtSend.Name = "tbBtSend";
+            this.tbBtSend.Size = new System.Drawing.Size(347, 35);
+            this.tbBtSend.TabIndex = 23;
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button6.Location = new System.Drawing.Point(336, 479);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(116, 48);
+            this.button6.TabIndex = 22;
+            this.button6.Text = "send";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(599, 316);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(29, 124);
+            this.panel2.TabIndex = 21;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label27.Location = new System.Drawing.Point(336, 409);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(114, 29);
+            this.label27.TabIndex = 20;
+            this.label27.Text = "Com Port";
+            // 
+            // tbNewBtCom
+            // 
+            this.tbNewBtCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbNewBtCom.Location = new System.Drawing.Point(480, 406);
+            this.tbNewBtCom.Name = "tbNewBtCom";
+            this.tbNewBtCom.Size = new System.Drawing.Size(92, 35);
+            this.tbNewBtCom.TabIndex = 19;
+            // 
+            // btnConnectNewBt
+            // 
+            this.btnConnectNewBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnConnectNewBt.Location = new System.Drawing.Point(336, 319);
+            this.btnConnectNewBt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnConnectNewBt.Name = "btnConnectNewBt";
+            this.btnConnectNewBt.Size = new System.Drawing.Size(236, 66);
+            this.btnConnectNewBt.TabIndex = 18;
+            this.btnConnectNewBt.Text = "Connect";
+            this.btnConnectNewBt.UseVisualStyleBackColor = true;
+            this.btnConnectNewBt.Click += new System.EventHandler(this.BtnConnectNewBt_Click);
+            // 
+            // lstBT
+            // 
+            this.lstBT.FormattingEnabled = true;
+            this.lstBT.ItemHeight = 20;
+            this.lstBT.Location = new System.Drawing.Point(30, 379);
+            this.lstBT.Name = "lstBT";
+            this.lstBT.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lstBT.Size = new System.Drawing.Size(236, 164);
+            this.lstBT.TabIndex = 17;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label22.Location = new System.Drawing.Point(30, 186);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(108, 29);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "Samples";
+            // 
+            // tbMax
+            // 
+            this.tbMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbMax.Location = new System.Drawing.Point(146, 183);
+            this.tbMax.Name = "tbMax";
+            this.tbMax.Size = new System.Drawing.Size(120, 35);
+            this.tbMax.TabIndex = 15;
+            this.tbMax.Text = "360";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label20.Location = new System.Drawing.Point(30, 139);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(86, 29);
+            this.label20.TabIndex = 14;
+            this.label20.Text = "Survey";
+            // 
+            // tbSrv
+            // 
+            this.tbSrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbSrv.Location = new System.Drawing.Point(146, 136);
+            this.tbSrv.Name = "tbSrv";
+            this.tbSrv.Size = new System.Drawing.Size(120, 35);
+            this.tbSrv.TabIndex = 13;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label18.Location = new System.Drawing.Point(30, 92);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(101, 29);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "Or Point";
+            // 
+            // tbOr
+            // 
+            this.tbOr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbOr.Location = new System.Drawing.Point(146, 89);
+            this.tbOr.Name = "tbOr";
+            this.tbOr.Size = new System.Drawing.Size(120, 35);
+            this.tbOr.TabIndex = 11;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label15.Location = new System.Drawing.Point(30, 45);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(88, 29);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "FieldId";
+            // 
+            // tbFieldId
+            // 
+            this.tbFieldId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbFieldId.Location = new System.Drawing.Point(146, 42);
+            this.tbFieldId.Name = "tbFieldId";
+            this.tbFieldId.Size = new System.Drawing.Size(120, 35);
+            this.tbFieldId.TabIndex = 9;
+            // 
+            // btnRunSurveyBT
+            // 
+            this.btnRunSurveyBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnRunSurveyBT.Location = new System.Drawing.Point(289, 42);
+            this.btnRunSurveyBT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRunSurveyBT.Name = "btnRunSurveyBT";
+            this.btnRunSurveyBT.Size = new System.Drawing.Size(79, 245);
+            this.btnRunSurveyBT.TabIndex = 8;
+            this.btnRunSurveyBT.Text = "Run";
+            this.btnRunSurveyBT.UseVisualStyleBackColor = true;
+            this.btnRunSurveyBT.Click += new System.EventHandler(this.BtnRunSurveyBT_Click);
+            // 
             // lbImportResults
             // 
             this.lbImportResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbImportResults.Location = new System.Drawing.Point(259, 196);
+            this.lbImportResults.Location = new System.Drawing.Point(388, 302);
+            this.lbImportResults.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbImportResults.Name = "lbImportResults";
-            this.lbImportResults.Size = new System.Drawing.Size(381, 13);
+            this.lbImportResults.Size = new System.Drawing.Size(572, 19);
             this.lbImportResults.TabIndex = 7;
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(483, 138);
+            this.btnImport.Location = new System.Drawing.Point(724, 212);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(157, 43);
+            this.btnImport.Size = new System.Drawing.Size(236, 66);
             this.btnImport.TabIndex = 5;
             this.btnImport.Text = "משוך סריקות";
             this.btnImport.UseVisualStyleBackColor = true;
@@ -2145,46 +2493,51 @@ namespace LaserSurvey
             // lbFilesFound
             // 
             this.lbFilesFound.AutoSize = true;
-            this.lbFilesFound.Location = new System.Drawing.Point(521, 109);
+            this.lbFilesFound.Location = new System.Drawing.Point(782, 168);
+            this.lbFilesFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbFilesFound.Name = "lbFilesFound";
             this.lbFilesFound.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbFilesFound.Size = new System.Drawing.Size(16, 13);
+            this.lbFilesFound.Size = new System.Drawing.Size(24, 20);
             this.lbFilesFound.TabIndex = 4;
             this.lbFilesFound.Text = "---";
             // 
             // lbDrive
             // 
             this.lbDrive.AutoSize = true;
-            this.lbDrive.Location = new System.Drawing.Point(521, 84);
+            this.lbDrive.Location = new System.Drawing.Point(782, 129);
+            this.lbDrive.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDrive.Name = "lbDrive";
             this.lbDrive.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbDrive.Size = new System.Drawing.Size(16, 13);
+            this.lbDrive.Size = new System.Drawing.Size(24, 20);
             this.lbDrive.TabIndex = 3;
             this.lbDrive.Text = "---";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(587, 109);
+            this.label13.Location = new System.Drawing.Point(880, 168);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 13);
+            this.label13.Size = new System.Drawing.Size(60, 20);
             this.label13.TabIndex = 2;
             this.label13.Text = "סריקות:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(602, 84);
+            this.label11.Location = new System.Drawing.Point(903, 129);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(32, 13);
+            this.label11.Size = new System.Drawing.Size(39, 20);
             this.label11.TabIndex = 1;
             this.label11.Text = "כונן:";
             // 
             // btnLookForFiles
             // 
-            this.btnLookForFiles.Location = new System.Drawing.Point(483, 24);
+            this.btnLookForFiles.Location = new System.Drawing.Point(724, 37);
+            this.btnLookForFiles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLookForFiles.Name = "btnLookForFiles";
-            this.btnLookForFiles.Size = new System.Drawing.Size(157, 43);
+            this.btnLookForFiles.Size = new System.Drawing.Size(236, 66);
             this.btnLookForFiles.TabIndex = 0;
             this.btnLookForFiles.Text = "חפש קבצים חדשים";
             this.btnLookForFiles.UseVisualStyleBackColor = true;
@@ -2204,57 +2557,66 @@ namespace LaserSurvey
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 485);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 758);
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(671, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1006, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
+            this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(85, 19);
             this.toolStripStatusLabel1.Text = "Servo Position:";
             // 
             // tsslPos
             // 
+            this.tsslPos.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.tsslPos.Name = "tsslPos";
             this.tsslPos.Size = new System.Drawing.Size(22, 19);
             this.tsslPos.Text = "---";
             // 
             // toolStripStatusLabel2
             // 
+            this.toolStripStatusLabel2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 19);
             this.toolStripStatusLabel2.Text = "|";
             // 
             // tsslOnOff
             // 
+            this.tsslOnOff.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.tsslOnOff.Name = "tsslOnOff";
             this.tsslOnOff.Size = new System.Drawing.Size(22, 19);
             this.tsslOnOff.Text = "---";
             // 
             // toolStripStatusLabel3
             // 
+            this.toolStripStatusLabel3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(10, 19);
             this.toolStripStatusLabel3.Text = "|";
             // 
             // tsslInPos
             // 
+            this.tsslInPos.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.tsslInPos.Name = "tsslInPos";
             this.tsslInPos.Size = new System.Drawing.Size(22, 19);
             this.tsslInPos.Text = "---";
             // 
             // toolStripStatusLabel4
             // 
+            this.toolStripStatusLabel4.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(10, 19);
             this.toolStripStatusLabel4.Text = "|";
             // 
             // tspbSurvey
             // 
+            this.tspbSurvey.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.tspbSurvey.Name = "tspbSurvey";
             this.tspbSurvey.Size = new System.Drawing.Size(150, 18);
             // 
@@ -2265,6 +2627,7 @@ namespace LaserSurvey
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.dstConStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.dstConStatus.Enabled = false;
+            this.dstConStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.dstConStatus.Name = "dstConStatus";
             this.dstConStatus.Size = new System.Drawing.Size(244, 45);
             this.dstConStatus.Text = "Disto Connected";
@@ -2276,6 +2639,7 @@ namespace LaserSurvey
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.srvConStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.srvConStatus.Enabled = false;
+            this.srvConStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.srvConStatus.Name = "srvConStatus";
             this.srvConStatus.Size = new System.Drawing.Size(249, 45);
             this.srvConStatus.Text = "Servo Connected";
@@ -2288,18 +2652,21 @@ namespace LaserSurvey
             this.srvOnStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.srvOnStatus.Enabled = false;
             this.srvOnStatus.Image = ((System.Drawing.Image)(resources.GetObject("srvOnStatus.Image")));
+            this.srvOnStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.srvOnStatus.Name = "srvOnStatus";
             this.srvOnStatus.Size = new System.Drawing.Size(239, 45);
             this.srvOnStatus.Text = "Servo Locked";
             // 
             // tsProgressbar
             // 
+            this.tsProgressbar.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.tsProgressbar.Name = "tsProgressbar";
             this.tsProgressbar.Size = new System.Drawing.Size(267, 45);
             this.tsProgressbar.Visible = false;
             // 
             // tsProgressInfo
             // 
+            this.tsProgressInfo.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.tsProgressInfo.Name = "tsProgressInfo";
             this.tsProgressInfo.Size = new System.Drawing.Size(42, 45);
             this.tsProgressInfo.Text = "--";
@@ -2327,24 +2694,52 @@ namespace LaserSurvey
             // 
             this.timerLoop.Tick += new System.EventHandler(this.timerLoop_Tick);
             // 
-            // button6
+            // label48
             // 
-            this.button6.Location = new System.Drawing.Point(43, 34);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(157, 43);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "משוך סריקות";
-            this.button6.UseVisualStyleBackColor = true;
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label48.Location = new System.Drawing.Point(30, 240);
+            this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label48.Name = "label48";
+            this.label48.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label48.Size = new System.Drawing.Size(109, 29);
+            this.label48.TabIndex = 24;
+            this.label48.Text = "Direction";
+            // 
+            // rbUpward
+            // 
+            this.rbUpward.AutoSize = true;
+            this.rbUpward.Checked = true;
+            this.rbUpward.Location = new System.Drawing.Point(169, 245);
+            this.rbUpward.Name = "rbUpward";
+            this.rbUpward.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rbUpward.Size = new System.Drawing.Size(55, 24);
+            this.rbUpward.TabIndex = 25;
+            this.rbUpward.TabStop = true;
+            this.rbUpward.Text = "Up";
+            this.rbUpward.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(169, 286);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radioButton2.Size = new System.Drawing.Size(75, 24);
+            this.radioButton2.TabIndex = 26;
+            this.radioButton2.Text = "Down";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(671, 507);
+            this.ClientSize = new System.Drawing.Size(1006, 780);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RightToLeftLayout = true;
@@ -2607,7 +3002,25 @@ namespace LaserSurvey
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnLookForFiles;
         private System.Windows.Forms.TextBox lbImportResults;
+        private System.Windows.Forms.Button btnRunSurveyBT;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox tbMax;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox tbSrv;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox tbOr;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tbFieldId;
+        private System.Windows.Forms.ListBox lstBT;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox tbNewBtCom;
+        private System.Windows.Forms.Button btnConnectNewBt;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox tbBtSend;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbUpward;
+        private System.Windows.Forms.Label label48;
     }
 }
 

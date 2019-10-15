@@ -58,7 +58,7 @@
   <ItemGroup>
     <Reference Include="BedekTreeAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\BedekTreeAdapter\BedekTreeAdapter\bin\Debug\BedekTreeAdapter.dll</HintPath>
+      <HintPath>..\..\..\Downloads\BedekTreeAdapter.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -83,6 +83,7 @@
     <Compile Include="BoxDrawer.cs" />
     <Compile Include="EthernetAdapter.cs" />
     <Compile Include="ModbusAdapter.cs" />
+    <Compile Include="NewScannerBt.cs" />
     <Compile Include="Parameters.cs" />
     <Compile Include="Sigma7Adapter.cs" />
     <Compile Include="DistoAdapter.cs" />

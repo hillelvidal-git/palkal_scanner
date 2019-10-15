@@ -9,6 +9,7 @@ using System.IO;
 using System.IO.Ports;
 using System.Configuration;
 using System.Management;
+using System.Threading;
 
 namespace LaserSurvey
 {
@@ -18,6 +19,8 @@ namespace LaserSurvey
         FilesAdapter filesTool;
         string attribution;
         bool bAvoidZeros = true;
+        NewScannerBt bt;
+
 
         public Form1()
         {
@@ -28,6 +31,24 @@ namespace LaserSurvey
 
             InitializeLaserSurvey();
             DisplayAttribution();
+
+            bt = new NewScannerBt();
+            bt.actBtConnectionChanged += actBtConnectionChanged;
+            bt.actBtDataRead += actBtDataRead;
+        }
+
+        private void actBtDataRead(string s)
+        {
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate {
+                lstBT.Items.Insert(0, s);
+            });
+        }
+
+        private void actBtConnectionChanged(bool connected)
+        {
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate {
+                panel2.BackColor = connected ? Color.Lime : Color.Transparent;
+            });
         }
 
         string lastServoCOM, lastDistoCOM;
@@ -556,6 +577,9 @@ namespace LaserSurvey
 
         string[] mbedFiles;
         string mbedDrive;
+        private bool btNewScannerConnected;
+        
+
         private void BtnLookForFiles_Click(object sender, EventArgs e)
         {
             lbDrive.Text = "";
@@ -565,7 +589,7 @@ namespace LaserSurvey
             {
                 if (drive.DriveType == DriveType.Removable)
                 {
-                    if (drive.VolumeLabel == "MBED_PALKAL")
+                    if (drive.VolumeLabel.Contains("MBED"))
                     {
                         mbedDrive = drive.Name;
                         lbDrive.Text = mbedDrive;
@@ -614,6 +638,61 @@ namespace LaserSurvey
             BtnLookForFiles_Click(new object(), new EventArgs());
         }
 
+        private void BtnRunSurveyBT_Click(object sender, EventArgs e)
+        {
+            if (bt.IsConnected)
+            {
+                try
+                {
+                    int i;
+                    if (!int.TryParse(tbFieldId.Text, out i)) throw new Exception("Field Id");
+                    if (!int.TryParse(tbSrv.Text, out i)) throw new Exception("Survey Id");
+                    if (!int.TryParse(tbOr.Text, out i)) throw new Exception("Or Id");
+                    if (!int.TryParse(tbMax.Text, out i)) throw new Exception("Max Samples");
+
+                    bt.Send("hv:SMP," + tbMax.Text + ",");
+                    bt.Send("hv:FLD," + tbFieldId.Text + ",");
+                    bt.Send("hv:ORP," + tbOr.Text + ",");
+                    bt.Send("hv:SRV," + tbSrv.Text + ",");
+
+                    if (rbUpward.Checked) bt.Send("hv:UPW,1");
+                    else bt.Send("hv:UPW,0");
+
+                    bt.Send("hv:RUN,1,");
+
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show("Invalid Parameters: " + ee.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bluetooth scanner is not connected");
+            }
+        }
+
+        private void BtnConnectNewBt_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(tbNewBtCom.Text, out int i))
+            {
+                bt.Stop();
+                Thread.Sleep(50);
+                bt.Run(tbNewBtCom.Text);
+            }
+            else
+            {
+                MessageBox.Show("Com port not set");
+            }
+        }
+
+        private void Button6_Click_1(object sender, EventArgs e)
+        {
+            if (bt.IsConnected)
+            {
+                bt.Send(tbBtSend.Text);
+            }
+        }
 
         private void btnServoResetAlarms_Click(object sender, EventArgs e)
         {
@@ -623,7 +702,7 @@ namespace LaserSurvey
             }
             catch
             {
-
+                
             }
         }
 
