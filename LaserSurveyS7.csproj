@@ -58,7 +58,7 @@
   <ItemGroup>
     <Reference Include="BedekTreeAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Downloads\BedekTreeAdapter.dll</HintPath>
+      <HintPath>E:\BedekTreeAdapter.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -130,6 +130,12 @@
     <Compile Include="SyncWizard.designer.cs">
       <DependentUpon>SyncWizard.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransferOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransferOutput.Designer.cs">
+      <DependentUpon>TransferOutput.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AssertAddingForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AssertAddingForm.cs</DependentUpon>
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="SyncWizard.resx">
       <DependentUpon>SyncWizard.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransferOutput.resx">
+      <DependentUpon>TransferOutput.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>

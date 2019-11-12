@@ -37,16 +37,27 @@ namespace LaserSurvey
             bt.actBtDataRead += actBtDataRead;
         }
 
+        bool isTransferingBt = false;
+
         private void actBtDataRead(string s)
         {
-            if (IsHandleCreated) Invoke((MethodInvoker)delegate {
+            if (isTransferingBt)
+            {
+                BtTransferDataRecieved(s);
+                return;
+            }
+
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            {
                 lstBT.Items.Insert(0, s);
             });
         }
 
+
         private void actBtConnectionChanged(bool connected)
         {
-            if (IsHandleCreated) Invoke((MethodInvoker)delegate {
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            {
                 panel2.BackColor = connected ? Color.Lime : Color.Transparent;
             });
         }
@@ -578,7 +589,7 @@ namespace LaserSurvey
         string[] mbedFiles;
         string mbedDrive;
         private bool btNewScannerConnected;
-        
+
 
         private void BtnLookForFiles_Click(object sender, EventArgs e)
         {
@@ -694,6 +705,79 @@ namespace LaserSurvey
             }
         }
 
+        private void TbBtSend_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //enter key is down
+                if (bt.IsConnected)
+                {
+                    bt.Send(tbBtSend.Text);
+                }
+            }
+        }
+
+        private void LbImportBt_Click(object sender, EventArgs e)
+        {
+            if (!bt.IsConnected)
+            {
+                MessageBox.Show("BT not connected");
+                return;
+            }
+
+            bt.Send("hv:TRN,5528");
+            btTransferIndex = 1;
+            btTransferLines = new List<string>();
+            isTransferingBt = true;
+            pTransferIndicator.Visible = true;
+        }
+
+        List<string> btTransferLines;
+
+        int btTransferIndex;
+        private void BtTransferDataRecieved(string s)
+        {
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            {
+                if (s.Contains("<<transfer>> <<index>>"))
+                {                    
+                    btTransferLines.Add(s);
+                    lstBT.Items.Insert(0, s);
+                    string reply = "hv:NXT," + btTransferIndex++;
+                    bt.Send(reply);
+                    lstBT.Items.Insert(0, "replied: >>> " + reply);
+                }
+
+                if (s.Contains("<<transfer>> <<complete>>"))
+                {
+                    isTransferingBt = false;
+                    pTransferIndicator.Visible = false;
+                    //TransferOutput filetext = new TransferOutput();
+                    //filetext.SetOutput(btTransferLines);
+                    //filetext.Show();
+                }
+            });
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChkTranfering_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkTranfering.Checked)
+            {
+                lstBT.Items.Clear();
+                isTransferingBt = true;
+                btTransferIndex = 1;
+            }
+            else
+            {
+                isTransferingBt = false;
+            }
+        }
+
         private void btnServoResetAlarms_Click(object sender, EventArgs e)
         {
             try
@@ -702,7 +786,7 @@ namespace LaserSurvey
             }
             catch
             {
-                
+
             }
         }
 
