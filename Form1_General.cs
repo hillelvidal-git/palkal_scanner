@@ -37,11 +37,11 @@ namespace LaserSurvey
             bt.actBtDataRead += actBtDataRead;
         }
 
-        bool isTransferingBt = false;
+
 
         private void actBtDataRead(string s)
         {
-            if (isTransferingBt)
+            if (bt.isTransfering)
             {
                 BtTransferDataRecieved(s);
                 return;
@@ -51,14 +51,39 @@ namespace LaserSurvey
             {
                 lstBT.Items.Insert(0, s);
             });
+
+            if (s.Contains("<<hv:empty:ok>>"))
+            {
+                if (IsHandleCreated) Invoke((MethodInvoker)delegate
+                {
+                    pEmptyOk.Visible = true;
+                });                
+            }
+
+            else if (s.Contains("Distance:"))
+            {
+                if (IsHandleCreated) Invoke((MethodInvoker)delegate
+                {
+                    tbDist.Text = s.Substring(10);
+                });
+            }
+
         }
 
-
+        bool was_disconnected = true;
         private void actBtConnectionChanged(bool connected)
         {
+
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
                 panel2.BackColor = connected ? Color.Lime : Color.Transparent;
+                if (connected && was_disconnected)
+                {
+                    was_disconnected = false;
+                    bt.Send("hv:BAT,1,");
+                    bt.Send("hv:BAT,1,");
+                }
+                else if (!connected) was_disconnected = true;
             });
         }
 
@@ -586,68 +611,6 @@ namespace LaserSurvey
             this.label10.Text = hScrollBar1.Value + "%";
         }
 
-        string[] mbedFiles;
-        string mbedDrive;
-        private bool btNewScannerConnected;
-
-
-        private void BtnLookForFiles_Click(object sender, EventArgs e)
-        {
-            lbDrive.Text = "";
-            lbFilesFound.Text = "";
-
-            foreach (DriveInfo drive in DriveInfo.GetDrives())
-            {
-                if (drive.DriveType == DriveType.Removable)
-                {
-                    if (drive.VolumeLabel.Contains("MBED"))
-                    {
-                        mbedDrive = drive.Name;
-                        lbDrive.Text = mbedDrive;
-                        mbedFiles = FindMbedSurveys(drive.Name);
-                        lbFilesFound.Text = mbedFiles.Length.ToString();
-                        break;
-                    }
-                }
-            }
-        }
-
-        private string[] FindMbedSurveys(string drive)
-        {
-            return Directory.GetFiles(drive, "*.PLK");
-        }
-
-        private void BtnImport_Click(object sender, EventArgs e)
-        {
-            if (mbedFiles.Length == 0)
-            {
-                lbImportResults.Text = "לא נמצאו סריקות";
-                return;
-            }
-
-            int good = 0;
-            int bad = 0;
-            string dest;
-
-            foreach (string f in mbedFiles)
-            {
-                try
-                {
-                    dest = f.Replace(mbedDrive, filesTool.newsFolder + "\\").Replace(".PLK", ".dat");
-                    File.Move(f, dest);
-                    good++;
-                }
-                catch (Exception ee)
-                {
-                    Console.WriteLine("Import Error: " + ee.Message);
-                    bad++;
-                }
-            }
-            lbImportResults.Text = "יובאו בהצלחה:  " + good + "  סריקות.";
-            if (bad > 0) lbImportResults.Text += "נכשלו:  " + bad + "  סריקות.";
-
-            BtnLookForFiles_Click(new object(), new EventArgs());
-        }
 
         private void BtnRunSurveyBT_Click(object sender, EventArgs e)
         {
@@ -726,35 +689,34 @@ namespace LaserSurvey
             }
 
             bt.Send("hv:TRN,5528");
-            btTransferIndex = 1;
             btTransferLines = new List<string>();
-            isTransferingBt = true;
-            pTransferIndicator.Visible = true;
+            bt.isTransfering = true;
+            pTransfering.Visible = true;
+            pEmptyOk.Visible = false;
         }
 
         List<string> btTransferLines;
 
-        int btTransferIndex;
         private void BtTransferDataRecieved(string s)
         {
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
-                if (s.Contains("<<transfer>> <<index>>"))
-                {                    
-                    btTransferLines.Add(s);
-                    lstBT.Items.Insert(0, s);
-                    string reply = "hv:NXT," + btTransferIndex++;
-                    bt.Send(reply);
-                    lstBT.Items.Insert(0, "replied: >>> " + reply);
+                btTransferLines.Add(s);
+
+                if (s.Contains("<<hv:transfer:completed>>"))
+                {
+                    bt.isTransfering = false;
+                    pTransfering.Visible = false;
+                    if (filesTool.SaveBtRawData(btTransferLines))
+                    {
+                        bt.Send("hv:EMP,5528");
+                    }
                 }
 
-                if (s.Contains("<<transfer>> <<complete>>"))
+                else if (s.Contains("<<hv:transfer:cancelled>>"))
                 {
-                    isTransferingBt = false;
-                    pTransferIndicator.Visible = false;
-                    //TransferOutput filetext = new TransferOutput();
-                    //filetext.SetOutput(btTransferLines);
-                    //filetext.Show();
+                    bt.isTransfering = false;
+                    pTransfering.Visible = false;
                 }
             });
         }
@@ -764,18 +726,9 @@ namespace LaserSurvey
 
         }
 
-        private void ChkTranfering_CheckedChanged(object sender, EventArgs e)
+        private void BtParseData_Click(object sender, EventArgs e)
         {
-            if (chkTranfering.Checked)
-            {
-                lstBT.Items.Clear();
-                isTransferingBt = true;
-                btTransferIndex = 1;
-            }
-            else
-            {
-                isTransferingBt = false;
-            }
+            pBtDataParsed.Visible = filesTool.ParseBtData();
         }
 
         private void btnServoResetAlarms_Click(object sender, EventArgs e)

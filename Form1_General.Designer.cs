@@ -182,11 +182,12 @@ namespace LaserSurvey
             this.label17 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabEmbed = new System.Windows.Forms.TabPage();
-            this.pTransferIndicator = new System.Windows.Forms.Panel();
-            this.lbBTfb = new System.Windows.Forms.Label();
+            this.btParseData = new System.Windows.Forms.Button();
+            this.pBtDataParsed = new System.Windows.Forms.Panel();
+            this.pTransfering = new System.Windows.Forms.Panel();
+            this.pEmptyOk = new System.Windows.Forms.Panel();
             this.lbImportBt = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.lbImportResults = new System.Windows.Forms.TextBox();
             this.rbUpward = new System.Windows.Forms.RadioButton();
             this.label48 = new System.Windows.Forms.Label();
             this.tbBtSend = new System.Windows.Forms.TextBox();
@@ -201,12 +202,6 @@ namespace LaserSurvey
             this.label15 = new System.Windows.Forms.Label();
             this.tbFieldId = new System.Windows.Forms.TextBox();
             this.btnRunSurveyBT = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.lbFilesFound = new System.Windows.Forms.Label();
-            this.lbDrive = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnLookForFiles = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnConnectNewBt = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
@@ -233,7 +228,7 @@ namespace LaserSurvey
             this.SurveyTimer = new System.Windows.Forms.Timer(this.components);
             this.ptInfoToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.timerLoop = new System.Windows.Forms.Timer(this.components);
-            this.chkTranfering = new System.Windows.Forms.CheckBox();
+            this.tbDist = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -2131,12 +2126,13 @@ namespace LaserSurvey
             // 
             // tabEmbed
             // 
-            this.tabEmbed.Controls.Add(this.chkTranfering);
-            this.tabEmbed.Controls.Add(this.pTransferIndicator);
-            this.tabEmbed.Controls.Add(this.lbBTfb);
+            this.tabEmbed.Controls.Add(this.tbDist);
+            this.tabEmbed.Controls.Add(this.btParseData);
+            this.tabEmbed.Controls.Add(this.pBtDataParsed);
+            this.tabEmbed.Controls.Add(this.pTransfering);
+            this.tabEmbed.Controls.Add(this.pEmptyOk);
             this.tabEmbed.Controls.Add(this.lbImportBt);
             this.tabEmbed.Controls.Add(this.radioButton2);
-            this.tabEmbed.Controls.Add(this.lbImportResults);
             this.tabEmbed.Controls.Add(this.rbUpward);
             this.tabEmbed.Controls.Add(this.label48);
             this.tabEmbed.Controls.Add(this.tbBtSend);
@@ -2151,12 +2147,6 @@ namespace LaserSurvey
             this.tabEmbed.Controls.Add(this.label15);
             this.tabEmbed.Controls.Add(this.tbFieldId);
             this.tabEmbed.Controls.Add(this.btnRunSurveyBT);
-            this.tabEmbed.Controls.Add(this.btnImport);
-            this.tabEmbed.Controls.Add(this.lbFilesFound);
-            this.tabEmbed.Controls.Add(this.lbDrive);
-            this.tabEmbed.Controls.Add(this.label13);
-            this.tabEmbed.Controls.Add(this.label11);
-            this.tabEmbed.Controls.Add(this.btnLookForFiles);
             this.tabEmbed.Controls.Add(this.panel2);
             this.tabEmbed.ImageIndex = 5;
             this.tabEmbed.Location = new System.Drawing.Point(4, 55);
@@ -2167,32 +2157,52 @@ namespace LaserSurvey
             this.tabEmbed.Text = "סורק חדש";
             this.tabEmbed.UseVisualStyleBackColor = true;
             // 
-            // pTransferIndicator
+            // btParseData
             // 
-            this.pTransferIndicator.BackColor = System.Drawing.Color.Blue;
-            this.pTransferIndicator.Location = new System.Drawing.Point(392, 92);
-            this.pTransferIndicator.Name = "pTransferIndicator";
-            this.pTransferIndicator.Size = new System.Drawing.Size(27, 36);
-            this.pTransferIndicator.TabIndex = 29;
-            this.pTransferIndicator.Visible = false;
+            this.btParseData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btParseData.Location = new System.Drawing.Point(423, 92);
+            this.btParseData.Name = "btParseData";
+            this.btParseData.Size = new System.Drawing.Size(103, 57);
+            this.btParseData.TabIndex = 32;
+            this.btParseData.Text = "Parse Data";
+            this.btParseData.UseVisualStyleBackColor = true;
+            this.btParseData.Click += new System.EventHandler(this.BtParseData_Click);
             // 
-            // lbBTfb
+            // pBtDataParsed
             // 
-            this.lbBTfb.AutoSize = true;
-            this.lbBTfb.Location = new System.Drawing.Point(267, 101);
-            this.lbBTfb.Name = "lbBTfb";
-            this.lbBTfb.Size = new System.Drawing.Size(52, 13);
-            this.lbBTfb.TabIndex = 28;
-            this.lbBTfb.Text = "feedback";
+            this.pBtDataParsed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pBtDataParsed.Location = new System.Drawing.Point(585, 29);
+            this.pBtDataParsed.Name = "pBtDataParsed";
+            this.pBtDataParsed.Size = new System.Drawing.Size(20, 57);
+            this.pBtDataParsed.TabIndex = 31;
+            this.pBtDataParsed.Visible = false;
+            // 
+            // pTransfering
+            // 
+            this.pTransfering.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.pTransfering.Location = new System.Drawing.Point(532, 29);
+            this.pTransfering.Name = "pTransfering";
+            this.pTransfering.Size = new System.Drawing.Size(20, 57);
+            this.pTransfering.TabIndex = 30;
+            this.pTransfering.Visible = false;
+            // 
+            // pEmptyOk
+            // 
+            this.pEmptyOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pEmptyOk.Location = new System.Drawing.Point(558, 29);
+            this.pEmptyOk.Name = "pEmptyOk";
+            this.pEmptyOk.Size = new System.Drawing.Size(20, 57);
+            this.pEmptyOk.TabIndex = 29;
+            this.pEmptyOk.Visible = false;
             // 
             // lbImportBt
             // 
             this.lbImportBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lbImportBt.Location = new System.Drawing.Point(267, 29);
+            this.lbImportBt.Location = new System.Drawing.Point(423, 29);
             this.lbImportBt.Name = "lbImportBt";
-            this.lbImportBt.Size = new System.Drawing.Size(152, 57);
+            this.lbImportBt.Size = new System.Drawing.Size(103, 57);
             this.lbImportBt.TabIndex = 27;
-            this.lbImportBt.Text = "Import via Bluetooth";
+            this.lbImportBt.Text = "Import Data";
             this.lbImportBt.UseVisualStyleBackColor = true;
             this.lbImportBt.Click += new System.EventHandler(this.LbImportBt_Click);
             // 
@@ -2207,14 +2217,6 @@ namespace LaserSurvey
             this.radioButton2.TabIndex = 26;
             this.radioButton2.Text = "Down";
             this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // lbImportResults
-            // 
-            this.lbImportResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbImportResults.Location = new System.Drawing.Point(431, 186);
-            this.lbImportResults.Name = "lbImportResults";
-            this.lbImportResults.Size = new System.Drawing.Size(209, 13);
-            this.lbImportResults.TabIndex = 7;
             // 
             // rbUpward
             // 
@@ -2356,69 +2358,11 @@ namespace LaserSurvey
             this.btnRunSurveyBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.btnRunSurveyBT.Location = new System.Drawing.Point(196, 27);
             this.btnRunSurveyBT.Name = "btnRunSurveyBT";
-            this.btnRunSurveyBT.Size = new System.Drawing.Size(53, 159);
+            this.btnRunSurveyBT.Size = new System.Drawing.Size(213, 57);
             this.btnRunSurveyBT.TabIndex = 8;
-            this.btnRunSurveyBT.Text = "Run";
+            this.btnRunSurveyBT.Text = "Run Survey";
             this.btnRunSurveyBT.UseVisualStyleBackColor = true;
             this.btnRunSurveyBT.Click += new System.EventHandler(this.BtnRunSurveyBT_Click);
-            // 
-            // btnImport
-            // 
-            this.btnImport.Location = new System.Drawing.Point(483, 138);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(157, 43);
-            this.btnImport.TabIndex = 5;
-            this.btnImport.Text = "משוך סריקות";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.BtnImport_Click);
-            // 
-            // lbFilesFound
-            // 
-            this.lbFilesFound.AutoSize = true;
-            this.lbFilesFound.Location = new System.Drawing.Point(521, 109);
-            this.lbFilesFound.Name = "lbFilesFound";
-            this.lbFilesFound.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbFilesFound.Size = new System.Drawing.Size(16, 13);
-            this.lbFilesFound.TabIndex = 4;
-            this.lbFilesFound.Text = "---";
-            // 
-            // lbDrive
-            // 
-            this.lbDrive.AutoSize = true;
-            this.lbDrive.Location = new System.Drawing.Point(521, 84);
-            this.lbDrive.Name = "lbDrive";
-            this.lbDrive.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbDrive.Size = new System.Drawing.Size(16, 13);
-            this.lbDrive.TabIndex = 3;
-            this.lbDrive.Text = "---";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(587, 109);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "סריקות:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(602, 84);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(32, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "כונן:";
-            // 
-            // btnLookForFiles
-            // 
-            this.btnLookForFiles.Location = new System.Drawing.Point(483, 24);
-            this.btnLookForFiles.Name = "btnLookForFiles";
-            this.btnLookForFiles.Size = new System.Drawing.Size(157, 43);
-            this.btnLookForFiles.TabIndex = 0;
-            this.btnLookForFiles.Text = "חפש קבצים חדשים";
-            this.btnLookForFiles.UseVisualStyleBackColor = true;
-            this.btnLookForFiles.Click += new System.EventHandler(this.BtnLookForFiles_Click);
             // 
             // panel2
             // 
@@ -2598,18 +2542,14 @@ namespace LaserSurvey
             // 
             this.timerLoop.Tick += new System.EventHandler(this.timerLoop_Tick);
             // 
-            // chkTranfering
+            // tbDist
             // 
-            this.chkTranfering.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkTranfering.AutoSize = true;
-            this.chkTranfering.Location = new System.Drawing.Point(267, 163);
-            this.chkTranfering.Name = "chkTranfering";
-            this.chkTranfering.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chkTranfering.Size = new System.Drawing.Size(79, 23);
-            this.chkTranfering.TabIndex = 30;
-            this.chkTranfering.Text = "Transfering...";
-            this.chkTranfering.UseVisualStyleBackColor = true;
-            this.chkTranfering.CheckedChanged += new System.EventHandler(this.ChkTranfering_CheckedChanged);
+            this.tbDist.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbDist.Location = new System.Drawing.Point(236, 177);
+            this.tbDist.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDist.Name = "tbDist";
+            this.tbDist.Size = new System.Drawing.Size(151, 35);
+            this.tbDist.TabIndex = 33;
             // 
             // Form1
             // 
@@ -2878,13 +2818,6 @@ namespace LaserSurvey
         private System.Windows.Forms.NumericUpDown nudBTtry;
         private System.Windows.Forms.Timer timerLoop;
         private System.Windows.Forms.TabPage tabEmbed;
-        private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.Label lbFilesFound;
-        private System.Windows.Forms.Label lbDrive;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnLookForFiles;
-        private System.Windows.Forms.TextBox lbImportResults;
         private System.Windows.Forms.Button btnRunSurveyBT;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox tbMax;
@@ -2904,10 +2837,12 @@ namespace LaserSurvey
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton rbUpward;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label lbBTfb;
         private System.Windows.Forms.Button lbImportBt;
-        private System.Windows.Forms.Panel pTransferIndicator;
-        private System.Windows.Forms.CheckBox chkTranfering;
+        private System.Windows.Forms.Panel pEmptyOk;
+        private System.Windows.Forms.Panel pTransfering;
+        private System.Windows.Forms.Panel pBtDataParsed;
+        private System.Windows.Forms.Button btParseData;
+        private System.Windows.Forms.TextBox tbDist;
     }
 }
 

@@ -36,6 +36,18 @@ namespace LaserSurvey
             newsFolder = dataFolder + "\\News";
             oldsFolder = dataFolder + "\\Olds";
             delFolder = dataFolder + "\\Deleted";
+
+            EnsureDirectory(bedekFolder);
+            EnsureDirectory(dataFolder);
+            EnsureDirectory(logFolder);
+            EnsureDirectory(newsFolder);
+            EnsureDirectory(oldsFolder);
+            EnsureDirectory(delFolder);
+        }
+
+        private void EnsureDirectory(string d)
+        {
+            if (!Directory.Exists(d)) Directory.CreateDirectory(d);
         }
 
         internal void SetSurveyDetails
@@ -62,6 +74,65 @@ namespace LaserSurvey
             surveyLines.Add("Angle (Degrees), Distance (MM)");
             surveyLines.Add("----------------------------------");
             surveyLines.Add("DATA:");
+        }
+
+        internal bool ParseBtData()
+        {
+            string line;
+            List<string> srv_lines;
+            int written = 0;
+            bool error_occured = false;
+
+            using (StreamReader sr = new StreamReader(dataFolder + "\\bt_raw.dat"))
+            {
+                do
+                {
+                    try
+                    {
+                        srv_lines = new List<string>();
+                        do
+                        {
+                            line = sr.ReadLine();
+                            srv_lines.Add(line);
+                        } while (!sr.EndOfStream && line != "End Of Data");
+
+                        if (srv_lines.Count > 5) //skip empty files
+                        {
+                            WriteBtSurveyFile(srv_lines, written);
+                            written++;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        error_occured = true;
+                        MessageBox.Show(e.Message);
+                    }
+
+                } while (!sr.EndOfStream);
+            }
+
+            if (!error_occured) File.Delete(dataFolder + "\\bt_raw.dat");
+            MessageBox.Show("Files Written: " + written);
+            return true;
+        }
+
+        private void WriteBtSurveyFile(List<string> srv, int i)
+        {
+            string filename = "[" + i + "][" + DateTime.Now.ToString().Replace("/", ".").Replace(":", ".") + "].DAT";
+
+            bool begin = false;
+            using (StreamWriter sw = new StreamWriter(this.newsFolder + "\\" + filename))
+            {
+                foreach (string l in srv)
+                {
+                    if (begin)
+                    {
+                        sw.WriteLine(l);
+                        if (l.Contains("End Of Data")) break;
+                    }
+                    else if (l.Contains("<<hv:newsurvey>>")) begin = true;
+                }
+            }
         }
 
         internal void ClearDate()
@@ -556,6 +627,24 @@ namespace LaserSurvey
                 return false;
             }
         }
+
+        internal bool SaveBtRawData(List<string> btTransferLines)
+        {
+            try
+            {
+                using (StreamWriter sw = File.AppendText(dataFolder + "\\bt_raw.dat"))
+                {
+                    foreach (string line in btTransferLines) sw.Write(line);
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
     } //class
 

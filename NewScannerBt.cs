@@ -10,7 +10,7 @@ namespace LaserSurvey
 {
     class NewScannerBt
     {
-        const int KEEPALIVE_INTERVAL_MS = 100000;
+        const int KEEPALIVE_INTERVAL_MS = 50000;
         const int RESPONSE_BUFFER_LENGTH = 20;
 
         public string PortName;
@@ -21,6 +21,7 @@ namespace LaserSurvey
 
         public Action<bool> actBtConnectionChanged;
         public Action<string> actBtDataRead;
+        public bool isTransfering = false;
 
         public bool IsRunning { get; private set; }
         public bool IsConnected
@@ -118,30 +119,21 @@ namespace LaserSurvey
                         catch { }
                         commandList.Remove(command);
                     }
-                    //if (swMonitor.ElapsedMilliseconds > MONITOR_INTERVAL_MS)
-                    //{
-                    //    try
-                    //    {
-                    //        Monitor();
-                    //    }
-                    //    catch
-                    //    {
-                    //        //Todo...
-                    //    }
-                    //    swMonitor.Restart();
-                    //}
-
+                    
                     if (swKeepAlive.ElapsedMilliseconds > KEEPALIVE_INTERVAL_MS)
                     {
+                        swKeepAlive.Restart();
                         try
                         {
-                            KeepAlive();
+                            if (!isTransfering)
+                                KeepAlive();
                         }
                         catch
                         {
                             //Todo...
                         }
                         swKeepAlive.Restart();
+
                     }
                 }
                 Thread.Sleep(1);
@@ -159,11 +151,13 @@ namespace LaserSurvey
         private void KeepAlive()
         {
             Debug.WriteLine("[Keep Alive]");
-            string response = SendCommand("hv:STT,1,");
+            string response = SendCommand("hv:BAT,1,");
         }
 
-        public void Send(string s, bool useCommandList = true)
+        public bool Send(string s, bool useCommandList = true)
         {
+            if (isTransfering) return false;
+
             if (useCommandList)
             {
                 commandList.Add(() =>
@@ -175,6 +169,8 @@ namespace LaserSurvey
             {
                 SendCommand(s);
             }
+
+            return true;
         }
 
         private string SendCommand(string c, bool read = false)
