@@ -17,6 +17,8 @@ namespace LaserSurvey
         string surveyAttribution;
         string surveyTime;
 
+        public Action<bool, string> parse_done;
+
         internal SurveySetting setting;
 
         public FilesAdapter()
@@ -76,12 +78,19 @@ namespace LaserSurvey
             surveyLines.Add("DATA:");
         }
 
-        internal bool ParseBtData()
+        internal void ParseBtData()
         {
+            if (!File.Exists(dataFolder + "\\bt_raw.dat"))
+            {
+                parse_done?.Invoke(false, "אין סריקות לשמור");
+                return;
+            }
+
             string line;
             List<string> srv_lines;
             int written = 0;
             bool error_occured = false;
+            bool dataexists;
 
             using (StreamReader sr = new StreamReader(dataFolder + "\\bt_raw.dat"))
             {
@@ -90,13 +99,16 @@ namespace LaserSurvey
                     try
                     {
                         srv_lines = new List<string>();
+                        dataexists = false;
                         do
                         {
                             line = sr.ReadLine();
                             srv_lines.Add(line);
+                            if (line.Contains("<<hv:newsurvey>>")) dataexists = true;
+
                         } while (!sr.EndOfStream && line != "End Of Data");
 
-                        if (srv_lines.Count > 5) //skip empty files
+                        if (dataexists) //skip empty files
                         {
                             WriteBtSurveyFile(srv_lines, written);
                             written++;
@@ -112,8 +124,9 @@ namespace LaserSurvey
             }
 
             if (!error_occured) File.Delete(dataFolder + "\\bt_raw.dat");
-            MessageBox.Show("Files Written: " + written);
-            return true;
+            parse_done?.Invoke(true, "קבצים נשמרו: "+ written);
+
+            return;
         }
 
         private void WriteBtSurveyFile(List<string> srv, int i)
@@ -127,7 +140,7 @@ namespace LaserSurvey
                 {
                     if (begin)
                     {
-                        sw.WriteLine(l);
+                        if (!l.Contains("<<hv:failed>>")) sw.WriteLine(l);
                         if (l.Contains("End Of Data")) break;
                     }
                     else if (l.Contains("<<hv:newsurvey>>")) begin = true;

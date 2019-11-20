@@ -23,6 +23,7 @@ namespace LaserSurvey
                 {
                     TreeNode n = tvProjects.SelectedNode;
                     this.CurrentFieldID = Convert.ToInt32(n.Name);
+                    tbFieldId.Text = CurrentFieldID.ToString();
                     this.attribution =
                         n.Parent.Parent.Parent.Text + "\\" +
                         n.Parent.Parent.Text + "\\" +

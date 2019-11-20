@@ -31,6 +31,33 @@ namespace LaserSurvey
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabEmbed = new System.Windows.Forms.TabPage();
+            this.label49 = new System.Windows.Forms.Label();
+            this.tbPipe = new System.Windows.Forms.NumericUpDown();
+            this.btnPipe = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbQuality = new System.Windows.Forms.TrackBar();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbUpward = new System.Windows.Forms.RadioButton();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tbSrv = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tbOr = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbFieldId = new System.Windows.Forms.TextBox();
+            this.chkTransfering = new System.Windows.Forms.CheckBox();
+            this.btTransferData = new System.Windows.Forms.Button();
+            this.tbBtSend = new System.Windows.Forms.TextBox();
+            this.lstBT = new System.Windows.Forms.ListBox();
+            this.btnRunSurveyBT = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnConnectNewBt = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tbNewBtCom = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label38 = new System.Windows.Forms.Label();
@@ -181,31 +208,6 @@ namespace LaserSurvey
             this.button2 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.tabEmbed = new System.Windows.Forms.TabPage();
-            this.btParseData = new System.Windows.Forms.Button();
-            this.pBtDataParsed = new System.Windows.Forms.Panel();
-            this.pTransfering = new System.Windows.Forms.Panel();
-            this.pEmptyOk = new System.Windows.Forms.Panel();
-            this.lbImportBt = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.rbUpward = new System.Windows.Forms.RadioButton();
-            this.label48 = new System.Windows.Forms.Label();
-            this.tbBtSend = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.lstBT = new System.Windows.Forms.ListBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.tbMax = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.tbSrv = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.tbOr = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tbFieldId = new System.Windows.Forms.TextBox();
-            this.btnRunSurveyBT = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnConnectNewBt = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.tbNewBtCom = new System.Windows.Forms.TextBox();
             this.imgsPages = new System.Windows.Forms.ImageList(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -228,8 +230,13 @@ namespace LaserSurvey
             this.SurveyTimer = new System.Windows.Forms.Timer(this.components);
             this.ptInfoToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.timerLoop = new System.Windows.Forms.Timer(this.components);
-            this.tbDist = new System.Windows.Forms.TextBox();
+            this.timerResetTransfer = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
+            this.tabEmbed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPipe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuality)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dstConnectedPct)).BeginInit();
@@ -277,18 +284,16 @@ namespace LaserSurvey
             ((System.ComponentModel.ISupportInitialize)(this.nUDtune)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDstep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDpos)).BeginInit();
-            this.tabEmbed.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabEmbed);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabEmbed);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImageList = this.imgsPages;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -299,6 +304,336 @@ namespace LaserSurvey
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(671, 485);
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabEmbed
+            // 
+            this.tabEmbed.Controls.Add(this.label49);
+            this.tabEmbed.Controls.Add(this.tbPipe);
+            this.tabEmbed.Controls.Add(this.btnPipe);
+            this.tabEmbed.Controls.Add(this.label22);
+            this.tabEmbed.Controls.Add(this.label13);
+            this.tabEmbed.Controls.Add(this.label11);
+            this.tabEmbed.Controls.Add(this.tbQuality);
+            this.tabEmbed.Controls.Add(this.panel7);
+            this.tabEmbed.Controls.Add(this.chkTransfering);
+            this.tabEmbed.Controls.Add(this.btTransferData);
+            this.tabEmbed.Controls.Add(this.tbBtSend);
+            this.tabEmbed.Controls.Add(this.lstBT);
+            this.tabEmbed.Controls.Add(this.btnRunSurveyBT);
+            this.tabEmbed.Controls.Add(this.panel2);
+            this.tabEmbed.ImageIndex = 5;
+            this.tabEmbed.Location = new System.Drawing.Point(4, 55);
+            this.tabEmbed.Name = "tabEmbed";
+            this.tabEmbed.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmbed.Size = new System.Drawing.Size(663, 426);
+            this.tabEmbed.TabIndex = 8;
+            this.tabEmbed.Text = "סורק חדש";
+            this.tabEmbed.UseVisualStyleBackColor = true;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label49.Location = new System.Drawing.Point(468, 231);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(52, 20);
+            this.label49.TabIndex = 56;
+            this.label49.Text = "מומלץ";
+            // 
+            // tbPipe
+            // 
+            this.tbPipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbPipe.Location = new System.Drawing.Point(82, 336);
+            this.tbPipe.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.tbPipe.Name = "tbPipe";
+            this.tbPipe.Size = new System.Drawing.Size(96, 26);
+            this.tbPipe.TabIndex = 55;
+            this.tbPipe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbPipe.Value = new decimal(new int[] {
+            433,
+            0,
+            0,
+            0});
+            // 
+            // btnPipe
+            // 
+            this.btnPipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnPipe.Location = new System.Drawing.Point(20, 336);
+            this.btnPipe.Name = "btnPipe";
+            this.btnPipe.Size = new System.Drawing.Size(56, 26);
+            this.btnPipe.TabIndex = 54;
+            this.btnPipe.Text = "עדכן";
+            this.btnPipe.UseVisualStyleBackColor = true;
+            this.btnPipe.Click += new System.EventHandler(this.BtnPipe_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label22.Location = new System.Drawing.Point(53, 305);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(129, 20);
+            this.label22.TabIndex = 53;
+            this.label22.Text = "אורך הצינור (מ\"מ)";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label13.Location = new System.Drawing.Point(334, 231);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 20);
+            this.label13.TabIndex = 51;
+            this.label13.Text = "מדויק";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label11.Location = new System.Drawing.Point(613, 231);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(42, 20);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "מהיר";
+            // 
+            // tbQuality
+            // 
+            this.tbQuality.Location = new System.Drawing.Point(334, 183);
+            this.tbQuality.Maximum = 5;
+            this.tbQuality.Minimum = 1;
+            this.tbQuality.Name = "tbQuality";
+            this.tbQuality.Size = new System.Drawing.Size(321, 45);
+            this.tbQuality.TabIndex = 49;
+            this.tbQuality.Value = 3;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel7.Controls.Add(this.radioButton2);
+            this.panel7.Controls.Add(this.rbUpward);
+            this.panel7.Controls.Add(this.label48);
+            this.panel7.Controls.Add(this.label20);
+            this.panel7.Controls.Add(this.tbSrv);
+            this.panel7.Controls.Add(this.label18);
+            this.panel7.Controls.Add(this.tbOr);
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.tbFieldId);
+            this.panel7.Location = new System.Drawing.Point(334, 16);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(321, 156);
+            this.panel7.TabIndex = 48;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButton2.Location = new System.Drawing.Point(46, 76);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radioButton2.Size = new System.Drawing.Size(62, 24);
+            this.radioButton2.TabIndex = 26;
+            this.radioButton2.Text = "רצפה";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // rbUpward
+            // 
+            this.rbUpward.AutoSize = true;
+            this.rbUpward.Checked = true;
+            this.rbUpward.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.rbUpward.Location = new System.Drawing.Point(119, 76);
+            this.rbUpward.Margin = new System.Windows.Forms.Padding(2);
+            this.rbUpward.Name = "rbUpward";
+            this.rbUpward.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rbUpward.Size = new System.Drawing.Size(64, 24);
+            this.rbUpward.TabIndex = 25;
+            this.rbUpward.TabStop = true;
+            this.rbUpward.Text = "תקרה";
+            this.rbUpward.UseVisualStyleBackColor = true;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label48.ForeColor = System.Drawing.Color.Blue;
+            this.label48.Location = new System.Drawing.Point(265, 78);
+            this.label48.Name = "label48";
+            this.label48.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label48.Size = new System.Drawing.Size(39, 20);
+            this.label48.TabIndex = 24;
+            this.label48.Text = "כיוון";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label20.ForeColor = System.Drawing.Color.Blue;
+            this.label20.Location = new System.Drawing.Point(188, 104);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(116, 20);
+            this.label20.TabIndex = 14;
+            this.label20.Text = "מס\' תיבה (SRV)";
+            // 
+            // tbSrv
+            // 
+            this.tbSrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbSrv.ForeColor = System.Drawing.Color.Red;
+            this.tbSrv.Location = new System.Drawing.Point(102, 104);
+            this.tbSrv.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSrv.Name = "tbSrv";
+            this.tbSrv.Size = new System.Drawing.Size(81, 35);
+            this.tbSrv.TabIndex = 13;
+            this.tbSrv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label18.ForeColor = System.Drawing.Color.Blue;
+            this.label18.Location = new System.Drawing.Point(228, 44);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(76, 20);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "נקודת OR";
+            // 
+            // tbOr
+            // 
+            this.tbOr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbOr.Location = new System.Drawing.Point(102, 41);
+            this.tbOr.Margin = new System.Windows.Forms.Padding(2);
+            this.tbOr.Name = "tbOr";
+            this.tbOr.Size = new System.Drawing.Size(81, 26);
+            this.tbOr.TabIndex = 11;
+            this.tbOr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label15.ForeColor = System.Drawing.Color.Blue;
+            this.label15.Location = new System.Drawing.Point(240, 13);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(64, 20);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "מס\' שדה";
+            // 
+            // tbFieldId
+            // 
+            this.tbFieldId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbFieldId.Location = new System.Drawing.Point(102, 10);
+            this.tbFieldId.Margin = new System.Windows.Forms.Padding(2);
+            this.tbFieldId.Name = "tbFieldId";
+            this.tbFieldId.ReadOnly = true;
+            this.tbFieldId.Size = new System.Drawing.Size(81, 26);
+            this.tbFieldId.TabIndex = 9;
+            this.tbFieldId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // chkTransfering
+            // 
+            this.chkTransfering.AutoSize = true;
+            this.chkTransfering.Location = new System.Drawing.Point(99, 193);
+            this.chkTransfering.Name = "chkTransfering";
+            this.chkTransfering.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chkTransfering.Size = new System.Drawing.Size(79, 17);
+            this.chkTransfering.TabIndex = 47;
+            this.chkTransfering.Text = "Transfering";
+            this.chkTransfering.UseVisualStyleBackColor = true;
+            this.chkTransfering.CheckedChanged += new System.EventHandler(this.ChkTransfering_CheckedChanged);
+            // 
+            // btTransferData
+            // 
+            this.btTransferData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btTransferData.Location = new System.Drawing.Point(75, 120);
+            this.btTransferData.Name = "btTransferData";
+            this.btTransferData.Size = new System.Drawing.Size(103, 57);
+            this.btTransferData.TabIndex = 27;
+            this.btTransferData.Text = "משוך סריקות";
+            this.btTransferData.UseVisualStyleBackColor = true;
+            this.btTransferData.Click += new System.EventHandler(this.LbImportBt_Click);
+            // 
+            // tbBtSend
+            // 
+            this.tbBtSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbBtSend.Location = new System.Drawing.Point(473, 389);
+            this.tbBtSend.Margin = new System.Windows.Forms.Padding(2);
+            this.tbBtSend.Name = "tbBtSend";
+            this.tbBtSend.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbBtSend.Size = new System.Drawing.Size(182, 26);
+            this.tbBtSend.TabIndex = 23;
+            this.tbBtSend.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbBtSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbBtSend_KeyDown);
+            // 
+            // lstBT
+            // 
+            this.lstBT.FormattingEnabled = true;
+            this.lstBT.Location = new System.Drawing.Point(20, 389);
+            this.lstBT.Margin = new System.Windows.Forms.Padding(2);
+            this.lstBT.Name = "lstBT";
+            this.lstBT.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lstBT.Size = new System.Drawing.Size(367, 17);
+            this.lstBT.TabIndex = 17;
+            // 
+            // btnRunSurveyBT
+            // 
+            this.btnRunSurveyBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnRunSurveyBT.Image = ((System.Drawing.Image)(resources.GetObject("btnRunSurveyBT.Image")));
+            this.btnRunSurveyBT.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRunSurveyBT.Location = new System.Drawing.Point(8, 16);
+            this.btnRunSurveyBT.Name = "btnRunSurveyBT";
+            this.btnRunSurveyBT.Size = new System.Drawing.Size(170, 93);
+            this.btnRunSurveyBT.TabIndex = 8;
+            this.btnRunSurveyBT.Text = "התחל סריקה";
+            this.btnRunSurveyBT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRunSurveyBT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRunSurveyBT.UseVisualStyleBackColor = true;
+            this.btnRunSurveyBT.Click += new System.EventHandler(this.BtnRunSurveyBT_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnConnectNewBt);
+            this.panel2.Controls.Add(this.label27);
+            this.panel2.Controls.Add(this.tbNewBtCom);
+            this.panel2.Location = new System.Drawing.Point(473, 279);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(182, 101);
+            this.panel2.TabIndex = 21;
+            // 
+            // btnConnectNewBt
+            // 
+            this.btnConnectNewBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnConnectNewBt.Location = new System.Drawing.Point(13, 15);
+            this.btnConnectNewBt.Name = "btnConnectNewBt";
+            this.btnConnectNewBt.Size = new System.Drawing.Size(157, 43);
+            this.btnConnectNewBt.TabIndex = 18;
+            this.btnConnectNewBt.Text = "התחבר";
+            this.btnConnectNewBt.UseVisualStyleBackColor = true;
+            this.btnConnectNewBt.Click += new System.EventHandler(this.BtnConnectNewBt_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label27.Location = new System.Drawing.Point(13, 70);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(75, 20);
+            this.label27.TabIndex = 20;
+            this.label27.Text = "Com Port";
+            // 
+            // tbNewBtCom
+            // 
+            this.tbNewBtCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbNewBtCom.Location = new System.Drawing.Point(107, 67);
+            this.tbNewBtCom.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNewBtCom.Name = "tbNewBtCom";
+            this.tbNewBtCom.Size = new System.Drawing.Size(63, 26);
+            this.tbNewBtCom.TabIndex = 19;
+            this.tbNewBtCom.Text = "4";
+            this.tbNewBtCom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage1
             // 
@@ -318,7 +653,7 @@ namespace LaserSurvey
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabPage1.Size = new System.Drawing.Size(663, 426);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "חיבורים";
+            this.tabPage1.Text = "סורק ישן";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -2124,287 +2459,6 @@ namespace LaserSurvey
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.srvHomeBtn_Click);
             // 
-            // tabEmbed
-            // 
-            this.tabEmbed.Controls.Add(this.tbDist);
-            this.tabEmbed.Controls.Add(this.btParseData);
-            this.tabEmbed.Controls.Add(this.pBtDataParsed);
-            this.tabEmbed.Controls.Add(this.pTransfering);
-            this.tabEmbed.Controls.Add(this.pEmptyOk);
-            this.tabEmbed.Controls.Add(this.lbImportBt);
-            this.tabEmbed.Controls.Add(this.radioButton2);
-            this.tabEmbed.Controls.Add(this.rbUpward);
-            this.tabEmbed.Controls.Add(this.label48);
-            this.tabEmbed.Controls.Add(this.tbBtSend);
-            this.tabEmbed.Controls.Add(this.button6);
-            this.tabEmbed.Controls.Add(this.lstBT);
-            this.tabEmbed.Controls.Add(this.label22);
-            this.tabEmbed.Controls.Add(this.tbMax);
-            this.tabEmbed.Controls.Add(this.label20);
-            this.tabEmbed.Controls.Add(this.tbSrv);
-            this.tabEmbed.Controls.Add(this.label18);
-            this.tabEmbed.Controls.Add(this.tbOr);
-            this.tabEmbed.Controls.Add(this.label15);
-            this.tabEmbed.Controls.Add(this.tbFieldId);
-            this.tabEmbed.Controls.Add(this.btnRunSurveyBT);
-            this.tabEmbed.Controls.Add(this.panel2);
-            this.tabEmbed.ImageIndex = 5;
-            this.tabEmbed.Location = new System.Drawing.Point(4, 55);
-            this.tabEmbed.Name = "tabEmbed";
-            this.tabEmbed.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmbed.Size = new System.Drawing.Size(663, 426);
-            this.tabEmbed.TabIndex = 8;
-            this.tabEmbed.Text = "סורק חדש";
-            this.tabEmbed.UseVisualStyleBackColor = true;
-            // 
-            // btParseData
-            // 
-            this.btParseData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btParseData.Location = new System.Drawing.Point(423, 92);
-            this.btParseData.Name = "btParseData";
-            this.btParseData.Size = new System.Drawing.Size(103, 57);
-            this.btParseData.TabIndex = 32;
-            this.btParseData.Text = "Parse Data";
-            this.btParseData.UseVisualStyleBackColor = true;
-            this.btParseData.Click += new System.EventHandler(this.BtParseData_Click);
-            // 
-            // pBtDataParsed
-            // 
-            this.pBtDataParsed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.pBtDataParsed.Location = new System.Drawing.Point(585, 29);
-            this.pBtDataParsed.Name = "pBtDataParsed";
-            this.pBtDataParsed.Size = new System.Drawing.Size(20, 57);
-            this.pBtDataParsed.TabIndex = 31;
-            this.pBtDataParsed.Visible = false;
-            // 
-            // pTransfering
-            // 
-            this.pTransfering.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.pTransfering.Location = new System.Drawing.Point(532, 29);
-            this.pTransfering.Name = "pTransfering";
-            this.pTransfering.Size = new System.Drawing.Size(20, 57);
-            this.pTransfering.TabIndex = 30;
-            this.pTransfering.Visible = false;
-            // 
-            // pEmptyOk
-            // 
-            this.pEmptyOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.pEmptyOk.Location = new System.Drawing.Point(558, 29);
-            this.pEmptyOk.Name = "pEmptyOk";
-            this.pEmptyOk.Size = new System.Drawing.Size(20, 57);
-            this.pEmptyOk.TabIndex = 29;
-            this.pEmptyOk.Visible = false;
-            // 
-            // lbImportBt
-            // 
-            this.lbImportBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lbImportBt.Location = new System.Drawing.Point(423, 29);
-            this.lbImportBt.Name = "lbImportBt";
-            this.lbImportBt.Size = new System.Drawing.Size(103, 57);
-            this.lbImportBt.TabIndex = 27;
-            this.lbImportBt.Text = "Import Data";
-            this.lbImportBt.UseVisualStyleBackColor = true;
-            this.lbImportBt.Click += new System.EventHandler(this.LbImportBt_Click);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(113, 186);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radioButton2.Size = new System.Drawing.Size(53, 17);
-            this.radioButton2.TabIndex = 26;
-            this.radioButton2.Text = "Down";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // rbUpward
-            // 
-            this.rbUpward.AutoSize = true;
-            this.rbUpward.Checked = true;
-            this.rbUpward.Location = new System.Drawing.Point(113, 159);
-            this.rbUpward.Margin = new System.Windows.Forms.Padding(2);
-            this.rbUpward.Name = "rbUpward";
-            this.rbUpward.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rbUpward.Size = new System.Drawing.Size(39, 17);
-            this.rbUpward.TabIndex = 25;
-            this.rbUpward.TabStop = true;
-            this.rbUpward.Text = "Up";
-            this.rbUpward.UseVisualStyleBackColor = true;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label48.Location = new System.Drawing.Point(20, 156);
-            this.label48.Name = "label48";
-            this.label48.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label48.Size = new System.Drawing.Size(72, 20);
-            this.label48.TabIndex = 24;
-            this.label48.Text = "Direction";
-            // 
-            // tbBtSend
-            // 
-            this.tbBtSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbBtSend.Location = new System.Drawing.Point(423, 352);
-            this.tbBtSend.Margin = new System.Windows.Forms.Padding(2);
-            this.tbBtSend.Name = "tbBtSend";
-            this.tbBtSend.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbBtSend.Size = new System.Drawing.Size(233, 26);
-            this.tbBtSend.TabIndex = 23;
-            this.tbBtSend.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbBtSend.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbBtSend_KeyDown);
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button6.Location = new System.Drawing.Point(579, 383);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(77, 31);
-            this.button6.TabIndex = 22;
-            this.button6.Text = "send";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button6_Click_1);
-            // 
-            // lstBT
-            // 
-            this.lstBT.FormattingEnabled = true;
-            this.lstBT.Location = new System.Drawing.Point(20, 220);
-            this.lstBT.Margin = new System.Windows.Forms.Padding(2);
-            this.lstBT.Name = "lstBT";
-            this.lstBT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lstBT.Size = new System.Drawing.Size(367, 186);
-            this.lstBT.TabIndex = 17;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label22.Location = new System.Drawing.Point(20, 121);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(71, 20);
-            this.label22.TabIndex = 16;
-            this.label22.Text = "Samples";
-            // 
-            // tbMax
-            // 
-            this.tbMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbMax.Location = new System.Drawing.Point(97, 119);
-            this.tbMax.Margin = new System.Windows.Forms.Padding(2);
-            this.tbMax.Name = "tbMax";
-            this.tbMax.Size = new System.Drawing.Size(81, 26);
-            this.tbMax.TabIndex = 15;
-            this.tbMax.Text = "360";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label20.Location = new System.Drawing.Point(20, 90);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(57, 20);
-            this.label20.TabIndex = 14;
-            this.label20.Text = "Survey";
-            // 
-            // tbSrv
-            // 
-            this.tbSrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbSrv.Location = new System.Drawing.Point(97, 88);
-            this.tbSrv.Margin = new System.Windows.Forms.Padding(2);
-            this.tbSrv.Name = "tbSrv";
-            this.tbSrv.Size = new System.Drawing.Size(81, 26);
-            this.tbSrv.TabIndex = 13;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label18.Location = new System.Drawing.Point(20, 60);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 20);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "Or Point";
-            // 
-            // tbOr
-            // 
-            this.tbOr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbOr.Location = new System.Drawing.Point(97, 58);
-            this.tbOr.Margin = new System.Windows.Forms.Padding(2);
-            this.tbOr.Name = "tbOr";
-            this.tbOr.Size = new System.Drawing.Size(81, 26);
-            this.tbOr.TabIndex = 11;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label15.Location = new System.Drawing.Point(20, 29);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 20);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "FieldId";
-            // 
-            // tbFieldId
-            // 
-            this.tbFieldId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbFieldId.Location = new System.Drawing.Point(97, 27);
-            this.tbFieldId.Margin = new System.Windows.Forms.Padding(2);
-            this.tbFieldId.Name = "tbFieldId";
-            this.tbFieldId.Size = new System.Drawing.Size(81, 26);
-            this.tbFieldId.TabIndex = 9;
-            // 
-            // btnRunSurveyBT
-            // 
-            this.btnRunSurveyBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnRunSurveyBT.Location = new System.Drawing.Point(196, 27);
-            this.btnRunSurveyBT.Name = "btnRunSurveyBT";
-            this.btnRunSurveyBT.Size = new System.Drawing.Size(213, 57);
-            this.btnRunSurveyBT.TabIndex = 8;
-            this.btnRunSurveyBT.Text = "Run Survey";
-            this.btnRunSurveyBT.UseVisualStyleBackColor = true;
-            this.btnRunSurveyBT.Click += new System.EventHandler(this.BtnRunSurveyBT_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnConnectNewBt);
-            this.panel2.Controls.Add(this.label27);
-            this.panel2.Controls.Add(this.tbNewBtCom);
-            this.panel2.Location = new System.Drawing.Point(474, 231);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(182, 101);
-            this.panel2.TabIndex = 21;
-            // 
-            // btnConnectNewBt
-            // 
-            this.btnConnectNewBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnConnectNewBt.Location = new System.Drawing.Point(13, 13);
-            this.btnConnectNewBt.Name = "btnConnectNewBt";
-            this.btnConnectNewBt.Size = new System.Drawing.Size(157, 43);
-            this.btnConnectNewBt.TabIndex = 18;
-            this.btnConnectNewBt.Text = "Connect";
-            this.btnConnectNewBt.UseVisualStyleBackColor = true;
-            this.btnConnectNewBt.Click += new System.EventHandler(this.BtnConnectNewBt_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label27.Location = new System.Drawing.Point(13, 70);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(75, 20);
-            this.label27.TabIndex = 20;
-            this.label27.Text = "Com Port";
-            // 
-            // tbNewBtCom
-            // 
-            this.tbNewBtCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbNewBtCom.Location = new System.Drawing.Point(107, 67);
-            this.tbNewBtCom.Margin = new System.Windows.Forms.Padding(2);
-            this.tbNewBtCom.Name = "tbNewBtCom";
-            this.tbNewBtCom.Size = new System.Drawing.Size(63, 26);
-            this.tbNewBtCom.TabIndex = 19;
-            // 
             // imgsPages
             // 
             this.imgsPages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgsPages.ImageStream")));
@@ -2542,14 +2596,10 @@ namespace LaserSurvey
             // 
             this.timerLoop.Tick += new System.EventHandler(this.timerLoop_Tick);
             // 
-            // tbDist
+            // timerResetTransfer
             // 
-            this.tbDist.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbDist.Location = new System.Drawing.Point(236, 177);
-            this.tbDist.Margin = new System.Windows.Forms.Padding(2);
-            this.tbDist.Name = "tbDist";
-            this.tbDist.Size = new System.Drawing.Size(151, 35);
-            this.tbDist.TabIndex = 33;
+            this.timerResetTransfer.Interval = 1000;
+            this.timerResetTransfer.Tick += new System.EventHandler(this.TimerResetTransfer_Tick);
             // 
             // Form1
             // 
@@ -2569,6 +2619,14 @@ namespace LaserSurvey
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabEmbed.ResumeLayout(false);
+            this.tabEmbed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPipe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuality)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -2633,10 +2691,6 @@ namespace LaserSurvey
             ((System.ComponentModel.ISupportInitialize)(this.nUDtune)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDstep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDpos)).EndInit();
-            this.tabEmbed.ResumeLayout(false);
-            this.tabEmbed.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2819,8 +2873,6 @@ namespace LaserSurvey
         private System.Windows.Forms.Timer timerLoop;
         private System.Windows.Forms.TabPage tabEmbed;
         private System.Windows.Forms.Button btnRunSurveyBT;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox tbMax;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tbSrv;
         private System.Windows.Forms.Label label18;
@@ -2833,16 +2885,20 @@ namespace LaserSurvey
         private System.Windows.Forms.Button btnConnectNewBt;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tbBtSend;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton rbUpward;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Button lbImportBt;
-        private System.Windows.Forms.Panel pEmptyOk;
-        private System.Windows.Forms.Panel pTransfering;
-        private System.Windows.Forms.Panel pBtDataParsed;
-        private System.Windows.Forms.Button btParseData;
-        private System.Windows.Forms.TextBox tbDist;
+        private System.Windows.Forms.Button btTransferData;
+        private System.Windows.Forms.CheckBox chkTransfering;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TrackBar tbQuality;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnPipe;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.NumericUpDown tbPipe;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Timer timerResetTransfer;
     }
 }
 

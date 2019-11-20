@@ -35,14 +35,25 @@ namespace LaserSurvey
             bt = new NewScannerBt();
             bt.actBtConnectionChanged += actBtConnectionChanged;
             bt.actBtDataRead += actBtDataRead;
+
+            filesTool.parse_done += actParseDone;
         }
 
-
+        private void actParseDone(bool ok, string msg)
+        {
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            {
+                if (ok) msg = "השמירה הצליחה:\n" + msg;
+                else msg = "השמירה נכשלה:\n" + msg;
+                MessageBox.Show(msg);
+            });
+        }
 
         private void actBtDataRead(string s)
         {
             if (bt.isTransfering)
             {
+                transferTOcount = 0;
                 BtTransferDataRecieved(s);
                 return;
             }
@@ -56,15 +67,7 @@ namespace LaserSurvey
             {
                 if (IsHandleCreated) Invoke((MethodInvoker)delegate
                 {
-                    pEmptyOk.Visible = true;
-                });                
-            }
-
-            else if (s.Contains("Distance:"))
-            {
-                if (IsHandleCreated) Invoke((MethodInvoker)delegate
-                {
-                    tbDist.Text = s.Substring(10);
+                    filesTool.ParseBtData();
                 });
             }
 
@@ -77,13 +80,18 @@ namespace LaserSurvey
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
                 panel2.BackColor = connected ? Color.Lime : Color.Transparent;
-                if (connected && was_disconnected)
+                if (connected)
                 {
-                    was_disconnected = false;
+                    //was_disconnected = false;
                     bt.Send("hv:BAT,1,");
                     bt.Send("hv:BAT,1,");
+                    btnConnectNewBt.Text = "התנתק";
                 }
-                else if (!connected) was_disconnected = true;
+                else if (!connected)
+                {
+                    //was_disconnected = true;
+                    btnConnectNewBt.Text = "התחבר";
+                }
             });
         }
 
@@ -96,6 +104,7 @@ namespace LaserSurvey
             filesTool.LoadSetting();
 
             dstOffsetNum.Value = filesTool.setting.DistoOffsetMm;
+            tbPipe.Value = filesTool.setting.DistoOffsetMm;
 
             if (filesTool.setting.UpwardSurvey) trackBar2.Value = 0;
             else trackBar2.Value = 1;
@@ -122,13 +131,28 @@ namespace LaserSurvey
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            bt.actBtConnectionChanged -= actBtConnectionChanged;
+            bt.actBtDataRead -= actBtDataRead;
+            filesTool.parse_done -= actParseDone;
+
             //Switch Devices Off
             try
             {
+                bt.Stop();
+            }
+            catch { }
+
+            try
+            {
                 myServo.SwitchOff();
+            }
+            catch { }
+            try
+            {
                 myDisto.SwitchOn(false);
             }
             catch { }
+           
 
             //Save User's Prefferences
             filesTool.SaveSetting(new string[]
@@ -622,12 +646,38 @@ namespace LaserSurvey
                     if (!int.TryParse(tbFieldId.Text, out i)) throw new Exception("Field Id");
                     if (!int.TryParse(tbSrv.Text, out i)) throw new Exception("Survey Id");
                     if (!int.TryParse(tbOr.Text, out i)) throw new Exception("Or Id");
-                    if (!int.TryParse(tbMax.Text, out i)) throw new Exception("Max Samples");
 
-                    bt.Send("hv:SMP," + tbMax.Text + ",");
                     bt.Send("hv:FLD," + tbFieldId.Text + ",");
                     bt.Send("hv:ORP," + tbOr.Text + ",");
                     bt.Send("hv:SRV," + tbSrv.Text + ",");
+
+                    switch ((int)tbQuality.Value)
+                    {
+                        case 1:
+                            bt.Send("hv:DEG,3,");
+                            bt.Send("hv:DLY,80,");
+                            break;
+
+                        case 2:
+                            bt.Send("hv:DEG,2,");
+                            bt.Send("hv:DLY,100,");
+                            break;
+
+                        case 3:
+                            bt.Send("hv:DEG,2,");
+                            bt.Send("hv:DLY,150,");
+                            break;
+
+                        case 4:
+                            bt.Send("hv:DEG,1,");
+                            bt.Send("hv:DLY,150,");
+                            break;
+
+                        case 5:
+                            bt.Send("hv:DEG,1,");
+                            bt.Send("hv:DLY,180,");
+                            break;
+                    }
 
                     if (rbUpward.Checked) bt.Send("hv:UPW,1");
                     else bt.Send("hv:UPW,0");
@@ -648,6 +698,13 @@ namespace LaserSurvey
 
         private void BtnConnectNewBt_Click(object sender, EventArgs e)
         {
+            if (bt.IsConnected) //user asks to disconnect
+            {
+                bt.Stop();
+                return;
+            }
+
+            //else - user asks to connect
             if (int.TryParse(tbNewBtCom.Text, out int i))
             {
                 bt.Stop();
@@ -684,29 +741,36 @@ namespace LaserSurvey
         {
             if (!bt.IsConnected)
             {
-                MessageBox.Show("BT not connected");
+                MessageBox.Show("הסורק איננו מחובר");
                 return;
             }
 
-            bt.Send("hv:TRN,5528");
+
+            btTransferData.Enabled = false;
             btTransferLines = new List<string>();
+            transferTOcount = 0;
+            timerResetTransfer.Start();
+            transferCount = 0;
+            bt.Send("hv:TRN,5528");
             bt.isTransfering = true;
-            pTransfering.Visible = true;
-            pEmptyOk.Visible = false;
         }
 
         List<string> btTransferLines;
 
+        int transferCount;
         private void BtTransferDataRecieved(string s)
         {
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
+                lstBT.Items.Insert(0, ">> TRANSFER: "+transferCount++);
                 btTransferLines.Add(s);
+                Console.WriteLine("transfer: " + s);
 
                 if (s.Contains("<<hv:transfer:completed>>"))
                 {
                     bt.isTransfering = false;
-                    pTransfering.Visible = false;
+                    btTransferData.Enabled = true;
+
                     if (filesTool.SaveBtRawData(btTransferLines))
                     {
                         bt.Send("hv:EMP,5528");
@@ -716,7 +780,7 @@ namespace LaserSurvey
                 else if (s.Contains("<<hv:transfer:cancelled>>"))
                 {
                     bt.isTransfering = false;
-                    pTransfering.Visible = false;
+                    btTransferData.Enabled = true;
                 }
             });
         }
@@ -728,7 +792,34 @@ namespace LaserSurvey
 
         private void BtParseData_Click(object sender, EventArgs e)
         {
-            pBtDataParsed.Visible = filesTool.ParseBtData();
+            
+        }
+
+        private void ChkTransfering_CheckedChanged(object sender, EventArgs e)
+        {
+            bt.isTransfering = chkTransfering.Checked;
+        }
+
+        private void BtnPipe_Click(object sender, EventArgs e)
+        {
+            if (bt.IsConnected)
+            {
+                if (MessageBox.Show("האם אתם בטוחים?", "שינוי אורך הצינור", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
+                    bt.Send("hv:DIP," + tbPipe.Value.ToString("0"));
+                }
+            }
+        }
+
+        int transferTOcount;
+        private void TimerResetTransfer_Tick(object sender, EventArgs e)
+        {
+            if (transferTOcount++ > 7)
+            {
+                timerResetTransfer.Stop();
+                BtTransferDataRecieved("<<hv:transfer:cancelled>><<interface timeout>>");
+                Console.WriteLine("Cancelling transfer - timeout.");
+            }
         }
 
         private void btnServoResetAlarms_Click(object sender, EventArgs e)
