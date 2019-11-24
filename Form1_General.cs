@@ -73,65 +73,65 @@ namespace LaserSurvey
                 });
             }
 
-            try
-            {
-                if (s.Contains("Battery Voltage:"))
-                {
-                    int k = s.IndexOf("Battery Voltage:");
-                    string bat_status = s.Substring(k + 16, 6);
-                    Console.WriteLine("Battery >> Index: " + k + ", num: " + bat_status);
+            //try
+            //{
+            //    if (s.Contains("Battery Voltage:"))
+            //    {
+            //        int k = s.IndexOf("Battery Voltage:");
+            //        string bat_status = s.Substring(k + 16, 6);
+            //        Console.WriteLine("Battery >> Index: " + k + ", num: " + bat_status);
 
-                    if (IsHandleCreated) Invoke((MethodInvoker)delegate
-                    {
+            //        if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            //        {
 
-                        try
-                        {
-                            double b = Convert.ToDouble(bat_status);
-                            if (b <= 16) pBatteryVoltage.BackColor = Color.Red;
-                            else if (b <= 17) pBatteryVoltage.BackColor = Color.Orange;
-                            else if (b <= 18.2) pBatteryVoltage.BackColor = Color.Yellow;
-                            else pBatteryVoltage.BackColor = Color.Lime;
+            //            try
+            //            {
+            //                double b = Convert.ToDouble(bat_status);
+            //                if (b <= 16) pBatteryVoltage.BackColor = Color.Red;
+            //                else if (b <= 17) pBatteryVoltage.BackColor = Color.Orange;
+            //                else if (b <= 18.2) pBatteryVoltage.BackColor = Color.Yellow;
+            //                else pBatteryVoltage.BackColor = Color.Lime;
 
-                            b = (b - 15) / 6;
-                            tbBatteryV.Text = b.ToString("P");
-                        }
-                        catch
-                        {
+            //                b = (b - 15) / 6;
+            //                tbBatteryV.Text = b.ToString("P");
+            //            }
+            //            catch
+            //            {
 
-                        }
-                    });
+            //            }
+            //        });
 
-                }
-            }
-            catch { }
+            //    }
+            //}
+            //catch { }
 
-            try
-            {
-                if (s.Contains("Survey Status:"))
-                {
-                    int j = s.IndexOf("Survey Status:");
-                    string srv_status = s.Substring(j + 14, 2);
-                    Console.WriteLine("Survey >> Index: " + j + ", num: " + srv_status);
+            //try
+            //{
+            //    if (s.Contains("Survey Status:"))
+            //    {
+            //        int j = s.IndexOf("Survey Status:");
+            //        string srv_status = s.Substring(j + 14, 2);
+            //        Console.WriteLine("Survey >> Index: " + j + ", num: " + srv_status);
 
-                    if (int.TryParse(srv_status, out j) && j == 1)
-                    {
-                        if (IsHandleCreated) Invoke((MethodInvoker)delegate
-                        {
-                            pbScanning.Visible = true;
-                            lbScannerStatus.Text = "סריקה מתבצעת...";
-                        });
-                    }
-                    else
-                    {
-                        if (IsHandleCreated) Invoke((MethodInvoker)delegate
-                        {
-                            pbScanning.Visible = false;
-                            lbScannerStatus.Text = "הסורק מוכן";
-                        });
-                    }
-                }
-            }
-            catch { }
+            //        if (int.TryParse(srv_status, out j) && j == 1)
+            //        {
+            //            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            //            {
+            //                pbScanning.Visible = true;
+            //                lbScannerStatus.Text = "סריקה מתבצעת...";
+            //            });
+            //        }
+            //        else
+            //        {
+            //            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            //            {
+            //                pbScanning.Visible = false;
+            //                lbScannerStatus.Text = "הסורק מוכן";
+            //            });
+            //        }
+            //    }
+            //}
+            //catch { }
 
         }
 
@@ -714,9 +714,9 @@ namespace LaserSurvey
                 try
                 {
                     int i;
-                    if (!int.TryParse(tbFieldId.Text, out i)) throw new Exception("Field Id");
-                    if (!int.TryParse(tbSrv.Text, out i)) throw new Exception("Survey Id");
-                    if (!int.TryParse(tbOr.Text, out i)) throw new Exception("Or Id");
+                    if (!int.TryParse(tbFieldId.Text, out i)) throw new Exception("בחר שדה");
+                    if (!int.TryParse(tbSrv.Text, out i)) throw new Exception("ציין מספר קדח");
+                    if (!int.TryParse(tbOr.Text, out i)) throw new Exception("ציין מספר נקודת מכוון (OR)");
 
                     bt.Send("hv:FLD," + tbFieldId.Text + ",");
                     bt.Send("hv:ORP," + tbOr.Text + ",");
@@ -853,7 +853,7 @@ namespace LaserSurvey
         int transferTOcount;
         private void TimerResetTransfer_Tick(object sender, EventArgs e)
         {
-            if (transferTOcount++ > 7)
+            if (transferTOcount++ > 15)
             {
                 timerResetTransfer.Stop();
                 BtTransferDataRecieved("<<hv:transfer:cancelled>><<interface timeout>>");
