@@ -20,7 +20,9 @@ namespace LaserSurvey
         string attribution;
         bool bAvoidZeros = true;
         NewScannerBt bt;
-
+        List<string> btTransferLines;
+        int transferCount;
+        string lastServoCOM, lastDistoCOM;
 
         public Form1()
         {
@@ -71,32 +73,91 @@ namespace LaserSurvey
                 });
             }
 
+            try
+            {
+                if (s.Contains("Battery Voltage:"))
+                {
+                    int k = s.IndexOf("Battery Voltage:");
+                    string bat_status = s.Substring(k + 16, 6);
+                    Console.WriteLine("Battery >> Index: " + k + ", num: " + bat_status);
+
+                    if (IsHandleCreated) Invoke((MethodInvoker)delegate
+                    {
+
+                        try
+                        {
+                            double b = Convert.ToDouble(bat_status);
+                            if (b <= 16) pBatteryVoltage.BackColor = Color.Red;
+                            else if (b <= 17) pBatteryVoltage.BackColor = Color.Orange;
+                            else if (b <= 18.2) pBatteryVoltage.BackColor = Color.Yellow;
+                            else pBatteryVoltage.BackColor = Color.Lime;
+
+                            b = (b - 15) / 6;
+                            tbBatteryV.Text = b.ToString("P");
+                        }
+                        catch
+                        {
+
+                        }
+                    });
+
+                }
+            }
+            catch { }
+
+            try
+            {
+                if (s.Contains("Survey Status:"))
+                {
+                    int j = s.IndexOf("Survey Status:");
+                    string srv_status = s.Substring(j + 14, 2);
+                    Console.WriteLine("Survey >> Index: " + j + ", num: " + srv_status);
+
+                    if (int.TryParse(srv_status, out j) && j == 1)
+                    {
+                        if (IsHandleCreated) Invoke((MethodInvoker)delegate
+                        {
+                            pbScanning.Visible = true;
+                            lbScannerStatus.Text = "סריקה מתבצעת...";
+                        });
+                    }
+                    else
+                    {
+                        if (IsHandleCreated) Invoke((MethodInvoker)delegate
+                        {
+                            pbScanning.Visible = false;
+                            lbScannerStatus.Text = "הסורק מוכן";
+                        });
+                    }
+                }
+            }
+            catch { }
+
         }
 
-        bool was_disconnected = true;
         private void actBtConnectionChanged(bool connected)
         {
 
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
-                panel2.BackColor = connected ? Color.Lime : Color.Transparent;
+                panel2.BackColor = connected ? Color.Lime : Color.Silver;
                 if (connected)
                 {
                     //was_disconnected = false;
                     bt.Send("hv:BAT,1,");
                     bt.Send("hv:BAT,1,");
                     btnConnectNewBt.Text = "התנתק";
+                    lbBtStatus.Text = "הסורק מחובר";
                 }
                 else if (!connected)
                 {
                     //was_disconnected = true;
                     btnConnectNewBt.Text = "התחבר";
+                    lbBtStatus.Text = "הסורק מנותק";
                 }
             });
         }
-
-        string lastServoCOM, lastDistoCOM;
-
+        
         private void InitializeLaserSurvey()
         {
             this.boxDraw = new BoxDrawer(drawPanel);
@@ -106,8 +167,17 @@ namespace LaserSurvey
             dstOffsetNum.Value = filesTool.setting.DistoOffsetMm;
             tbPipe.Value = filesTool.setting.DistoOffsetMm;
 
-            if (filesTool.setting.UpwardSurvey) trackBar2.Value = 0;
-            else trackBar2.Value = 1;
+            if (filesTool.setting.UpwardSurvey)
+            {
+                trackBar2.Value = 0;
+                rbUpward.Checked = true;
+            }
+            else
+            {
+                trackBar2.Value = 1;
+                rbDownward.Checked = true;
+            }
+
             trackBar2_ValueChanged(new object(), new EventArgs());
 
             trackBar3.Value = filesTool.setting.MovesNum;
@@ -117,6 +187,7 @@ namespace LaserSurvey
 
             this.lastServoCOM = filesTool.setting.servoCOM;
             this.lastDistoCOM = filesTool.setting.distoCOM;
+            tbNewBtCom.Text = filesTool.setting.distoCOM;
 
             try
             {
@@ -152,17 +223,17 @@ namespace LaserSurvey
                 myDisto.SwitchOn(false);
             }
             catch { }
-           
+
 
             //Save User's Prefferences
             filesTool.SaveSetting(new string[]
             {
-            "DistoOffset: "+dstOffsetNum.Value,
-            "UpwardSurvey: "+ (trackBar2.Value == 0),
+            "DistoOffset: " + tbPipe.Value, //dstOffsetNum.Value,
+            "UpwardSurvey: " + (rbUpward.Checked),
             "ServoRpm: "+ (int)nudServoRpm.Value,
             "MovesNum: "+ (int)trackBar3.Value,
             "servoCOM: "+this.lastServoCOM,
-            "distoCOM: "+this.lastDistoCOM
+            "distoCOM: "+ tbNewBtCom.Text // this.lastDistoCOM
             });
 
         }
@@ -716,27 +787,7 @@ namespace LaserSurvey
                 MessageBox.Show("Com port not set");
             }
         }
-
-        private void Button6_Click_1(object sender, EventArgs e)
-        {
-            if (bt.IsConnected)
-            {
-                bt.Send(tbBtSend.Text);
-            }
-        }
-
-        private void TbBtSend_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                //enter key is down
-                if (bt.IsConnected)
-                {
-                    bt.Send(tbBtSend.Text);
-                }
-            }
-        }
-
+      
         private void LbImportBt_Click(object sender, EventArgs e)
         {
             if (!bt.IsConnected)
@@ -755,9 +806,7 @@ namespace LaserSurvey
             bt.isTransfering = true;
         }
 
-        List<string> btTransferLines;
-
-        int transferCount;
+        
         private void BtTransferDataRecieved(string s)
         {
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
@@ -788,16 +837,6 @@ namespace LaserSurvey
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void BtParseData_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ChkTransfering_CheckedChanged(object sender, EventArgs e)
-        {
-            bt.isTransfering = chkTransfering.Checked;
         }
 
         private void BtnPipe_Click(object sender, EventArgs e)

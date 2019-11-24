@@ -161,6 +161,7 @@ namespace LaserSurvey
         {
             Debug.WriteLine("[Keep Alive]");
             string response = SendCommand("hv:BAT,1,");
+            response = SendCommand("hv:STT,1,");
         }
 
         public bool Send(string s, bool useCommandList = true)
