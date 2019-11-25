@@ -32,6 +32,8 @@ namespace LaserSurvey
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmbed = new System.Windows.Forms.TabPage();
+            this.lbTransferOutput = new System.Windows.Forms.ListBox();
+            this.pBatteryVoltage = new System.Windows.Forms.Panel();
             this.tbBatteryV = new System.Windows.Forms.TextBox();
             this.lbScannerStatus = new System.Windows.Forms.Label();
             this.pbScanning = new System.Windows.Forms.PictureBox();
@@ -235,9 +237,10 @@ namespace LaserSurvey
             this.ptInfoToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.timerLoop = new System.Windows.Forms.Timer(this.components);
             this.timerResetTransfer = new System.Windows.Forms.Timer(this.components);
-            this.pBatteryVoltage = new System.Windows.Forms.Panel();
+            this.timerHideLb = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabEmbed.SuspendLayout();
+            this.pBatteryVoltage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbScanning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPipe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbQuality)).BeginInit();
@@ -290,7 +293,6 @@ namespace LaserSurvey
             ((System.ComponentModel.ISupportInitialize)(this.nUDtune)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDstep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDpos)).BeginInit();
-            this.pBatteryVoltage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -314,6 +316,7 @@ namespace LaserSurvey
             // 
             // tabEmbed
             // 
+            this.tabEmbed.Controls.Add(this.lbTransferOutput);
             this.tabEmbed.Controls.Add(this.pBatteryVoltage);
             this.tabEmbed.Controls.Add(this.lbScannerStatus);
             this.tabEmbed.Controls.Add(this.pbScanning);
@@ -340,6 +343,24 @@ namespace LaserSurvey
             this.tabEmbed.Text = "סורק חדש";
             this.tabEmbed.UseVisualStyleBackColor = true;
             // 
+            // lbTransferOutput
+            // 
+            this.lbTransferOutput.FormattingEnabled = true;
+            this.lbTransferOutput.Location = new System.Drawing.Point(18, 158);
+            this.lbTransferOutput.Name = "lbTransferOutput";
+            this.lbTransferOutput.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbTransferOutput.Size = new System.Drawing.Size(200, 225);
+            this.lbTransferOutput.TabIndex = 63;
+            this.lbTransferOutput.Visible = false;
+            // 
+            // pBatteryVoltage
+            // 
+            this.pBatteryVoltage.Controls.Add(this.tbBatteryV);
+            this.pBatteryVoltage.Location = new System.Drawing.Point(318, 276);
+            this.pBatteryVoltage.Name = "pBatteryVoltage";
+            this.pBatteryVoltage.Size = new System.Drawing.Size(141, 53);
+            this.pBatteryVoltage.TabIndex = 62;
+            // 
             // tbBatteryV
             // 
             this.tbBatteryV.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -358,7 +379,7 @@ namespace LaserSurvey
             // 
             this.lbScannerStatus.AutoSize = true;
             this.lbScannerStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lbScannerStatus.Location = new System.Drawing.Point(147, 187);
+            this.lbScannerStatus.Location = new System.Drawing.Point(253, 67);
             this.lbScannerStatus.Name = "lbScannerStatus";
             this.lbScannerStatus.Size = new System.Drawing.Size(75, 20);
             this.lbScannerStatus.TabIndex = 60;
@@ -367,10 +388,10 @@ namespace LaserSurvey
             // pbScanning
             // 
             this.pbScanning.Image = ((System.Drawing.Image)(resources.GetObject("pbScanning.Image")));
-            this.pbScanning.Location = new System.Drawing.Point(19, 210);
+            this.pbScanning.Location = new System.Drawing.Point(284, 16);
             this.pbScanning.Name = "pbScanning";
-            this.pbScanning.Size = new System.Drawing.Size(200, 200);
-            this.pbScanning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbScanning.Size = new System.Drawing.Size(44, 48);
+            this.pbScanning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbScanning.TabIndex = 59;
             this.pbScanning.TabStop = false;
             this.pbScanning.Visible = false;
@@ -2657,13 +2678,10 @@ namespace LaserSurvey
             this.timerResetTransfer.Interval = 1000;
             this.timerResetTransfer.Tick += new System.EventHandler(this.TimerResetTransfer_Tick);
             // 
-            // pBatteryVoltage
+            // timerHideLb
             // 
-            this.pBatteryVoltage.Controls.Add(this.tbBatteryV);
-            this.pBatteryVoltage.Location = new System.Drawing.Point(318, 276);
-            this.pBatteryVoltage.Name = "pBatteryVoltage";
-            this.pBatteryVoltage.Size = new System.Drawing.Size(141, 53);
-            this.pBatteryVoltage.TabIndex = 62;
+            this.timerHideLb.Interval = 10000;
+            this.timerHideLb.Tick += new System.EventHandler(this.TimerHideLb_Tick);
             // 
             // Form1
             // 
@@ -2685,6 +2703,8 @@ namespace LaserSurvey
             this.tabControl1.ResumeLayout(false);
             this.tabEmbed.ResumeLayout(false);
             this.tabEmbed.PerformLayout();
+            this.pBatteryVoltage.ResumeLayout(false);
+            this.pBatteryVoltage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbScanning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPipe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbQuality)).EndInit();
@@ -2756,8 +2776,6 @@ namespace LaserSurvey
             ((System.ComponentModel.ISupportInitialize)(this.nUDtune)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDstep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDpos)).EndInit();
-            this.pBatteryVoltage.ResumeLayout(false);
-            this.pBatteryVoltage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2971,6 +2989,8 @@ namespace LaserSurvey
         private System.Windows.Forms.Label lbScannerStatus;
         private System.Windows.Forms.TextBox tbBatteryV;
         private System.Windows.Forms.Panel pBatteryVoltage;
+        private System.Windows.Forms.ListBox lbTransferOutput;
+        private System.Windows.Forms.Timer timerHideLb;
     }
 }
 

@@ -160,7 +160,7 @@ namespace LaserSurvey
         private void KeepAlive()
         {
             Debug.WriteLine("[Keep Alive]");
-            string response = SendCommand("hv:BAT,1,");
+            string response = SendCommand("hv:STT,1,");
             //response = SendCommand("hv:STT,1,");
         }
 
@@ -202,18 +202,18 @@ namespace LaserSurvey
 
 
                 serialPort.ReadExisting(); //Clear content..
-                Debug.WriteLine(trd + "[WRITING TO BT] | " + c);
+                //Debug.WriteLine(trd + "[WRITING TO BT] | " + c);
                 serialPort.WriteLine(c);
-                Debug.WriteLine(trd + "sent! | " + c);
+                //Debug.WriteLine(trd + "sent! | " + c);
 
                 string res = "";
                 if (read)
                 {
-                    Debug.WriteLine(trd + "[READING BT] | " + c);
+                    //Debug.WriteLine(trd + "[READING BT] | " + c);
                     serialPort.Read(response_buffer, 0, RESPONSE_BUFFER_LENGTH);
                     res = ParseResponse(response_buffer);
                     //actPortError?.Invoke("OK");
-                    Debug.WriteLine(trd + "read! | " + c);
+                    //Debug.WriteLine(trd + "read! | " + c);
                 }
 
                 return res;

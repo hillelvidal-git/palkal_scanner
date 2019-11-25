@@ -43,16 +43,29 @@ namespace LaserSurvey
 
         private void actParseDone(bool ok, string msg)
         {
+            
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
-                if (ok) msg = "השמירה הצליחה:\n" + msg;
-                else msg = "השמירה נכשלה:\n" + msg;
+                if (ok)
+                {
+                    msg = "השמירה הצליחה:\n" + msg;
+                    tt("saving files succeeded.");
+                }
+                else
+                {
+                    msg = "השמירה נכשלה:\n" + msg;
+                    tt("saving files failed!");
+                }
+
+                tt(msg);
                 MessageBox.Show(msg);
+                timerHideLb.Start();
             });
         }
 
         private void actBtDataRead(string s)
         {
+            Console.WriteLine(">>> " + s);
             if (bt.isTransfering)
             {
                 transferTOcount = 0;
@@ -65,45 +78,49 @@ namespace LaserSurvey
                 lstBT.Items.Insert(0, s);
             });
 
-            if (s.Contains("<<hv:empty:ok>>"))
+            if (s.Contains("<<empty:ok>>"))
             {
+                timerResetTransfer.Stop();
+                tt("deleting mbed data succeeded.");
                 if (IsHandleCreated) Invoke((MethodInvoker)delegate
                 {
+                    tt("parsing raw data...");
                     filesTool.ParseBtData();
                 });
             }
 
-            //try
-            //{
-            //    if (s.Contains("Battery Voltage:"))
-            //    {
-            //        int k = s.IndexOf("Battery Voltage:");
-            //        string bat_status = s.Substring(k + 16, 6);
-            //        Console.WriteLine("Battery >> Index: " + k + ", num: " + bat_status);
+            try
+            {
+                if (s.Contains("<<bat_is>>") && s.Contains("<<bat_end>>"))
+                {
+                    int k1 = s.IndexOf("<<bat_is>>")+10;
+                    int k2 = s.IndexOf("<<bat_end>>", k1);
+                    string bat_status = s.Substring(k1, k2 - k1);
+                    Console.WriteLine("Battery >> " + bat_status);
 
-            //        if (IsHandleCreated) Invoke((MethodInvoker)delegate
-            //        {
+                    if (IsHandleCreated) Invoke((MethodInvoker)delegate
+                    {
 
-            //            try
-            //            {
-            //                double b = Convert.ToDouble(bat_status);
-            //                if (b <= 16) pBatteryVoltage.BackColor = Color.Red;
-            //                else if (b <= 17) pBatteryVoltage.BackColor = Color.Orange;
-            //                else if (b <= 18.2) pBatteryVoltage.BackColor = Color.Yellow;
-            //                else pBatteryVoltage.BackColor = Color.Lime;
+                        try
+                        {
+                            double b = Convert.ToDouble(bat_status);
+                            if (b <= 16) pBatteryVoltage.BackColor = Color.Red;
+                            else if (b <= 17) pBatteryVoltage.BackColor = Color.Orange;
+                            else if (b <= 18.2) pBatteryVoltage.BackColor = Color.Yellow;
+                            else pBatteryVoltage.BackColor = Color.Lime;
 
-            //                b = (b - 15) / 6;
-            //                tbBatteryV.Text = b.ToString("P");
-            //            }
-            //            catch
-            //            {
+                            b = (b - 15) / 6;
+                            tbBatteryV.Text = b.ToString("P");
+                        }
+                        catch
+                        {
 
-            //            }
-            //        });
+                        }
+                    });
 
-            //    }
-            //}
-            //catch { }
+                }
+            }
+            catch { }
 
             //try
             //{
@@ -148,12 +165,14 @@ namespace LaserSurvey
                     bt.Send("hv:BAT,1,");
                     btnConnectNewBt.Text = "התנתק";
                     lbBtStatus.Text = "הסורק מחובר";
+                    pBatteryVoltage.Visible = true;
                 }
                 else if (!connected)
                 {
                     //was_disconnected = true;
                     btnConnectNewBt.Text = "התחבר";
                     lbBtStatus.Text = "הסורק מנותק";
+                    pBatteryVoltage.Visible = false;
                 }
             });
         }
@@ -799,37 +818,57 @@ namespace LaserSurvey
 
             btTransferData.Enabled = false;
             btTransferLines = new List<string>();
+            lbTransferOutput.Items.Clear();
+            lbTransferOutput.Visible = true;
             transferTOcount = 0;
             timerResetTransfer.Start();
+            tt("started.");
             transferCount = 0;
             bt.Send("hv:TRN,5528");
+            tt("command sent to mbed.");
             bt.isTransfering = true;
         }
 
-        
+        private void tt(string line)
+        {
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            {
+                lbTransferOutput.Items.Add(line);
+            });
+        }
+
         private void BtTransferDataRecieved(string s)
         {
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
-                lstBT.Items.Insert(0, ">> TRANSFER: "+transferCount++);
+                tt("data recieved: "+ transferCount++);
+                //lstBT.Items.Insert(0, ">> TRANSFER: "+);
                 btTransferLines.Add(s);
-                Console.WriteLine("transfer: " + s);
+                //Console.WriteLine("transfer: " + s);
 
-                if (s.Contains("<<hv:transfer:completed>>"))
+                if (s.Contains("<<trn:completed>>"))
                 {
                     bt.isTransfering = false;
                     btTransferData.Enabled = true;
+                    tt("<<completed>> recieved");
 
                     if (filesTool.SaveBtRawData(btTransferLines))
                     {
+                        tt("saving raw data succeeded.");
                         bt.Send("hv:EMP,5528");
+                        tt("command EMP sent to mbed.");
+                    }
+                    else
+                    {
+                        tt("saving raw data failed!");
                     }
                 }
 
-                else if (s.Contains("<<hv:transfer:cancelled>>"))
+                else if (s.Contains("<<trn:cancelled>>"))
                 {
                     bt.isTransfering = false;
                     btTransferData.Enabled = true;
+                    tt("transfer cancelled!");
                 }
             });
         }
@@ -856,9 +895,19 @@ namespace LaserSurvey
             if (transferTOcount++ > 15)
             {
                 timerResetTransfer.Stop();
-                BtTransferDataRecieved("<<hv:transfer:cancelled>><<interface timeout>>");
+                BtTransferDataRecieved("<<trn:cancelled>><<interface timeout>>");
                 Console.WriteLine("Cancelling transfer - timeout.");
             }
+        }
+
+        private void TimerHideLb_Tick(object sender, EventArgs e)
+        {
+            timerHideLb.Stop();
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            {
+                lbTransferOutput.Visible = false;
+                lbTransferOutput.Items.Clear();
+            });
         }
 
         private void btnServoResetAlarms_Click(object sender, EventArgs e)
