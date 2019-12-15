@@ -10,7 +10,7 @@ namespace LaserSurvey
 {
     class NewScannerBt
     {
-        const int KEEPALIVE_INTERVAL_MS = 5000;
+        const int KEEPALIVE_INTERVAL_MS = 2000;
         const int RESPONSE_BUFFER_LENGTH = 20;
 
         public string PortName;

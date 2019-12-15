@@ -32,10 +32,12 @@ namespace LaserSurvey
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmbed = new System.Windows.Forms.TabPage();
+            this.pPbBack = new System.Windows.Forms.Panel();
+            this.pPbFore = new System.Windows.Forms.Panel();
+            this.lbScannerStatus = new System.Windows.Forms.TextBox();
             this.lbTransferOutput = new System.Windows.Forms.ListBox();
             this.pBatteryVoltage = new System.Windows.Forms.Panel();
             this.tbBatteryV = new System.Windows.Forms.TextBox();
-            this.lbScannerStatus = new System.Windows.Forms.Label();
             this.pbScanning = new System.Windows.Forms.PictureBox();
             this.label56 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
@@ -240,6 +242,7 @@ namespace LaserSurvey
             this.timerHideLb = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabEmbed.SuspendLayout();
+            this.pPbBack.SuspendLayout();
             this.pBatteryVoltage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbScanning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPipe)).BeginInit();
@@ -316,9 +319,10 @@ namespace LaserSurvey
             // 
             // tabEmbed
             // 
+            this.tabEmbed.Controls.Add(this.pPbBack);
+            this.tabEmbed.Controls.Add(this.lbScannerStatus);
             this.tabEmbed.Controls.Add(this.lbTransferOutput);
             this.tabEmbed.Controls.Add(this.pBatteryVoltage);
-            this.tabEmbed.Controls.Add(this.lbScannerStatus);
             this.tabEmbed.Controls.Add(this.pbScanning);
             this.tabEmbed.Controls.Add(this.label56);
             this.tabEmbed.Controls.Add(this.label54);
@@ -343,6 +347,40 @@ namespace LaserSurvey
             this.tabEmbed.Text = "סורק חדש";
             this.tabEmbed.UseVisualStyleBackColor = true;
             // 
+            // pPbBack
+            // 
+            this.pPbBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pPbBack.BackColor = System.Drawing.Color.Silver;
+            this.pPbBack.Controls.Add(this.pPbFore);
+            this.pPbBack.Location = new System.Drawing.Point(50, 160);
+            this.pPbBack.Name = "pPbBack";
+            this.pPbBack.Size = new System.Drawing.Size(278, 19);
+            this.pPbBack.TabIndex = 65;
+            this.pPbBack.Visible = false;
+            // 
+            // pPbFore
+            // 
+            this.pPbFore.BackColor = System.Drawing.Color.YellowGreen;
+            this.pPbFore.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pPbFore.Location = new System.Drawing.Point(0, 0);
+            this.pPbFore.Name = "pPbFore";
+            this.pPbFore.Size = new System.Drawing.Size(14, 19);
+            this.pPbFore.TabIndex = 1;
+            // 
+            // lbScannerStatus
+            // 
+            this.lbScannerStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbScannerStatus.BackColor = System.Drawing.Color.White;
+            this.lbScannerStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbScannerStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lbScannerStatus.Location = new System.Drawing.Point(50, 136);
+            this.lbScannerStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.lbScannerStatus.Name = "lbScannerStatus";
+            this.lbScannerStatus.ReadOnly = true;
+            this.lbScannerStatus.Size = new System.Drawing.Size(278, 19);
+            this.lbScannerStatus.TabIndex = 64;
+            this.lbScannerStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lbTransferOutput
             // 
             this.lbTransferOutput.FormattingEnabled = true;
@@ -355,6 +393,7 @@ namespace LaserSurvey
             // 
             // pBatteryVoltage
             // 
+            this.pBatteryVoltage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBatteryVoltage.Controls.Add(this.tbBatteryV);
             this.pBatteryVoltage.Location = new System.Drawing.Point(318, 276);
             this.pBatteryVoltage.Name = "pBatteryVoltage";
@@ -375,22 +414,13 @@ namespace LaserSurvey
             this.tbBatteryV.TabIndex = 61;
             this.tbBatteryV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lbScannerStatus
-            // 
-            this.lbScannerStatus.AutoSize = true;
-            this.lbScannerStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lbScannerStatus.Location = new System.Drawing.Point(253, 67);
-            this.lbScannerStatus.Name = "lbScannerStatus";
-            this.lbScannerStatus.Size = new System.Drawing.Size(75, 20);
-            this.lbScannerStatus.TabIndex = 60;
-            this.lbScannerStatus.Text = "סורק מוכן";
-            // 
             // pbScanning
             // 
+            this.pbScanning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbScanning.Image = ((System.Drawing.Image)(resources.GetObject("pbScanning.Image")));
-            this.pbScanning.Location = new System.Drawing.Point(284, 16);
+            this.pbScanning.Location = new System.Drawing.Point(110, 16);
             this.pbScanning.Name = "pbScanning";
-            this.pbScanning.Size = new System.Drawing.Size(44, 48);
+            this.pbScanning.Size = new System.Drawing.Size(158, 111);
             this.pbScanning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbScanning.TabIndex = 59;
             this.pbScanning.TabStop = false;
@@ -418,6 +448,7 @@ namespace LaserSurvey
             // 
             // label49
             // 
+            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label49.Location = new System.Drawing.Point(468, 238);
@@ -428,6 +459,7 @@ namespace LaserSurvey
             // 
             // tbPipe
             // 
+            this.tbPipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbPipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbPipe.Location = new System.Drawing.Point(380, 385);
             this.tbPipe.Maximum = new decimal(new int[] {
@@ -447,6 +479,7 @@ namespace LaserSurvey
             // 
             // btnPipe
             // 
+            this.btnPipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.btnPipe.Location = new System.Drawing.Point(318, 385);
             this.btnPipe.Name = "btnPipe";
@@ -458,6 +491,7 @@ namespace LaserSurvey
             // 
             // label22
             // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label22.Location = new System.Drawing.Point(334, 354);
@@ -468,6 +502,7 @@ namespace LaserSurvey
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label13.Location = new System.Drawing.Point(334, 238);
@@ -478,6 +513,7 @@ namespace LaserSurvey
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label11.Location = new System.Drawing.Point(613, 238);
@@ -488,6 +524,7 @@ namespace LaserSurvey
             // 
             // tbQuality
             // 
+            this.tbQuality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbQuality.LargeChange = 1;
             this.tbQuality.Location = new System.Drawing.Point(334, 190);
             this.tbQuality.Maximum = 5;
@@ -499,6 +536,7 @@ namespace LaserSurvey
             // 
             // panel7
             // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.Gainsboro;
             this.panel7.Controls.Add(this.rbDownward);
             this.panel7.Controls.Add(this.rbUpward);
@@ -633,6 +671,7 @@ namespace LaserSurvey
             // 
             // lstBT
             // 
+            this.lstBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lstBT.FormattingEnabled = true;
             this.lstBT.Location = new System.Drawing.Point(318, 334);
             this.lstBT.Margin = new System.Windows.Forms.Padding(2);
@@ -655,6 +694,7 @@ namespace LaserSurvey
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.lbBtStatus);
             this.panel2.Controls.Add(this.btnConnectNewBt);
@@ -2703,6 +2743,7 @@ namespace LaserSurvey
             this.tabControl1.ResumeLayout(false);
             this.tabEmbed.ResumeLayout(false);
             this.tabEmbed.PerformLayout();
+            this.pPbBack.ResumeLayout(false);
             this.pBatteryVoltage.ResumeLayout(false);
             this.pBatteryVoltage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbScanning)).EndInit();
@@ -2986,11 +3027,13 @@ namespace LaserSurvey
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.PictureBox pbScanning;
-        private System.Windows.Forms.Label lbScannerStatus;
         private System.Windows.Forms.TextBox tbBatteryV;
         private System.Windows.Forms.Panel pBatteryVoltage;
         private System.Windows.Forms.ListBox lbTransferOutput;
         private System.Windows.Forms.Timer timerHideLb;
+        private System.Windows.Forms.TextBox lbScannerStatus;
+        private System.Windows.Forms.Panel pPbBack;
+        private System.Windows.Forms.Panel pPbFore;
     }
 }
 

@@ -23,6 +23,8 @@ namespace LaserSurvey
         List<string> btTransferLines;
         int transferCount;
         string lastServoCOM, lastDistoCOM;
+        string stt_status = "";
+        int surveyTotalSmaples;
 
         public Form1()
         {
@@ -43,7 +45,7 @@ namespace LaserSurvey
 
         private void actParseDone(bool ok, string msg)
         {
-            
+
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
                 if (ok)
@@ -89,21 +91,29 @@ namespace LaserSurvey
                 });
             }
 
+            //bt.printf("\r\n<stt>%d,%d,%f</stt>",_srv.status, _srv.i, battery_voltage);
+            string opening_tag = "<stt>";
+            string closing_tag = "</stt>";
             try
             {
-                if (s.Contains("<<bat_is>>") && s.Contains("<<bat_end>>"))
+                if (s.Contains(opening_tag) && s.Contains(closing_tag))
                 {
-                    int k1 = s.IndexOf("<<bat_is>>")+10;
-                    int k2 = s.IndexOf("<<bat_end>>", k1);
-                    string bat_status = s.Substring(k1, k2 - k1);
-                    Console.WriteLine("Battery >> " + bat_status);
+                    int k1 = s.IndexOf(opening_tag) + opening_tag.Length;
+                    int k2 = s.IndexOf(closing_tag, k1);
+                    string raw_status = s.Substring(k1, k2 - k1);
+                    Console.WriteLine("Raw Status >> " + raw_status);
+
+                    string[] words = raw_status.Split(',');
 
                     if (IsHandleCreated) Invoke((MethodInvoker)delegate
                     {
 
                         try
                         {
-                            double b = Convert.ToDouble(bat_status);
+                            ///////////
+                            //BATTERY//
+                            ///////////
+                            double b = Convert.ToDouble(words[2]);
                             if (b <= 16) pBatteryVoltage.BackColor = Color.Red;
                             else if (b <= 17) pBatteryVoltage.BackColor = Color.Orange;
                             else if (b <= 18.2) pBatteryVoltage.BackColor = Color.Yellow;
@@ -111,6 +121,45 @@ namespace LaserSurvey
 
                             b = (b - 15) / 6;
                             tbBatteryV.Text = b.ToString("P");
+
+                            ///////////
+                            //STATUS///
+                            ///////////
+                            stt_status = words[0];
+                            Console.WriteLine("Status >> " + stt_status);
+                            if (stt_status == "0")
+                            {
+                                if (IsHandleCreated) Invoke((MethodInvoker)delegate
+                                {
+                                    pbScanning.Visible = false;
+                                    lbScannerStatus.Text = "הסורק מוכן";
+                                    pPbBack.Visible = false;
+                                });
+                            }
+                            else if (stt_status == "1")
+                            {
+                                ///////////
+                                //SURVEY///
+                                ///////////
+                                string srv_status = words[1];
+                                Console.WriteLine("Survey >> " + srv_status);
+
+                                if (IsHandleCreated) Invoke((MethodInvoker)delegate
+                                {
+                                    pbScanning.Visible = true;
+                                    lbScannerStatus.Text = "סריקה מתבצעת: דגימה מס' " + srv_status;
+                                    pPbBack.Visible = true;
+                                    try
+                                    {
+                                        double v = Convert.ToDouble(srv_status);
+                                        v /= surveyTotalSmaples;
+                                        v *= pPbBack.Width;
+                                        pPbFore.Width = (int)v;
+                                    }
+                                    catch { }
+                                });
+                            }
+
                         }
                         catch
                         {
@@ -122,33 +171,26 @@ namespace LaserSurvey
             }
             catch { }
 
-            //try
-            //{
-            //    if (s.Contains("Survey Status:"))
-            //    {
-            //        int j = s.IndexOf("Survey Status:");
-            //        string srv_status = s.Substring(j + 14, 2);
-            //        Console.WriteLine("Survey >> Index: " + j + ", num: " + srv_status);
 
-            //        if (int.TryParse(srv_status, out j) && j == 1)
-            //        {
-            //            if (IsHandleCreated) Invoke((MethodInvoker)delegate
-            //            {
-            //                pbScanning.Visible = true;
-            //                lbScannerStatus.Text = "סריקה מתבצעת...";
-            //            });
-            //        }
-            //        else
-            //        {
-            //            if (IsHandleCreated) Invoke((MethodInvoker)delegate
-            //            {
-            //                pbScanning.Visible = false;
-            //                lbScannerStatus.Text = "הסורק מוכן";
-            //            });
-            //        }
-            //    }
-            //}
-            //catch { }
+
+
+            //<<sample_is>>180<<sample_end>>
+
+            if (stt_status == "1")
+            {
+                try
+                {
+                    if (s.Contains("<<sample_is>>") && s.Contains("<<sample_end>>"))
+                    {
+                        int k1 = s.IndexOf("<<sample_is>>") + 13;
+                        int k2 = s.IndexOf("<<sample_end>>", k1);
+
+
+
+                    }
+                }
+                catch { }
+            }
 
         }
 
@@ -176,7 +218,7 @@ namespace LaserSurvey
                 }
             });
         }
-        
+
         private void InitializeLaserSurvey()
         {
             this.boxDraw = new BoxDrawer(drawPanel);
@@ -746,26 +788,31 @@ namespace LaserSurvey
                         case 1:
                             bt.Send("hv:DEG,3,");
                             bt.Send("hv:DLY,80,");
+                            surveyTotalSmaples = 120;
                             break;
 
                         case 2:
                             bt.Send("hv:DEG,2,");
                             bt.Send("hv:DLY,100,");
+                            surveyTotalSmaples = 180;
                             break;
 
                         case 3:
                             bt.Send("hv:DEG,2,");
                             bt.Send("hv:DLY,150,");
+                            surveyTotalSmaples = 180;
                             break;
 
                         case 4:
                             bt.Send("hv:DEG,1,");
                             bt.Send("hv:DLY,150,");
+                            surveyTotalSmaples = 360;
                             break;
 
                         case 5:
                             bt.Send("hv:DEG,1,");
                             bt.Send("hv:DLY,180,");
+                            surveyTotalSmaples = 360;
                             break;
                     }
 
@@ -806,7 +853,7 @@ namespace LaserSurvey
                 MessageBox.Show("Com port not set");
             }
         }
-      
+
         private void LbImportBt_Click(object sender, EventArgs e)
         {
             if (!bt.IsConnected)
@@ -841,7 +888,7 @@ namespace LaserSurvey
         {
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
-                tt("data recieved: "+ transferCount++);
+                tt("data recieved: " + transferCount++);
                 //lstBT.Items.Insert(0, ">> TRANSFER: "+);
                 btTransferLines.Add(s);
                 //Console.WriteLine("transfer: " + s);
