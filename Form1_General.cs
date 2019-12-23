@@ -31,6 +31,8 @@ namespace LaserSurvey
             filesTool = new FilesAdapter();
             filesTool.LoadSetting();
             InitializeComponent();
+            InitializeBoxCanvas();
+            
             SyncData();
 
             InitializeLaserSurvey();
@@ -41,6 +43,35 @@ namespace LaserSurvey
             bt.actBtDataRead += actBtDataRead;
 
             filesTool.parse_done += actParseDone;
+        }
+
+        private void InitializeBoxCanvas()
+        {
+            //this.WindowState = FormWindowState.Maximized;
+            pnlBoxCanvas.Size = new Size(640, 640);
+            //int w = Screen.GetWorkingArea(this).Width;
+            //float mid = ( w- 640) / 2;
+            //pnlBoxCanvas.Location = new Point((int)mid, pnlBoxCanvas.Location.Y);
+            int pad = lvDiary.Location.X + lvDiary.Width;
+            pnlBoxCanvas.Location = new Point(this.ClientSize.Width / 2 - pnlBoxCanvas.Size.Width / 2 +pad/2, this.ClientSize.Height / 2 - pnlBoxCanvas.Size.Height / 2);
+            
+            pnlBoxCanvas.Anchor = AnchorStyles.None;
+        }
+
+        private void pnlBoxCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            Panel p = sender as Panel;
+
+            // Create pen.
+            Pen circlePen = new Pen(Color.Red, 2);
+            circlePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+
+            // Create rectangle for ellipse.
+            int padding = 5;
+            Rectangle rect = new Rectangle(padding, padding, p.Width- padding-4, p.Height- padding-4);
+
+            // Draw ellipse to screen.
+            e.Graphics.DrawEllipse(circlePen, rect);
         }
 
         private void actParseDone(bool ok, string msg)
@@ -207,22 +238,25 @@ namespace LaserSurvey
                     bt.Send("hv:BAT,1,");
                     btnConnectNewBt.Text = "התנתק";
                     lbBtStatus.Text = "הסורק מחובר";
-                    pBatteryVoltage.Visible = true;
+                    
                 }
                 else if (!connected)
                 {
                     //was_disconnected = true;
                     btnConnectNewBt.Text = "התחבר";
                     lbBtStatus.Text = "הסורק מנותק";
-                    pBatteryVoltage.Visible = false;
                 }
+
+                pBatteryVoltage.Visible = connected;
+                btnStep.Visible = connected;
+                btnTenSteps.Visible = connected;
             });
         }
 
         private void InitializeLaserSurvey()
         {
-            this.boxDraw = new BoxDrawer(drawPanel);
-            this.previewDrawer = new BoxDrawer(pnlPreview);
+            this.boxDraw = new BoxDrawer(pnlBoxDraw);
+            this.previewDrawer = new BoxDrawer(pnlBoxDraw);
             filesTool.LoadSetting();
 
             dstOffsetNum.Value = filesTool.setting.DistoOffsetMm;
@@ -716,7 +750,7 @@ namespace LaserSurvey
             try
             {
                 this.previewDrawer.Clear();
-                this.label8.Text = "Loading Survey Preview...";
+                //this.label8.Text = "Loading Survey Preview...";
                 using (StreamReader sr = new StreamReader(filename))
                 {
                     //skip file header
@@ -732,11 +766,11 @@ namespace LaserSurvey
                 }
                 this.previewDrawer.Redraw();
                 this.previewDrawer.ClosePolygon();
-                label8.Text = "Good samples: " + i;
+                //label8.Text = "Good samples: " + i;
             }
             catch
             {
-                this.label8.Text = "Cannot Draw Survey";
+                //this.label8.Text = "Cannot Draw Survey";
             }
 
         }
@@ -759,13 +793,13 @@ namespace LaserSurvey
             }
         }
 
-        private void hScrollBar1_ValueChanged(object sender, EventArgs e)
-        {
-            double percent = hScrollBar1.Value;
-            percent /= 100;
-            this.previewDrawer.ScaleBox(percent, new double[] { 0, 0 });
-            this.label10.Text = hScrollBar1.Value + "%";
-        }
+        //private void hScrollBar1_ValueChanged(object sender, EventArgs e)
+        //{
+        //    double percent = hScrollBar1.Value;
+        //    percent /= 100;
+        //    this.previewDrawer.ScaleBox(percent, new double[] { 0, 0 });
+        //    this.label10.Text = hScrollBar1.Value + "%";
+        //}
 
 
         private void BtnRunSurveyBT_Click(object sender, EventArgs e)
@@ -955,6 +989,33 @@ namespace LaserSurvey
                 lbTransferOutput.Visible = false;
                 lbTransferOutput.Items.Clear();
             });
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            Text = "Laser Survey Bt   [" + Width + "/" + Height+"]";
+        }
+
+        private void BtnStep_Click(object sender, EventArgs e)
+        {
+            if (!bt.IsConnected)
+            {
+                MessageBox.Show("הסורק איננו מחובר");
+                return;
+            }
+
+            bt.Send("hv:STP,1,");
+        }
+
+        private void BtnTenSteps_Click(object sender, EventArgs e)
+        {
+            if (!bt.IsConnected)
+            {
+                MessageBox.Show("הסורק איננו מחובר");
+                return;
+            }
+
+            bt.Send("hv:STP,10,");
         }
 
         private void btnServoResetAlarms_Click(object sender, EventArgs e)

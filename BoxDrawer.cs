@@ -20,7 +20,7 @@ namespace LaserSurvey
     class BoxDrawer
     {
         public Panel drawingPanel;
-        public Pen pointsStdPen = new Pen(Color.Red, 1);
+        public Pen pointsStdPen = new Pen(Color.Blue, 1);
         public Pen pointsErrPen = new Pen(Color.Green, 1);
         public Pen linesStdPen = new Pen(Color.Blue, 1);
         private Graphics g;
@@ -29,12 +29,14 @@ namespace LaserSurvey
         private System.Collections.ArrayList BadVertices = new System.Collections.ArrayList();
         int[,] intPts;
         drawPtInfo[] PtsInfo = new drawPtInfo[501];
-        private double BoxScale = 0.08;
+        private double BoxScale;
         private double scale = 1;
+        internal float zoomVal=1;
 
         public BoxDrawer(Panel dPanel)
         {
             this.drawingPanel = dPanel;
+            BoxScale = (double)drawingPanel.Width / (2*4096);
             this.g = this.drawingPanel.CreateGraphics();
             this.BasePt = new Point(
                 this.drawingPanel.Size.Width / 2,
@@ -56,13 +58,13 @@ namespace LaserSurvey
             if (valid)
             {
                 this.Vertices.Add(newPT);
-                for (int r = (int)x - 3; r < (int)x + 3; r++)
-                    for (int c = (int)y - 3; c < (int)y + 3; c++)
-                        try
-                        {
-                            this.intPts[r, c] = num;
-                        }
-                        catch { }
+                //for (int r = (int)x - 3; r < (int)x + 3; r++)
+                //    for (int c = (int)y - 3; c < (int)y + 3; c++)
+                //        try
+                //        {
+                //            this.intPts[r, c] = num;
+                //        }
+                //        catch { }
                 drawPtInfo newInfo = new drawPtInfo();
                 newInfo.Angle = (ang * 180 / Math.PI).ToString("0.00");
                 newInfo.Distance = ((dist / this.BoxScale) / 10).ToString("0.0");
@@ -72,13 +74,13 @@ namespace LaserSurvey
             else //Invalid point
             {
                 this.BadVertices.Add(newPT);
-                for (int r = (int)x - 3; r < (int)x + 3; r++)
-                    for (int c = (int)y - 3; c < (int)y + 3; c++)
-                        try
-                        {
-                            this.intPts[r, c] = num;
-                        }
-                        catch { }
+                //for (int r = (int)x - 3; r < (int)x + 3; r++)
+                //    for (int c = (int)y - 3; c < (int)y + 3; c++)
+                //        try
+                //        {
+                //            this.intPts[r, c] = num;
+                //        }
+                //        catch { }
                 drawPtInfo newInfo = new drawPtInfo();
                 newInfo.Angle = (ang * 180 / Math.PI).ToString("0.00");
                 newInfo.Distance = "Distance Error";
@@ -115,6 +117,8 @@ namespace LaserSurvey
 
         public void Redraw()
         {
+            //g.ScaleTransform(zoomVal, zoomVal);
+
             Point[] pts = new Point[Vertices.Count];
             Vertices.CopyTo(pts);
 
@@ -128,24 +132,53 @@ namespace LaserSurvey
             }
             catch { }
 
+            int ptWidth = 1;
+
             try
             {
                 //Draw Valid points
                 foreach (Point pt in pts)
                 {
-                    this.g.FillEllipse(this.pointsStdPen.Brush, pt.X - 2, pt.Y - 2, 4, 4);
+                    this.g.FillEllipse(this.pointsStdPen.Brush, pt.X - ptWidth, pt.Y - ptWidth, ptWidth*2, ptWidth*2);
                 }
 
                 //Draw Invalid points
                 foreach (Point bpt in Badpts)
                 {
-                    this.g.FillEllipse(this.pointsErrPen.Brush, bpt.X - 2, bpt.Y - 2, 4, 4);
+                    this.g.FillEllipse(this.pointsErrPen.Brush, bpt.X - ptWidth, bpt.Y - ptWidth, ptWidth*2, ptWidth*2);
                 }
 
                 //Draw center point
                 this.g.FillEllipse(this.pointsErrPen.Brush, this.BasePt.X - 4, this.BasePt.Y - 4, 8, 8);
             }
             catch { }
+
+            //Panel p = sender as Panel;
+
+            // Create pen.
+            Pen circlePen = new Pen(Color.Red, 2);
+            circlePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+
+            // Create rectangle for ellipse.
+            int padding = 5;
+            Rectangle rect = new Rectangle(padding, padding, this.drawingPanel.Width - padding - 4, this.drawingPanel.Height - padding - 4);
+
+            // Draw ellipse to screen.
+            this.g.DrawEllipse(circlePen, rect);
+
+            // Create pen.
+            Pen circlePen2;
+            int c = 200;
+            
+
+            for (int mm = 500; mm < 4000; mm += 500)
+            {                
+                circlePen2 = new Pen(Color.FromArgb(c,c,c), 1);
+                Rectangle rect2 = new Rectangle((int)(BasePt.X - BoxScale * mm), (int)(BasePt.X - BoxScale * mm), (int)(2 * BoxScale * mm), (int)(2 * BoxScale * mm));
+                this.g.DrawEllipse(circlePen2, rect2);
+                c -= 15;
+            }
+
         }
 
         public bool ScaleBox(double absFactor, double[] move)
@@ -176,7 +209,8 @@ namespace LaserSurvey
 
         public string GetPtTip(int x, int y)
         {
-
+            
+            return "";
             try
             {
                 if (this.intPts[x, y] != 0)

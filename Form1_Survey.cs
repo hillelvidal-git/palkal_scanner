@@ -322,7 +322,7 @@ namespace LaserSurvey
             try
             {
                 this.tspbSurvey.Value = sample;
-                this.statusStrip1.Refresh();
+                //this.statusStrip1.Refresh();
             }
             catch { }
 

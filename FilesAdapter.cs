@@ -140,11 +140,27 @@ namespace LaserSurvey
                 {
                     if (begin)
                     {
-                        if (!l.Contains("<<hv:failed>>")) sw.WriteLine(l);
+                        if (l.Contains("Time:")) sw.WriteLine(EnsureValidTime(l));
+                        else if (!l.Contains("<<hv:failed>>")) sw.WriteLine(l);
                         if (l.Contains("End Of Data")) break;
                     }
                     else if (l.Contains("<<hv:newsurvey>>")) begin = true;
                 }
+            }
+        }
+
+        private string EnsureValidTime(string time_line)
+        {
+            string t = time_line.Substring(5);
+            try
+            {
+                DateTime dt = Convert.ToDateTime(t);
+                if (dt.Year < 2000) throw new Exception();
+                return time_line;
+            }
+            catch
+            {
+                return "Time: " +DateTime.Now.ToString("DD/MM/YYYY HH:mm:SS");
             }
         }
 
