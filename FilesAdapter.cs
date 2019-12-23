@@ -160,7 +160,7 @@ namespace LaserSurvey
             }
             catch
             {
-                return "Time: " +DateTime.Now.ToString("DD/MM/YYYY HH:mm:SS");
+                return "Time: " +DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             }
         }
 
