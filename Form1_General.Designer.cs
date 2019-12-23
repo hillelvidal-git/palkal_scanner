@@ -2181,8 +2181,8 @@ namespace LaserSurvey
             // 
             this.imgsUpDown.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgsUpDown.ImageStream")));
             this.imgsUpDown.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgsUpDown.Images.SetKeyName(0, "Stock Index Up_24x24.png");
-            this.imgsUpDown.Images.SetKeyName(1, "Stock Index Down_24x24.png");
+            this.imgsUpDown.Images.SetKeyName(0, "Stock Index Down_24x24.png");
+            this.imgsUpDown.Images.SetKeyName(1, "Stock Index Up_24x24.png");
             // 
             // btnExport
             // 
