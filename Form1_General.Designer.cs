@@ -32,6 +32,9 @@ namespace LaserSurvey
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmbed = new System.Windows.Forms.TabPage();
+            this.pnlGoj = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btn45Steps = new System.Windows.Forms.Button();
             this.btnTenSteps = new System.Windows.Forms.Button();
             this.btnStep = new System.Windows.Forms.Button();
             this.pPbBack = new System.Windows.Forms.Panel();
@@ -240,6 +243,7 @@ namespace LaserSurvey
             this.timerHideLb = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabEmbed.SuspendLayout();
+            this.pnlGoj.SuspendLayout();
             this.pPbBack.SuspendLayout();
             this.pBatteryVoltage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbScanning)).BeginInit();
@@ -311,13 +315,12 @@ namespace LaserSurvey
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabControl1.RightToLeftLayout = true;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(671, 507);
+            this.tabControl1.Size = new System.Drawing.Size(671, 561);
             this.tabControl1.TabIndex = 0;
             // 
             // tabEmbed
             // 
-            this.tabEmbed.Controls.Add(this.btnTenSteps);
-            this.tabEmbed.Controls.Add(this.btnStep);
+            this.tabEmbed.Controls.Add(this.pnlGoj);
             this.tabEmbed.Controls.Add(this.pPbBack);
             this.tabEmbed.Controls.Add(this.lbScannerStatus);
             this.tabEmbed.Controls.Add(this.lbTransferOutput);
@@ -341,35 +344,70 @@ namespace LaserSurvey
             this.tabEmbed.Location = new System.Drawing.Point(4, 55);
             this.tabEmbed.Name = "tabEmbed";
             this.tabEmbed.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmbed.Size = new System.Drawing.Size(663, 448);
+            this.tabEmbed.Size = new System.Drawing.Size(663, 502);
             this.tabEmbed.TabIndex = 8;
             this.tabEmbed.Text = "סורק חדש";
             this.tabEmbed.UseVisualStyleBackColor = true;
+            // 
+            // pnlGoj
+            // 
+            this.pnlGoj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlGoj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnlGoj.Controls.Add(this.label8);
+            this.pnlGoj.Controls.Add(this.btn45Steps);
+            this.pnlGoj.Controls.Add(this.btnTenSteps);
+            this.pnlGoj.Controls.Add(this.btnStep);
+            this.pnlGoj.Location = new System.Drawing.Point(357, 431);
+            this.pnlGoj.Name = "pnlGoj";
+            this.pnlGoj.Size = new System.Drawing.Size(300, 63);
+            this.pnlGoj.TabIndex = 69;
+            this.pnlGoj.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label8.Location = new System.Drawing.Point(5, 21);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 20);
+            this.label8.TabIndex = 69;
+            this.label8.Text = "JOG";
+            // 
+            // btn45Steps
+            // 
+            this.btn45Steps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn45Steps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btn45Steps.Location = new System.Drawing.Point(56, 9);
+            this.btn45Steps.Name = "btn45Steps";
+            this.btn45Steps.Size = new System.Drawing.Size(75, 44);
+            this.btn45Steps.TabIndex = 68;
+            this.btn45Steps.Text = "45°";
+            this.btn45Steps.UseVisualStyleBackColor = true;
+            this.btn45Steps.Click += new System.EventHandler(this.Btn45Steps_Click);
             // 
             // btnTenSteps
             // 
             this.btnTenSteps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTenSteps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnTenSteps.Location = new System.Drawing.Point(224, 337);
+            this.btnTenSteps.Location = new System.Drawing.Point(137, 9);
             this.btnTenSteps.Name = "btnTenSteps";
-            this.btnTenSteps.Size = new System.Drawing.Size(75, 80);
+            this.btnTenSteps.Size = new System.Drawing.Size(75, 44);
             this.btnTenSteps.TabIndex = 67;
-            this.btnTenSteps.Text = "10 Steps";
+            this.btnTenSteps.Text = "10°";
             this.btnTenSteps.UseVisualStyleBackColor = true;
-            this.btnTenSteps.Visible = false;
             this.btnTenSteps.Click += new System.EventHandler(this.BtnTenSteps_Click);
             // 
             // btnStep
             // 
             this.btnStep.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnStep.Location = new System.Drawing.Point(224, 275);
+            this.btnStep.Location = new System.Drawing.Point(218, 9);
             this.btnStep.Name = "btnStep";
-            this.btnStep.Size = new System.Drawing.Size(75, 55);
+            this.btnStep.Size = new System.Drawing.Size(75, 44);
             this.btnStep.TabIndex = 66;
-            this.btnStep.Text = "Step";
+            this.btnStep.Text = "1°";
             this.btnStep.UseVisualStyleBackColor = true;
-            this.btnStep.Visible = false;
             this.btnStep.Click += new System.EventHandler(this.BtnStep_Click);
             // 
             // pPbBack
@@ -793,7 +831,7 @@ namespace LaserSurvey
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage1.Size = new System.Drawing.Size(663, 448);
+            this.tabPage1.Size = new System.Drawing.Size(663, 502);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "סורק ישן";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1232,7 +1270,7 @@ namespace LaserSurvey
             this.tabPage3.Location = new System.Drawing.Point(4, 55);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(663, 448);
+            this.tabPage3.Size = new System.Drawing.Size(663, 502);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "סקר";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1657,7 +1695,7 @@ namespace LaserSurvey
             this.tabPage6.Location = new System.Drawing.Point(4, 55);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(663, 448);
+            this.tabPage6.Size = new System.Drawing.Size(663, 502);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "הדמיה";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1839,7 +1877,7 @@ namespace LaserSurvey
             // progressBar2
             // 
             this.progressBar2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar2.Location = new System.Drawing.Point(3, 430);
+            this.progressBar2.Location = new System.Drawing.Point(3, 484);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(657, 15);
             this.progressBar2.TabIndex = 44;
@@ -2090,7 +2128,7 @@ namespace LaserSurvey
             this.tabPage5.Location = new System.Drawing.Point(4, 55);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(663, 448);
+            this.tabPage5.Size = new System.Drawing.Size(663, 502);
             this.tabPage5.TabIndex = 7;
             this.tabPage5.Text = "נתונים";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -2222,7 +2260,7 @@ namespace LaserSurvey
             this.tabPage4.Location = new System.Drawing.Point(4, 55);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(663, 448);
+            this.tabPage4.Size = new System.Drawing.Size(663, 502);
             this.tabPage4.TabIndex = 5;
             this.tabPage4.Text = "שליטה";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2708,7 +2746,7 @@ namespace LaserSurvey
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(671, 507);
+            this.ClientSize = new System.Drawing.Size(671, 561);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -2723,6 +2761,8 @@ namespace LaserSurvey
             this.tabControl1.ResumeLayout(false);
             this.tabEmbed.ResumeLayout(false);
             this.tabEmbed.PerformLayout();
+            this.pnlGoj.ResumeLayout(false);
+            this.pnlGoj.PerformLayout();
             this.pPbBack.ResumeLayout(false);
             this.pBatteryVoltage.ResumeLayout(false);
             this.pBatteryVoltage.PerformLayout();
@@ -3009,6 +3049,9 @@ namespace LaserSurvey
         private System.Windows.Forms.Panel pnlBoxDraw;
         private System.Windows.Forms.Button btnTenSteps;
         private System.Windows.Forms.Button btnStep;
+        private System.Windows.Forms.Panel pnlGoj;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btn45Steps;
     }
 }
 

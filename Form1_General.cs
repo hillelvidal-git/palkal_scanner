@@ -248,8 +248,7 @@ namespace LaserSurvey
                 }
 
                 pBatteryVoltage.Visible = connected;
-                btnStep.Visible = connected;
-                btnTenSteps.Visible = connected;
+                pnlGoj.Visible = connected;
             });
         }
 
@@ -1004,7 +1003,7 @@ namespace LaserSurvey
                 return;
             }
 
-            bt.Send("hv:STP,1,");
+            bt.Send("hv:JOG,1,");
         }
 
         private void BtnTenSteps_Click(object sender, EventArgs e)
@@ -1015,7 +1014,18 @@ namespace LaserSurvey
                 return;
             }
 
-            bt.Send("hv:STP,10,");
+            bt.Send("hv:JOG,10,");
+        }
+
+        private void Btn45Steps_Click(object sender, EventArgs e)
+        {
+            if (!bt.IsConnected)
+            {
+                MessageBox.Show("הסורק איננו מחובר");
+                return;
+            }
+
+            bt.Send("hv:JOG,45,");
         }
 
         private void btnServoResetAlarms_Click(object sender, EventArgs e)
