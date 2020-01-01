@@ -32,7 +32,9 @@ namespace LaserSurvey
             filesTool.LoadSetting();
             InitializeComponent();
             InitializeBoxCanvas();
+
             
+
             SyncData();
 
             InitializeLaserSurvey();
@@ -53,8 +55,8 @@ namespace LaserSurvey
             //float mid = ( w- 640) / 2;
             //pnlBoxCanvas.Location = new Point((int)mid, pnlBoxCanvas.Location.Y);
             int pad = lvDiary.Location.X + lvDiary.Width;
-            pnlBoxCanvas.Location = new Point(this.ClientSize.Width / 2 - pnlBoxCanvas.Size.Width / 2 +pad/2, this.ClientSize.Height / 2 - pnlBoxCanvas.Size.Height / 2);
-            
+            pnlBoxCanvas.Location = new Point(this.ClientSize.Width / 2 - pnlBoxCanvas.Size.Width / 2 + pad / 2, this.ClientSize.Height / 2 - pnlBoxCanvas.Size.Height / 2);
+
             pnlBoxCanvas.Anchor = AnchorStyles.None;
         }
 
@@ -68,7 +70,7 @@ namespace LaserSurvey
 
             // Create rectangle for ellipse.
             int padding = 5;
-            Rectangle rect = new Rectangle(padding, padding, p.Width- padding-4, p.Height- padding-4);
+            Rectangle rect = new Rectangle(padding, padding, p.Width - padding - 4, p.Height - padding - 4);
 
             // Draw ellipse to screen.
             e.Graphics.DrawEllipse(circlePen, rect);
@@ -238,7 +240,7 @@ namespace LaserSurvey
                     bt.Send("hv:BAT,1,");
                     btnConnectNewBt.Text = "התנתק";
                     lbBtStatus.Text = "הסורק מחובר";
-                    
+
                 }
                 else if (!connected)
                 {
@@ -838,13 +840,13 @@ namespace LaserSurvey
 
                         case 4:
                             bt.Send("hv:DEG,1,");
-                            bt.Send("hv:DLY,150,");
+                            bt.Send("hv:DLY,200,");
                             surveyTotalSmaples = 360;
                             break;
 
                         case 5:
                             bt.Send("hv:DEG,1,");
-                            bt.Send("hv:DLY,180,");
+                            bt.Send("hv:DLY,300,");
                             surveyTotalSmaples = 360;
                             break;
                     }
@@ -955,7 +957,7 @@ namespace LaserSurvey
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void BtnPipe_Click(object sender, EventArgs e)
@@ -992,7 +994,7 @@ namespace LaserSurvey
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            Text = "Laser Survey Bt   [" + Width + "/" + Height+"]";
+            Text = "Laser Survey Bt   [" + Width + "/" + Height + "]";
         }
 
         private void BtnStep_Click(object sender, EventArgs e)
@@ -1026,6 +1028,13 @@ namespace LaserSurvey
             }
 
             bt.Send("hv:JOG,45,");
+        }
+
+
+        private void TbFilter_ValueChanged(object sender, EventArgs e)
+        {
+            filesTool.filter_max_mm = tbFilter.Value * 500;
+            lbFilerMm.Text = filesTool.filter_max_mm + " mm";
         }
 
         private void btnServoResetAlarms_Click(object sender, EventArgs e)

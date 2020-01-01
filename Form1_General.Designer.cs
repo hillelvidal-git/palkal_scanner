@@ -32,6 +32,9 @@ namespace LaserSurvey
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmbed = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbFilerMm = new System.Windows.Forms.Label();
+            this.tbFilter = new System.Windows.Forms.TrackBar();
             this.pnlGoj = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btn45Steps = new System.Windows.Forms.Button();
@@ -243,6 +246,7 @@ namespace LaserSurvey
             this.timerHideLb = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabEmbed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFilter)).BeginInit();
             this.pnlGoj.SuspendLayout();
             this.pPbBack.SuspendLayout();
             this.pBatteryVoltage.SuspendLayout();
@@ -302,10 +306,10 @@ namespace LaserSurvey
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabEmbed);
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImageList = this.imgsPages;
@@ -320,6 +324,9 @@ namespace LaserSurvey
             // 
             // tabEmbed
             // 
+            this.tabEmbed.Controls.Add(this.label10);
+            this.tabEmbed.Controls.Add(this.lbFilerMm);
+            this.tabEmbed.Controls.Add(this.tbFilter);
             this.tabEmbed.Controls.Add(this.pnlGoj);
             this.tabEmbed.Controls.Add(this.pPbBack);
             this.tabEmbed.Controls.Add(this.lbScannerStatus);
@@ -348,6 +355,43 @@ namespace LaserSurvey
             this.tabEmbed.TabIndex = 8;
             this.tabEmbed.Text = "סורק חדש";
             this.tabEmbed.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label10.Location = new System.Drawing.Point(224, 253);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 20);
+            this.label10.TabIndex = 72;
+            this.label10.Text = "Filter";
+            // 
+            // lbFilerMm
+            // 
+            this.lbFilerMm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFilerMm.AutoSize = true;
+            this.lbFilerMm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lbFilerMm.Location = new System.Drawing.Point(224, 538);
+            this.lbFilerMm.Name = "lbFilerMm";
+            this.lbFilerMm.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbFilerMm.Size = new System.Drawing.Size(45, 20);
+            this.lbFilerMm.TabIndex = 71;
+            this.lbFilerMm.Text = "3000";
+            // 
+            // tbFilter
+            // 
+            this.tbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFilter.LargeChange = 1;
+            this.tbFilter.Location = new System.Drawing.Point(224, 276);
+            this.tbFilter.Maximum = 9;
+            this.tbFilter.Minimum = 1;
+            this.tbFilter.Name = "tbFilter";
+            this.tbFilter.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tbFilter.Size = new System.Drawing.Size(45, 252);
+            this.tbFilter.TabIndex = 70;
+            this.tbFilter.Value = 6;
+            this.tbFilter.ValueChanged += new System.EventHandler(this.TbFilter_ValueChanged);
             // 
             // pnlGoj
             // 
@@ -595,7 +639,7 @@ namespace LaserSurvey
             this.tbQuality.Name = "tbQuality";
             this.tbQuality.Size = new System.Drawing.Size(321, 45);
             this.tbQuality.TabIndex = 49;
-            this.tbQuality.Value = 3;
+            this.tbQuality.Value = 5;
             // 
             // panel7
             // 
@@ -2761,6 +2805,7 @@ namespace LaserSurvey
             this.tabControl1.ResumeLayout(false);
             this.tabEmbed.ResumeLayout(false);
             this.tabEmbed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFilter)).EndInit();
             this.pnlGoj.ResumeLayout(false);
             this.pnlGoj.PerformLayout();
             this.pPbBack.ResumeLayout(false);
@@ -3052,6 +3097,9 @@ namespace LaserSurvey
         private System.Windows.Forms.Panel pnlGoj;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn45Steps;
+        private System.Windows.Forms.Label lbFilerMm;
+        private System.Windows.Forms.TrackBar tbFilter;
+        private System.Windows.Forms.Label label10;
     }
 }
 

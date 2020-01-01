@@ -58,7 +58,7 @@
   <ItemGroup>
     <Reference Include="BedekTreeAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\BedekTreeAdapter.dll</HintPath>
+      <HintPath>..\..\..\Downloads\hv\‏‏כונן USB\LaserSurveyS7\LaserSurvey1\bin\Debug\BedekTreeAdapter.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

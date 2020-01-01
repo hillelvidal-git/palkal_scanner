@@ -20,6 +20,7 @@ namespace LaserSurvey
         public Action<bool, string> parse_done;
 
         internal SurveySetting setting;
+        public int filter_max_mm = 3000;
 
         public FilesAdapter()
         {
@@ -124,7 +125,7 @@ namespace LaserSurvey
             }
 
             if (!error_occured) File.Delete(dataFolder + "\\bt_raw.dat");
-            parse_done?.Invoke(true, "קבצים נשמרו: "+ written);
+            parse_done?.Invoke(true, "קבצים נשמרו: " + written);
 
             return;
         }
@@ -134,6 +135,7 @@ namespace LaserSurvey
             string filename = "[" + i + "][" + DateTime.Now.ToString().Replace("/", ".").Replace(":", ".") + "].DAT";
 
             bool begin = false;
+            bool is_data = false;
             using (StreamWriter sw = new StreamWriter(this.newsFolder + "\\" + filename))
             {
                 foreach (string l in srv)
@@ -141,12 +143,34 @@ namespace LaserSurvey
                     if (begin)
                     {
                         if (l.Contains("Time:")) sw.WriteLine(EnsureValidTime(l));
-                        else if (!l.Contains("<<hv:failed>>")) sw.WriteLine(l);
+                        else if (l.Contains("DATA:")) { sw.WriteLine(l); is_data = true; }
+                        else if (data_in_range(l, is_data)) sw.WriteLine(l);
                         if (l.Contains("End Of Data")) break;
                     }
                     else if (l.Contains("<<hv:newsurvey>>")) begin = true;
                 }
             }
+        }
+
+        private bool data_in_range(string l, bool is_data)
+        {
+            if (!is_data) return true;
+            if (l.Contains("<<hv:failed>>")) return false; //don't write failed data
+
+            try
+            {
+                string mm = l.Split(',')[1];
+                if (int.TryParse(mm, out int int_mm))
+                {
+                    if (int_mm >= filter_max_mm) return false;
+                }
+
+            }
+            catch
+            {
+
+            }
+            return true;
         }
 
         private string EnsureValidTime(string time_line)
@@ -160,7 +184,7 @@ namespace LaserSurvey
             }
             catch
             {
-                return "Time: " +DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                return "Time: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             }
         }
 
