@@ -56,9 +56,8 @@
     <ApplicationIcon>Ampeross-Qetto-2-Connect.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BedekTreeAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Downloads\hv\‏‏כונן USB\LaserSurveyS7\LaserSurvey1\bin\Debug\BedekTreeAdapter.dll</HintPath>
+    <Reference Include="BedekTreeAdapter">
+      <HintPath>..\..\..\..\..\Program Files\LaserSurey2020\BedekTreeAdapter.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -84,6 +83,7 @@
     <Compile Include="EthernetAdapter.cs" />
     <Compile Include="ModbusAdapter.cs" />
     <Compile Include="NewScannerBt.cs" />
+    <Compile Include="new_bt_adapter.cs" />
     <Compile Include="Parameters.cs" />
     <Compile Include="Sigma7Adapter.cs" />
     <Compile Include="DistoAdapter.cs" />
