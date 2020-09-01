@@ -19,12 +19,14 @@ namespace LaserSurvey
         FilesAdapter filesTool;
         string attribution;
         bool bAvoidZeros = true;
-        NewScannerBt bt;
+        //NewScannerBt bt;
+        serial_adapter bt;
         List<string> btTransferLines;
         int transferCount;
         string lastServoCOM, lastDistoCOM;
         string stt_status = "";
         int surveyTotalSmaples;
+        bool gui_prev_status = false;
 
         public Form1()
         {
@@ -33,16 +35,14 @@ namespace LaserSurvey
             InitializeComponent();
             InitializeBoxCanvas();
 
-            
+            chkShowOldGUI_CheckedChanged(new object(), new EventArgs());
 
             SyncData();
 
             InitializeLaserSurvey();
             DisplayAttribution();
 
-            bt = new NewScannerBt();
-            bt.actBtConnectionChanged += actBtConnectionChanged;
-            bt.actBtDataRead += actBtDataRead;
+            
 
             filesTool.parse_done += actParseDone;
         }
@@ -232,7 +232,7 @@ namespace LaserSurvey
 
             if (IsHandleCreated) Invoke((MethodInvoker)delegate
             {
-                panel2.BackColor = connected ? Color.Lime : Color.Silver;
+                pnl_conn.BackColor = connected ? Color.Lime : Color.Silver;
                 if (connected)
                 {
                     //was_disconnected = false;
@@ -250,7 +250,7 @@ namespace LaserSurvey
                 }
 
                 pBatteryVoltage.Visible = connected;
-                pnlGoj.Visible = connected;
+                pnlJog.Visible = connected;
             });
         }
 
@@ -266,12 +266,12 @@ namespace LaserSurvey
             if (filesTool.setting.UpwardSurvey)
             {
                 trackBar2.Value = 0;
-                rbUpward.Checked = true;
+                cmbDirection.SelectedIndex = 0;
             }
             else
             {
                 trackBar2.Value = 1;
-                rbDownward.Checked = true;
+                cmbDirection.SelectedIndex = 1;
             }
 
             trackBar2_ValueChanged(new object(), new EventArgs());
@@ -298,25 +298,30 @@ namespace LaserSurvey
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            bt.actBtConnectionChanged -= actBtConnectionChanged;
-            bt.actBtDataRead -= actBtDataRead;
+            
+            
             filesTool.parse_done -= actParseDone;
 
             //Switch Devices Off
             try
             {
-                bt.Stop();
+                if (bt != null)
+                {
+                    bt.actUpdateState -= actBtDataRead; 
+                    bt?.Die();
+                }
+
             }
             catch { }
 
             try
             {
-                myServo.SwitchOff();
+                myServo?.SwitchOff();
             }
             catch { }
             try
             {
-                myDisto.SwitchOn(false);
+                myDisto?.SwitchOn(false);
             }
             catch { }
 
@@ -325,8 +330,8 @@ namespace LaserSurvey
             filesTool.SaveSetting(new string[]
             {
             "DistoOffset: " + tbPipe.Value, //dstOffsetNum.Value,
-            "UpwardSurvey: " + (rbUpward.Checked),
-            "ServoRpm: "+ (int)nudServoRpm.Value,
+            "UpwardSurvey: " + (cmbDirection.SelectedIndex == 0),
+            "ServoRpm: " + (int)nudServoRpm.Value,
             "MovesNum: "+ (int)trackBar3.Value,
             "servoCOM: "+this.lastServoCOM,
             "distoCOM: "+ tbNewBtCom.Text // this.lastDistoCOM
@@ -851,7 +856,7 @@ namespace LaserSurvey
                             break;
                     }
 
-                    if (rbUpward.Checked) bt.Send("hv:UPW,1");
+                    if (cmbDirection.SelectedIndex == 0) bt.Send("hv:UPW,1");
                     else bt.Send("hv:UPW,0");
 
                     bt.Send("hv:RUN,1,");
@@ -870,23 +875,23 @@ namespace LaserSurvey
 
         private void BtnConnectNewBt_Click(object sender, EventArgs e)
         {
-            if (bt.IsConnected) //user asks to disconnect
-            {
-                bt.Stop();
-                return;
-            }
+            //if (bt.IsConnected) //user asks to disconnect
+            //{
+            //    bt.Stop();
+            //    return;
+            //}
 
-            //else - user asks to connect
-            if (int.TryParse(tbNewBtCom.Text, out int i))
-            {
-                bt.Stop();
-                Thread.Sleep(50);
-                bt.Run(tbNewBtCom.Text);
-            }
-            else
-            {
-                MessageBox.Show("Com port not set");
-            }
+            ////else - user asks to connect
+            //if (int.TryParse(tbNewBtCom.Text, out int i))
+            //{
+            //    bt.Stop();
+            //    Thread.Sleep(50);
+            //    bt.Run(tbNewBtCom.Text);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Com port not set");
+            //}
         }
 
         private void LbImportBt_Click(object sender, EventArgs e)
@@ -1036,6 +1041,162 @@ namespace LaserSurvey
             filesTool.filter_max_mm = tbFilter.Value * 500;
             lbFilerMm.Text = filesTool.filter_max_mm + " mm";
         }
+
+        private void btnAutoCon_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        void StartAutoConnect()
+        {
+            int com;
+            if (int.TryParse(tbNewBtCom.Text, out com))
+            {
+                if (bt != null)
+                {
+                    bt.Die();
+                    bt.actDataRead = null;
+                    bt.actUpdateState = null;
+                    bt = null;
+                    Thread.Sleep(500);
+                }
+
+                bt = new serial_adapter(com); //NewScannerBt();
+                //bt.actBtConnectionChanged += actBtConnectionChanged;
+                bt.actDataRead += actBtDataRead;
+                bt.actUpdateState += serial_rec;
+                bt.Run();
+            }
+        }
+
+        private void serial_rec(string status)
+        {
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            {
+                tbBtStatus.Text = status;
+                //panel1.BackColor = data=="lost"? Color.Gray : Color.Green;
+                switch (status)
+                {
+                    case "lost":
+                        pnlBtStatus1.BackColor = Color.Gray;
+                        pnlBtStatus2.BackColor = Color.Gray;
+                        ToggleScannerUi(false);
+                        break;
+                    case "trying":
+                        pnlBtStatus2.BackColor = Color.Orange;
+                        break;
+                    case "failed":
+                        pnlBtStatus2.BackColor = Color.Red;
+                        break;
+                    case "connected":
+                        pnlBtStatus2.BackColor = Color.Yellow;
+                        ToggleScannerUi(true);
+                        break;
+                    case "keep":
+                        pnlBtStatus2.BackColor = Color.Blue;
+                        break;
+                    case "received":
+                        pnlBtStatus1.BackColor = Color.LawnGreen;
+                        break;
+
+                }
+            });
+        }
+
+        
+        private void ToggleScannerUi(bool show)
+        {
+            pnl_settings.Visible = show;
+            pnl_survey2.Visible = show;
+            if (show) tbNewBtCom.BackColor = Color.White;
+        }
+
+        private void chkShowOldGUI_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkShowOldGUI.Checked)
+            {
+                tabControl1.TabPages.Remove(tpDrawing);
+                tabControl1.TabPages.Remove(tpOldScannerConn);
+                tabControl1.TabPages.Remove(tpOldControl);
+            }
+            else
+            {
+                tabControl1.TabPages.Add(tpDrawing);
+                tabControl1.TabPages.Add(tpOldScannerConn);
+                tabControl1.TabPages.Add(tpOldControl);
+            }
+        }
+
+        private void btnDisconnectBt_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        void DisconnectAutoConnect()
+        {
+            if (bt != null)
+            {
+                bt.Die();
+                bt.actDataRead = null;
+                bt.actUpdateState = null;
+                bt = null;
+                Thread.Sleep(500);
+            }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            
+            if (bt != null)
+            {
+                Console.WriteLine("Stopping current bt...");
+                bt.Die();
+                bt.actDataRead = null;
+                bt.actUpdateState = null;
+                bt = null;
+                Thread.Sleep(500);
+            }
+
+            tbNewBtCom.BackColor = Color.White;
+            lbPortFound.Text = "ξητω...";
+            lbPortFound.Visible = true;
+
+            port_finder pf = new port_finder();
+            pf.actEnd += PortFound;
+            pf.Run();
+            
+        }
+
+        private void PortFound(int status, string msg)
+        {
+            if (IsHandleCreated) Invoke((MethodInvoker)delegate
+            {
+                switch (status)
+                {
+                    case 0:
+                        lbPortFound.Text = msg + "  > X"; break;
+                    case 1:
+                        lbPortFound.Text = msg + "  > X"; 
+                        tbNewBtCom.BackColor = Color.IndianRed;
+                        tbNewBtCom.Text = "";
+                        lbPortFound.Visible = false;
+                        break;
+                    case 2:
+                        lbPortFound.Text = msg + "  > V";
+                        tbNewBtCom.BackColor = Color.GreenYellow;
+                        tbNewBtCom.Text = msg.Substring(3);
+                        lbPortFound.Visible = false;
+                        break;
+                }
+            });
+        }
+
+        private void chkAutoConnect_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAutoConnect.Checked) StartAutoConnect();
+            else DisconnectAutoConnect();
+        }
+       
 
         private void btnServoResetAlarms_Click(object sender, EventArgs e)
         {

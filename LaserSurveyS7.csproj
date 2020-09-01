@@ -85,6 +85,8 @@
     <Compile Include="NewScannerBt.cs" />
     <Compile Include="new_bt_adapter.cs" />
     <Compile Include="Parameters.cs" />
+    <Compile Include="port_finder.cs" />
+    <Compile Include="ScannerSerialAdpter.cs" />
     <Compile Include="Sigma7Adapter.cs" />
     <Compile Include="DistoAdapter.cs" />
     <Compile Include="FilesAdapter.cs" />

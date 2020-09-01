@@ -32,49 +32,138 @@ namespace LaserSurvey
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmbed = new System.Windows.Forms.TabPage();
+            this.pnl_settings = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.lbFilerMm = new System.Windows.Forms.Label();
             this.tbFilter = new System.Windows.Forms.TrackBar();
-            this.pnlGoj = new System.Windows.Forms.Panel();
+            this.lbFilerMm = new System.Windows.Forms.Label();
+            this.pnlJog = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btn45Steps = new System.Windows.Forms.Button();
             this.btnTenSteps = new System.Windows.Forms.Button();
             this.btnStep = new System.Windows.Forms.Button();
-            this.pPbBack = new System.Windows.Forms.Panel();
-            this.pPbFore = new System.Windows.Forms.Panel();
-            this.lbScannerStatus = new System.Windows.Forms.TextBox();
-            this.lbTransferOutput = new System.Windows.Forms.ListBox();
             this.pBatteryVoltage = new System.Windows.Forms.Panel();
             this.tbBatteryV = new System.Windows.Forms.TextBox();
-            this.pbScanning = new System.Windows.Forms.PictureBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
             this.tbPipe = new System.Windows.Forms.NumericUpDown();
             this.btnPipe = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tbQuality = new System.Windows.Forms.TrackBar();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.rbDownward = new System.Windows.Forms.RadioButton();
-            this.rbUpward = new System.Windows.Forms.RadioButton();
-            this.label48 = new System.Windows.Forms.Label();
+            this.lstBT = new System.Windows.Forms.ListBox();
+            this.tbBtStatus = new System.Windows.Forms.TextBox();
+            this.chkShowOldGUI = new System.Windows.Forms.CheckBox();
+            this.btnConnectNewBt = new System.Windows.Forms.Button();
+            this.lbBtStatus = new System.Windows.Forms.TextBox();
+            this.lbTransferOutput = new System.Windows.Forms.ListBox();
+            this.pbScanning = new System.Windows.Forms.PictureBox();
+            this.pnl_conn = new System.Windows.Forms.Panel();
+            this.chkAutoConnect = new System.Windows.Forms.CheckBox();
+            this.lbPortFound = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.pnlBtStatus1 = new System.Windows.Forms.Panel();
+            this.pnlBtStatus2 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tbNewBtCom = new System.Windows.Forms.TextBox();
+            this.pnl_survey = new System.Windows.Forms.Panel();
+            this.cmbLayer = new System.Windows.Forms.ComboBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.cmbDirection = new System.Windows.Forms.ComboBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.pnl_survey2 = new System.Windows.Forms.Panel();
+            this.pPbBack = new System.Windows.Forms.Panel();
+            this.pPbFore = new System.Windows.Forms.Panel();
+            this.lbScannerStatus = new System.Windows.Forms.TextBox();
+            this.btTransferData = new System.Windows.Forms.Button();
+            this.btnRunSurveyBT = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.tbSrv = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tbOr = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.tbFieldId = new System.Windows.Forms.TextBox();
-            this.btTransferData = new System.Windows.Forms.Button();
-            this.lstBT = new System.Windows.Forms.ListBox();
-            this.btnRunSurveyBT = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbBtStatus = new System.Windows.Forms.TextBox();
-            this.btnConnectNewBt = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.tbNewBtCom = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbQuality = new System.Windows.Forms.TrackBar();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.nudBTtry = new System.Windows.Forms.NumericUpDown();
+            this.lbSurveyLog = new System.Windows.Forms.ListBox();
+            this.lblTreeTime = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tvProjects = new System.Windows.Forms.TreeView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.nudOrientaionPt = new System.Windows.Forms.NumericUpDown();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnStartSurvey = new System.Windows.Forms.Button();
+            this.imgsPlayStop = new System.Windows.Forms.ImageList(this.components);
+            this.nudBoreNum = new System.Windows.Forms.NumericUpDown();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.trackBar4 = new System.Windows.Forms.TrackBar();
+            this.lblSamples = new System.Windows.Forms.Label();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.lblDown = new System.Windows.Forms.Label();
+            this.lblUp = new System.Windows.Forms.Label();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.lblElevation = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.pictDown = new System.Windows.Forms.PictureBox();
+            this.pictUp = new System.Windows.Forms.PictureBox();
+            this.minDistChkBox = new System.Windows.Forms.CheckBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pnlBoxCanvas = new System.Windows.Forms.Panel();
+            this.pnlBoxDraw = new System.Windows.Forms.Panel();
+            this.lvDiary = new System.Windows.Forms.ListView();
+            this.cmsDiary = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.äôåêëéååïñøé÷äToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ùðäîñôø÷ãçToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.îç÷ñøé÷äToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imgsUpDown = new System.Windows.Forms.ImageList(this.components);
+            this.btnExport = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblNewSurveys = new System.Windows.Forms.Label();
+            this.tpDrawing = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbField = new System.Windows.Forms.Label();
+            this.lbBore = new System.Windows.Forms.Label();
+            this.lblBoreNum = new System.Windows.Forms.Label();
+            this.lblFieldName = new System.Windows.Forms.Label();
+            this.lblSmaplesSum = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.lblCurrentSample = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnStopSurvey = new System.Windows.Forms.Button();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.FinishTimeLbl = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tbFalseSamples = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbCurrentDist = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.tbAbsTicks = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.tbRelTicks = new System.Windows.Forms.TextBox();
+            this.tbRelAngle = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.drawPanel = new System.Windows.Forms.Panel();
+            this.nDemo = new System.Windows.Forms.NumericUpDown();
+            this.label43 = new System.Windows.Forms.Label();
+            this.ElapsedTimeLbl = new System.Windows.Forms.Label();
+            this.tpOldScannerConn = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label38 = new System.Windows.Forms.Label();
             this.dstConnectedPct = new System.Windows.Forms.PictureBox();
@@ -111,87 +200,7 @@ namespace LaserSurvey
             this.srvConnectedLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.srvConnectBtn = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.nudBTtry = new System.Windows.Forms.NumericUpDown();
-            this.lbSurveyLog = new System.Windows.Forms.ListBox();
-            this.lblTreeTime = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tvProjects = new System.Windows.Forms.TreeView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.nudOrientaionPt = new System.Windows.Forms.NumericUpDown();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnStartSurvey = new System.Windows.Forms.Button();
-            this.imgsPlayStop = new System.Windows.Forms.ImageList(this.components);
-            this.nudBoreNum = new System.Windows.Forms.NumericUpDown();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.trackBar4 = new System.Windows.Forms.TrackBar();
-            this.lblSamples = new System.Windows.Forms.Label();
-            this.trackBar3 = new System.Windows.Forms.TrackBar();
-            this.lblDown = new System.Windows.Forms.Label();
-            this.lblUp = new System.Windows.Forms.Label();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.lblElevation = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.pictDown = new System.Windows.Forms.PictureBox();
-            this.pictUp = new System.Windows.Forms.PictureBox();
-            this.minDistChkBox = new System.Windows.Forms.CheckBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lbField = new System.Windows.Forms.Label();
-            this.lbBore = new System.Windows.Forms.Label();
-            this.lblBoreNum = new System.Windows.Forms.Label();
-            this.lblFieldName = new System.Windows.Forms.Label();
-            this.lblSmaplesSum = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.lblCurrentSample = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnStopSurvey = new System.Windows.Forms.Button();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.FinishTimeLbl = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.tbFalseSamples = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbCurrentDist = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.tbAbsTicks = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.tbRelTicks = new System.Windows.Forms.TextBox();
-            this.tbRelAngle = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.drawPanel = new System.Windows.Forms.Panel();
-            this.nDemo = new System.Windows.Forms.NumericUpDown();
-            this.label43 = new System.Windows.Forms.Label();
-            this.ElapsedTimeLbl = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.pnlBoxCanvas = new System.Windows.Forms.Panel();
-            this.pnlBoxDraw = new System.Windows.Forms.Panel();
-            this.lvDiary = new System.Windows.Forms.ListView();
-            this.cmsDiary = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.äôåêëéååïñøé÷äToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ùðäîñôø÷ãçToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.îç÷ñøé÷äToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imgsUpDown = new System.Windows.Forms.ImageList(this.components);
-            this.btnExport = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblNewSurveys = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tpOldControl = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -246,28 +255,17 @@ namespace LaserSurvey
             this.timerHideLb = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabEmbed.SuspendLayout();
+            this.pnl_settings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbFilter)).BeginInit();
-            this.pnlGoj.SuspendLayout();
-            this.pPbBack.SuspendLayout();
+            this.pnlJog.SuspendLayout();
             this.pBatteryVoltage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbScanning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPipe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbScanning)).BeginInit();
+            this.pnl_conn.SuspendLayout();
+            this.pnl_survey.SuspendLayout();
+            this.pnl_survey2.SuspendLayout();
+            this.pPbBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbQuality)).BeginInit();
-            this.panel7.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dstConnectedPct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.srvConnectedPct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDistoCom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dstOffsetNum)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudServoCom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudServoRpm)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBTtry)).BeginInit();
             this.panel4.SuspendLayout();
@@ -282,18 +280,31 @@ namespace LaserSurvey
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUp)).BeginInit();
-            this.tabPage6.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.pnlBoxCanvas.SuspendLayout();
+            this.cmsDiary.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tpDrawing.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.drawPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nDemo)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            this.pnlBoxCanvas.SuspendLayout();
-            this.cmsDiary.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tpOldScannerConn.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dstConnectedPct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.srvConnectedPct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDistoCom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dstOffsetNum)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServoCom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServoRpm)).BeginInit();
+            this.tpOldControl.SuspendLayout();
             this.panel6.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -308,113 +319,135 @@ namespace LaserSurvey
             this.tabControl1.Controls.Add(this.tabEmbed);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tpDrawing);
+            this.tabControl1.Controls.Add(this.tpOldScannerConn);
+            this.tabControl1.Controls.Add(this.tpOldControl);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImageList = this.imgsPages;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabControl1.RightToLeftLayout = true;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(671, 561);
+            this.tabControl1.Size = new System.Drawing.Size(1816, 912);
             this.tabControl1.TabIndex = 0;
             // 
             // tabEmbed
             // 
-            this.tabEmbed.Controls.Add(this.label10);
-            this.tabEmbed.Controls.Add(this.lbFilerMm);
-            this.tabEmbed.Controls.Add(this.tbFilter);
-            this.tabEmbed.Controls.Add(this.pnlGoj);
-            this.tabEmbed.Controls.Add(this.pPbBack);
-            this.tabEmbed.Controls.Add(this.lbScannerStatus);
+            this.tabEmbed.Controls.Add(this.pnl_settings);
+            this.tabEmbed.Controls.Add(this.tbBtStatus);
+            this.tabEmbed.Controls.Add(this.chkShowOldGUI);
+            this.tabEmbed.Controls.Add(this.btnConnectNewBt);
+            this.tabEmbed.Controls.Add(this.lbBtStatus);
             this.tabEmbed.Controls.Add(this.lbTransferOutput);
-            this.tabEmbed.Controls.Add(this.pBatteryVoltage);
             this.tabEmbed.Controls.Add(this.pbScanning);
-            this.tabEmbed.Controls.Add(this.label56);
-            this.tabEmbed.Controls.Add(this.label54);
-            this.tabEmbed.Controls.Add(this.label49);
-            this.tabEmbed.Controls.Add(this.tbPipe);
-            this.tabEmbed.Controls.Add(this.btnPipe);
-            this.tabEmbed.Controls.Add(this.label22);
-            this.tabEmbed.Controls.Add(this.label13);
-            this.tabEmbed.Controls.Add(this.label11);
-            this.tabEmbed.Controls.Add(this.tbQuality);
-            this.tabEmbed.Controls.Add(this.panel7);
-            this.tabEmbed.Controls.Add(this.btTransferData);
-            this.tabEmbed.Controls.Add(this.lstBT);
-            this.tabEmbed.Controls.Add(this.btnRunSurveyBT);
-            this.tabEmbed.Controls.Add(this.panel2);
+            this.tabEmbed.Controls.Add(this.pnl_conn);
+            this.tabEmbed.Controls.Add(this.pnl_survey);
             this.tabEmbed.ImageIndex = 5;
             this.tabEmbed.Location = new System.Drawing.Point(4, 55);
+            this.tabEmbed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabEmbed.Name = "tabEmbed";
-            this.tabEmbed.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmbed.Size = new System.Drawing.Size(663, 502);
+            this.tabEmbed.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabEmbed.Size = new System.Drawing.Size(1808, 853);
             this.tabEmbed.TabIndex = 8;
             this.tabEmbed.Text = "ñåø÷ çãù";
             this.tabEmbed.UseVisualStyleBackColor = true;
+            // 
+            // pnl_settings
+            // 
+            this.pnl_settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnl_settings.Controls.Add(this.label48);
+            this.pnl_settings.Controls.Add(this.label10);
+            this.pnl_settings.Controls.Add(this.tbFilter);
+            this.pnl_settings.Controls.Add(this.lbFilerMm);
+            this.pnl_settings.Controls.Add(this.pnlJog);
+            this.pnl_settings.Controls.Add(this.pBatteryVoltage);
+            this.pnl_settings.Controls.Add(this.tbPipe);
+            this.pnl_settings.Controls.Add(this.btnPipe);
+            this.pnl_settings.Controls.Add(this.label22);
+            this.pnl_settings.Controls.Add(this.lstBT);
+            this.pnl_settings.Location = new System.Drawing.Point(617, 26);
+            this.pnl_settings.Name = "pnl_settings";
+            this.pnl_settings.Size = new System.Drawing.Size(566, 630);
+            this.pnl_settings.TabIndex = 75;
+            this.pnl_settings.Visible = false;
+            // 
+            // label48
+            // 
+            this.label48.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label48.Location = new System.Drawing.Point(336, 63);
+            this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(197, 29);
+            this.label48.TabIndex = 74;
+            this.label48.Text = "îöá ñåììä áîëùéø";
             // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label10.Location = new System.Drawing.Point(224, 253);
+            this.label10.Location = new System.Drawing.Point(355, 490);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 20);
+            this.label10.Size = new System.Drawing.Size(196, 29);
             this.label10.TabIndex = 72;
-            this.label10.Text = "Filter";
+            this.label10.Text = "ñéðåï îãéãåú (mm):";
+            // 
+            // tbFilter
+            // 
+            this.tbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFilter.LargeChange = 1;
+            this.tbFilter.Location = new System.Drawing.Point(27, 524);
+            this.tbFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbFilter.Maximum = 9;
+            this.tbFilter.Minimum = 1;
+            this.tbFilter.Name = "tbFilter";
+            this.tbFilter.Size = new System.Drawing.Size(519, 69);
+            this.tbFilter.TabIndex = 70;
+            this.tbFilter.Value = 6;
+            this.tbFilter.ValueChanged += new System.EventHandler(this.TbFilter_ValueChanged);
             // 
             // lbFilerMm
             // 
             this.lbFilerMm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFilerMm.AutoSize = true;
             this.lbFilerMm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lbFilerMm.Location = new System.Drawing.Point(224, 538);
+            this.lbFilerMm.Location = new System.Drawing.Point(37, 490);
+            this.lbFilerMm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbFilerMm.Name = "lbFilerMm";
             this.lbFilerMm.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbFilerMm.Size = new System.Drawing.Size(45, 20);
+            this.lbFilerMm.Size = new System.Drawing.Size(65, 29);
             this.lbFilerMm.TabIndex = 71;
             this.lbFilerMm.Text = "3000";
             // 
-            // tbFilter
+            // pnlJog
             // 
-            this.tbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFilter.LargeChange = 1;
-            this.tbFilter.Location = new System.Drawing.Point(224, 276);
-            this.tbFilter.Maximum = 9;
-            this.tbFilter.Minimum = 1;
-            this.tbFilter.Name = "tbFilter";
-            this.tbFilter.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tbFilter.Size = new System.Drawing.Size(45, 252);
-            this.tbFilter.TabIndex = 70;
-            this.tbFilter.Value = 6;
-            this.tbFilter.ValueChanged += new System.EventHandler(this.TbFilter_ValueChanged);
-            // 
-            // pnlGoj
-            // 
-            this.pnlGoj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGoj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pnlGoj.Controls.Add(this.label8);
-            this.pnlGoj.Controls.Add(this.btn45Steps);
-            this.pnlGoj.Controls.Add(this.btnTenSteps);
-            this.pnlGoj.Controls.Add(this.btnStep);
-            this.pnlGoj.Location = new System.Drawing.Point(357, 431);
-            this.pnlGoj.Name = "pnlGoj";
-            this.pnlGoj.Size = new System.Drawing.Size(300, 63);
-            this.pnlGoj.TabIndex = 69;
-            this.pnlGoj.Visible = false;
+            this.pnlJog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlJog.BackColor = System.Drawing.Color.White;
+            this.pnlJog.Controls.Add(this.label8);
+            this.pnlJog.Controls.Add(this.btn45Steps);
+            this.pnlJog.Controls.Add(this.btnTenSteps);
+            this.pnlJog.Controls.Add(this.btnStep);
+            this.pnlJog.Location = new System.Drawing.Point(27, 334);
+            this.pnlJog.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlJog.Name = "pnlJog";
+            this.pnlJog.Size = new System.Drawing.Size(519, 97);
+            this.pnlJog.TabIndex = 69;
             // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(5, 21);
+            this.label8.Location = new System.Drawing.Point(26, 34);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 20);
+            this.label8.Size = new System.Drawing.Size(65, 29);
             this.label8.TabIndex = 69;
             this.label8.Text = "JOG";
             // 
@@ -422,9 +455,10 @@ namespace LaserSurvey
             // 
             this.btn45Steps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn45Steps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btn45Steps.Location = new System.Drawing.Point(56, 9);
+            this.btn45Steps.Location = new System.Drawing.Point(153, 14);
+            this.btn45Steps.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn45Steps.Name = "btn45Steps";
-            this.btn45Steps.Size = new System.Drawing.Size(75, 44);
+            this.btn45Steps.Size = new System.Drawing.Size(112, 68);
             this.btn45Steps.TabIndex = 68;
             this.btn45Steps.Text = "45°";
             this.btn45Steps.UseVisualStyleBackColor = true;
@@ -434,9 +468,10 @@ namespace LaserSurvey
             // 
             this.btnTenSteps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTenSteps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnTenSteps.Location = new System.Drawing.Point(137, 9);
+            this.btnTenSteps.Location = new System.Drawing.Point(275, 14);
+            this.btnTenSteps.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTenSteps.Name = "btnTenSteps";
-            this.btnTenSteps.Size = new System.Drawing.Size(75, 44);
+            this.btnTenSteps.Size = new System.Drawing.Size(112, 68);
             this.btnTenSteps.TabIndex = 67;
             this.btnTenSteps.Text = "10°";
             this.btnTenSteps.UseVisualStyleBackColor = true;
@@ -446,136 +481,51 @@ namespace LaserSurvey
             // 
             this.btnStep.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnStep.Location = new System.Drawing.Point(218, 9);
+            this.btnStep.Location = new System.Drawing.Point(396, 14);
+            this.btnStep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStep.Name = "btnStep";
-            this.btnStep.Size = new System.Drawing.Size(75, 44);
+            this.btnStep.Size = new System.Drawing.Size(112, 68);
             this.btnStep.TabIndex = 66;
             this.btnStep.Text = "1°";
             this.btnStep.UseVisualStyleBackColor = true;
             this.btnStep.Click += new System.EventHandler(this.BtnStep_Click);
             // 
-            // pPbBack
-            // 
-            this.pPbBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pPbBack.BackColor = System.Drawing.Color.Silver;
-            this.pPbBack.Controls.Add(this.pPbFore);
-            this.pPbBack.Location = new System.Drawing.Point(50, 160);
-            this.pPbBack.Name = "pPbBack";
-            this.pPbBack.Size = new System.Drawing.Size(278, 19);
-            this.pPbBack.TabIndex = 65;
-            this.pPbBack.Visible = false;
-            // 
-            // pPbFore
-            // 
-            this.pPbFore.BackColor = System.Drawing.Color.YellowGreen;
-            this.pPbFore.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pPbFore.Location = new System.Drawing.Point(0, 0);
-            this.pPbFore.Name = "pPbFore";
-            this.pPbFore.Size = new System.Drawing.Size(14, 19);
-            this.pPbFore.TabIndex = 1;
-            // 
-            // lbScannerStatus
-            // 
-            this.lbScannerStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbScannerStatus.BackColor = System.Drawing.Color.White;
-            this.lbScannerStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbScannerStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lbScannerStatus.Location = new System.Drawing.Point(50, 136);
-            this.lbScannerStatus.Margin = new System.Windows.Forms.Padding(2);
-            this.lbScannerStatus.Name = "lbScannerStatus";
-            this.lbScannerStatus.ReadOnly = true;
-            this.lbScannerStatus.Size = new System.Drawing.Size(278, 19);
-            this.lbScannerStatus.TabIndex = 64;
-            this.lbScannerStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbTransferOutput
-            // 
-            this.lbTransferOutput.FormattingEnabled = true;
-            this.lbTransferOutput.Location = new System.Drawing.Point(18, 158);
-            this.lbTransferOutput.Name = "lbTransferOutput";
-            this.lbTransferOutput.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbTransferOutput.Size = new System.Drawing.Size(200, 225);
-            this.lbTransferOutput.TabIndex = 63;
-            this.lbTransferOutput.Visible = false;
-            // 
             // pBatteryVoltage
             // 
             this.pBatteryVoltage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pBatteryVoltage.Controls.Add(this.tbBatteryV);
-            this.pBatteryVoltage.Location = new System.Drawing.Point(318, 276);
+            this.pBatteryVoltage.Location = new System.Drawing.Point(27, 45);
+            this.pBatteryVoltage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pBatteryVoltage.Name = "pBatteryVoltage";
-            this.pBatteryVoltage.Size = new System.Drawing.Size(141, 53);
+            this.pBatteryVoltage.Size = new System.Drawing.Size(212, 82);
             this.pBatteryVoltage.TabIndex = 62;
             // 
             // tbBatteryV
             // 
             this.tbBatteryV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbBatteryV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbBatteryV.Location = new System.Drawing.Point(17, 16);
-            this.tbBatteryV.Margin = new System.Windows.Forms.Padding(2);
+            this.tbBatteryV.Location = new System.Drawing.Point(26, 25);
             this.tbBatteryV.Multiline = true;
             this.tbBatteryV.Name = "tbBatteryV";
             this.tbBatteryV.ReadOnly = true;
             this.tbBatteryV.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbBatteryV.Size = new System.Drawing.Size(108, 22);
+            this.tbBatteryV.Size = new System.Drawing.Size(162, 34);
             this.tbBatteryV.TabIndex = 61;
             this.tbBatteryV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pbScanning
-            // 
-            this.pbScanning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbScanning.Image = ((System.Drawing.Image)(resources.GetObject("pbScanning.Image")));
-            this.pbScanning.Location = new System.Drawing.Point(110, 16);
-            this.pbScanning.Name = "pbScanning";
-            this.pbScanning.Size = new System.Drawing.Size(158, 111);
-            this.pbScanning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbScanning.TabIndex = 59;
-            this.pbScanning.TabStop = false;
-            this.pbScanning.Visible = false;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label56.Location = new System.Drawing.Point(19, 120);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(95, 20);
-            this.label56.TabIndex = 58;
-            this.label56.Text = "îùåê ñøé÷åú";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label54.Location = new System.Drawing.Point(123, 120);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(92, 20);
-            this.label54.TabIndex = 57;
-            this.label54.Text = "äúçì ñøé÷ä";
-            // 
-            // label49
-            // 
-            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label49.Location = new System.Drawing.Point(468, 238);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(52, 20);
-            this.label49.TabIndex = 56;
-            this.label49.Text = "îåîìõ";
             // 
             // tbPipe
             // 
             this.tbPipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbPipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbPipe.Location = new System.Drawing.Point(380, 385);
+            this.tbPipe.Location = new System.Drawing.Point(121, 163);
+            this.tbPipe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbPipe.Maximum = new decimal(new int[] {
             5000,
             0,
             0,
             0});
             this.tbPipe.Name = "tbPipe";
-            this.tbPipe.Size = new System.Drawing.Size(79, 26);
+            this.tbPipe.Size = new System.Drawing.Size(118, 35);
             this.tbPipe.TabIndex = 55;
             this.tbPipe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbPipe.Value = new decimal(new int[] {
@@ -588,9 +538,10 @@ namespace LaserSurvey
             // 
             this.btnPipe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnPipe.Location = new System.Drawing.Point(318, 385);
+            this.btnPipe.Location = new System.Drawing.Point(27, 160);
+            this.btnPipe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPipe.Name = "btnPipe";
-            this.btnPipe.Size = new System.Drawing.Size(56, 26);
+            this.btnPipe.Size = new System.Drawing.Size(84, 40);
             this.btnPipe.TabIndex = 54;
             this.btnPipe.Text = "òãëï";
             this.btnPipe.UseVisualStyleBackColor = true;
@@ -601,123 +552,366 @@ namespace LaserSurvey
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label22.Location = new System.Drawing.Point(334, 354);
+            this.label22.Location = new System.Drawing.Point(351, 160);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(129, 20);
+            this.label22.Size = new System.Drawing.Size(182, 29);
             this.label22.TabIndex = 53;
             this.label22.Text = "àåøê äöéðåø (î\"î)";
             // 
-            // label13
+            // lstBT
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label13.Location = new System.Drawing.Point(334, 238);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 20);
-            this.label13.TabIndex = 51;
-            this.label13.Text = "îãåé÷";
+            this.lstBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstBT.FormattingEnabled = true;
+            this.lstBT.ItemHeight = 20;
+            this.lstBT.Location = new System.Drawing.Point(326, 442);
+            this.lstBT.Name = "lstBT";
+            this.lstBT.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lstBT.Size = new System.Drawing.Size(210, 24);
+            this.lstBT.TabIndex = 17;
+            this.lstBT.Visible = false;
             // 
-            // label11
+            // tbBtStatus
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label11.Location = new System.Drawing.Point(613, 238);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 20);
-            this.label11.TabIndex = 50;
-            this.label11.Text = "îäéø";
+            this.tbBtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbBtStatus.Location = new System.Drawing.Point(1025, 648);
+            this.tbBtStatus.Name = "tbBtStatus";
+            this.tbBtStatus.Size = new System.Drawing.Size(16, 35);
+            this.tbBtStatus.TabIndex = 25;
+            this.tbBtStatus.Text = "4";
+            this.tbBtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbBtStatus.Visible = false;
             // 
-            // tbQuality
+            // chkShowOldGUI
             // 
-            this.tbQuality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbQuality.LargeChange = 1;
-            this.tbQuality.Location = new System.Drawing.Point(334, 190);
-            this.tbQuality.Maximum = 5;
-            this.tbQuality.Minimum = 1;
-            this.tbQuality.Name = "tbQuality";
-            this.tbQuality.Size = new System.Drawing.Size(321, 45);
-            this.tbQuality.TabIndex = 49;
-            this.tbQuality.Value = 5;
+            this.chkShowOldGUI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkShowOldGUI.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkShowOldGUI.AutoSize = true;
+            this.chkShowOldGUI.Location = new System.Drawing.Point(1675, 817);
+            this.chkShowOldGUI.Name = "chkShowOldGUI";
+            this.chkShowOldGUI.Size = new System.Drawing.Size(121, 30);
+            this.chkShowOldGUI.TabIndex = 73;
+            this.chkShowOldGUI.Text = "Show Old GUI";
+            this.chkShowOldGUI.UseVisualStyleBackColor = true;
+            this.chkShowOldGUI.CheckedChanged += new System.EventHandler(this.chkShowOldGUI_CheckedChanged);
             // 
-            // panel7
+            // btnConnectNewBt
             // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel7.Controls.Add(this.rbDownward);
-            this.panel7.Controls.Add(this.rbUpward);
-            this.panel7.Controls.Add(this.label48);
-            this.panel7.Controls.Add(this.label20);
-            this.panel7.Controls.Add(this.tbSrv);
-            this.panel7.Controls.Add(this.label18);
-            this.panel7.Controls.Add(this.tbOr);
-            this.panel7.Controls.Add(this.label15);
-            this.panel7.Controls.Add(this.tbFieldId);
-            this.panel7.Location = new System.Drawing.Point(334, 16);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(321, 161);
-            this.panel7.TabIndex = 48;
+            this.btnConnectNewBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnConnectNewBt.Location = new System.Drawing.Point(995, 651);
+            this.btnConnectNewBt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnConnectNewBt.Name = "btnConnectNewBt";
+            this.btnConnectNewBt.Size = new System.Drawing.Size(23, 32);
+            this.btnConnectNewBt.TabIndex = 18;
+            this.btnConnectNewBt.Text = "äúçáø";
+            this.btnConnectNewBt.UseVisualStyleBackColor = true;
+            this.btnConnectNewBt.Visible = false;
+            this.btnConnectNewBt.Click += new System.EventHandler(this.BtnConnectNewBt_Click);
             // 
-            // rbDownward
+            // lbBtStatus
             // 
-            this.rbDownward.AutoSize = true;
-            this.rbDownward.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.rbDownward.Location = new System.Drawing.Point(46, 76);
-            this.rbDownward.Margin = new System.Windows.Forms.Padding(2);
-            this.rbDownward.Name = "rbDownward";
-            this.rbDownward.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rbDownward.Size = new System.Drawing.Size(62, 24);
-            this.rbDownward.TabIndex = 26;
-            this.rbDownward.Text = "øöôä";
-            this.rbDownward.UseVisualStyleBackColor = true;
+            this.lbBtStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbBtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lbBtStatus.Location = new System.Drawing.Point(967, 651);
+            this.lbBtStatus.Multiline = true;
+            this.lbBtStatus.Name = "lbBtStatus";
+            this.lbBtStatus.ReadOnly = true;
+            this.lbBtStatus.Size = new System.Drawing.Size(23, 34);
+            this.lbBtStatus.TabIndex = 21;
+            this.lbBtStatus.Text = "äñåø÷ îðåú÷";
+            this.lbBtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lbBtStatus.Visible = false;
             // 
-            // rbUpward
+            // lbTransferOutput
             // 
-            this.rbUpward.AutoSize = true;
-            this.rbUpward.Checked = true;
-            this.rbUpward.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.rbUpward.Location = new System.Drawing.Point(119, 76);
-            this.rbUpward.Margin = new System.Windows.Forms.Padding(2);
-            this.rbUpward.Name = "rbUpward";
-            this.rbUpward.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rbUpward.Size = new System.Drawing.Size(64, 24);
-            this.rbUpward.TabIndex = 25;
-            this.rbUpward.TabStop = true;
-            this.rbUpward.Text = "ú÷øä";
-            this.rbUpward.UseVisualStyleBackColor = true;
+            this.lbTransferOutput.FormattingEnabled = true;
+            this.lbTransferOutput.ItemHeight = 20;
+            this.lbTransferOutput.Location = new System.Drawing.Point(615, 766);
+            this.lbTransferOutput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbTransferOutput.Name = "lbTransferOutput";
+            this.lbTransferOutput.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbTransferOutput.Size = new System.Drawing.Size(568, 64);
+            this.lbTransferOutput.TabIndex = 63;
+            this.lbTransferOutput.Visible = false;
             // 
-            // label48
+            // pbScanning
             // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label48.ForeColor = System.Drawing.Color.Blue;
-            this.label48.Location = new System.Drawing.Point(265, 78);
-            this.label48.Name = "label48";
-            this.label48.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label48.Size = new System.Drawing.Size(39, 20);
-            this.label48.TabIndex = 24;
-            this.label48.Text = "ëéååï";
+            this.pbScanning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbScanning.Location = new System.Drawing.Point(1361, 344);
+            this.pbScanning.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbScanning.Name = "pbScanning";
+            this.pbScanning.Size = new System.Drawing.Size(292, 225);
+            this.pbScanning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbScanning.TabIndex = 59;
+            this.pbScanning.TabStop = false;
+            this.pbScanning.Visible = false;
+            // 
+            // pnl_conn
+            // 
+            this.pnl_conn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_conn.BackColor = System.Drawing.Color.Silver;
+            this.pnl_conn.Controls.Add(this.chkAutoConnect);
+            this.pnl_conn.Controls.Add(this.lbPortFound);
+            this.pnl_conn.Controls.Add(this.button6);
+            this.pnl_conn.Controls.Add(this.pnlBtStatus1);
+            this.pnl_conn.Controls.Add(this.pnlBtStatus2);
+            this.pnl_conn.Controls.Add(this.label27);
+            this.pnl_conn.Controls.Add(this.tbNewBtCom);
+            this.pnl_conn.Location = new System.Drawing.Point(1214, 26);
+            this.pnl_conn.Name = "pnl_conn";
+            this.pnl_conn.Size = new System.Drawing.Size(566, 281);
+            this.pnl_conn.TabIndex = 21;
+            // 
+            // chkAutoConnect
+            // 
+            this.chkAutoConnect.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkAutoConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.chkAutoConnect.Location = new System.Drawing.Point(24, 30);
+            this.chkAutoConnect.Name = "chkAutoConnect";
+            this.chkAutoConnect.Size = new System.Drawing.Size(520, 61);
+            this.chkAutoConnect.TabIndex = 57;
+            this.chkAutoConnect.Text = "çéáåø ÷áåò";
+            this.chkAutoConnect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkAutoConnect.UseVisualStyleBackColor = true;
+            this.chkAutoConnect.CheckedChanged += new System.EventHandler(this.chkAutoConnect_CheckedChanged);
+            // 
+            // lbPortFound
+            // 
+            this.lbPortFound.AutoSize = true;
+            this.lbPortFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lbPortFound.Location = new System.Drawing.Point(239, 226);
+            this.lbPortFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPortFound.Name = "lbPortFound";
+            this.lbPortFound.Size = new System.Drawing.Size(37, 29);
+            this.lbPortFound.TabIndex = 56;
+            this.lbPortFound.Text = "---";
+            this.lbPortFound.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button6.Location = new System.Drawing.Point(147, 221);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 40);
+            this.button6.TabIndex = 55;
+            this.button6.Text = "çôù";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // pnlBtStatus1
+            // 
+            this.pnlBtStatus1.BackColor = System.Drawing.Color.LightGray;
+            this.pnlBtStatus1.Location = new System.Drawing.Point(20, 117);
+            this.pnlBtStatus1.Name = "pnlBtStatus1";
+            this.pnlBtStatus1.Size = new System.Drawing.Size(530, 10);
+            this.pnlBtStatus1.TabIndex = 24;
+            // 
+            // pnlBtStatus2
+            // 
+            this.pnlBtStatus2.BackColor = System.Drawing.Color.LightGray;
+            this.pnlBtStatus2.Location = new System.Drawing.Point(21, 133);
+            this.pnlBtStatus2.Name = "pnlBtStatus2";
+            this.pnlBtStatus2.Size = new System.Drawing.Size(528, 10);
+            this.pnlBtStatus2.TabIndex = 23;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label27.Location = new System.Drawing.Point(398, 226);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(151, 29);
+            this.label27.TabIndex = 20;
+            this.label27.Text = "éöéàä  (COM)";
+            // 
+            // tbNewBtCom
+            // 
+            this.tbNewBtCom.BackColor = System.Drawing.Color.White;
+            this.tbNewBtCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbNewBtCom.Location = new System.Drawing.Point(24, 223);
+            this.tbNewBtCom.Name = "tbNewBtCom";
+            this.tbNewBtCom.Size = new System.Drawing.Size(101, 35);
+            this.tbNewBtCom.TabIndex = 19;
+            this.tbNewBtCom.Text = "4";
+            this.tbNewBtCom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pnl_survey
+            // 
+            this.pnl_survey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnl_survey.Controls.Add(this.cmbLayer);
+            this.pnl_survey.Controls.Add(this.label56);
+            this.pnl_survey.Controls.Add(this.cmbDirection);
+            this.pnl_survey.Controls.Add(this.label54);
+            this.pnl_survey.Controls.Add(this.pnl_survey2);
+            this.pnl_survey.Controls.Add(this.label20);
+            this.pnl_survey.Controls.Add(this.tbSrv);
+            this.pnl_survey.Controls.Add(this.label18);
+            this.pnl_survey.Controls.Add(this.tbOr);
+            this.pnl_survey.Controls.Add(this.label15);
+            this.pnl_survey.Controls.Add(this.tbFieldId);
+            this.pnl_survey.Controls.Add(this.tbQuality);
+            this.pnl_survey.Controls.Add(this.label13);
+            this.pnl_survey.Controls.Add(this.label49);
+            this.pnl_survey.Controls.Add(this.label11);
+            this.pnl_survey.Location = new System.Drawing.Point(14, 26);
+            this.pnl_survey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnl_survey.Name = "pnl_survey";
+            this.pnl_survey.Size = new System.Drawing.Size(566, 804);
+            this.pnl_survey.TabIndex = 48;
+            // 
+            // cmbLayer
+            // 
+            this.cmbLayer.DisplayMember = "0";
+            this.cmbLayer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.cmbLayer.FormattingEnabled = true;
+            this.cmbLayer.Items.AddRange(new object[] {
+            "òìéåðä",
+            "úçúåðä"});
+            this.cmbLayer.Location = new System.Drawing.Point(20, 111);
+            this.cmbLayer.Name = "cmbLayer";
+            this.cmbLayer.Size = new System.Drawing.Size(121, 37);
+            this.cmbLayer.TabIndex = 70;
+            this.cmbLayer.ValueMember = "0";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label56.ForeColor = System.Drawing.Color.Blue;
+            this.label56.Location = new System.Drawing.Point(173, 114);
+            this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(55, 29);
+            this.label56.TabIndex = 69;
+            this.label56.Text = "âåáä";
+            // 
+            // cmbDirection
+            // 
+            this.cmbDirection.DisplayMember = "0";
+            this.cmbDirection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDirection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.cmbDirection.FormattingEnabled = true;
+            this.cmbDirection.Items.AddRange(new object[] {
+            "ìú÷øä",
+            "ìøöôä"});
+            this.cmbDirection.Location = new System.Drawing.Point(322, 111);
+            this.cmbDirection.Name = "cmbDirection";
+            this.cmbDirection.Size = new System.Drawing.Size(121, 37);
+            this.cmbDirection.TabIndex = 68;
+            this.cmbDirection.ValueMember = "0";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label54.ForeColor = System.Drawing.Color.Blue;
+            this.label54.Location = new System.Drawing.Point(475, 114);
+            this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(54, 29);
+            this.label54.TabIndex = 67;
+            this.label54.Text = "ëéååï";
+            // 
+            // pnl_survey2
+            // 
+            this.pnl_survey2.Controls.Add(this.pPbBack);
+            this.pnl_survey2.Controls.Add(this.lbScannerStatus);
+            this.pnl_survey2.Controls.Add(this.btTransferData);
+            this.pnl_survey2.Controls.Add(this.btnRunSurveyBT);
+            this.pnl_survey2.Location = new System.Drawing.Point(1, 474);
+            this.pnl_survey2.Name = "pnl_survey2";
+            this.pnl_survey2.Size = new System.Drawing.Size(560, 311);
+            this.pnl_survey2.TabIndex = 66;
+            this.pnl_survey2.Visible = false;
+            // 
+            // pPbBack
+            // 
+            this.pPbBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pPbBack.BackColor = System.Drawing.Color.Silver;
+            this.pPbBack.Controls.Add(this.pPbFore);
+            this.pPbBack.Location = new System.Drawing.Point(21, 251);
+            this.pPbBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pPbBack.Name = "pPbBack";
+            this.pPbBack.Size = new System.Drawing.Size(526, 29);
+            this.pPbBack.TabIndex = 65;
+            this.pPbBack.Visible = false;
+            // 
+            // pPbFore
+            // 
+            this.pPbFore.BackColor = System.Drawing.Color.YellowGreen;
+            this.pPbFore.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pPbFore.Location = new System.Drawing.Point(0, 0);
+            this.pPbFore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pPbFore.Name = "pPbFore";
+            this.pPbFore.Size = new System.Drawing.Size(21, 29);
+            this.pPbFore.TabIndex = 1;
+            // 
+            // lbScannerStatus
+            // 
+            this.lbScannerStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbScannerStatus.BackColor = System.Drawing.Color.White;
+            this.lbScannerStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbScannerStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lbScannerStatus.Location = new System.Drawing.Point(20, 215);
+            this.lbScannerStatus.Name = "lbScannerStatus";
+            this.lbScannerStatus.ReadOnly = true;
+            this.lbScannerStatus.Size = new System.Drawing.Size(526, 28);
+            this.lbScannerStatus.TabIndex = 64;
+            this.lbScannerStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btTransferData
+            // 
+            this.btTransferData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btTransferData.Image = ((System.Drawing.Image)(resources.GetObject("btTransferData.Image")));
+            this.btTransferData.Location = new System.Drawing.Point(21, 17);
+            this.btTransferData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btTransferData.Name = "btTransferData";
+            this.btTransferData.Size = new System.Drawing.Size(240, 166);
+            this.btTransferData.TabIndex = 27;
+            this.btTransferData.Text = "îùåê ñøé÷åú";
+            this.btTransferData.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btTransferData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btTransferData.UseVisualStyleBackColor = true;
+            this.btTransferData.Click += new System.EventHandler(this.LbImportBt_Click);
+            // 
+            // btnRunSurveyBT
+            // 
+            this.btnRunSurveyBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnRunSurveyBT.Image = ((System.Drawing.Image)(resources.GetObject("btnRunSurveyBT.Image")));
+            this.btnRunSurveyBT.Location = new System.Drawing.Point(298, 17);
+            this.btnRunSurveyBT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRunSurveyBT.Name = "btnRunSurveyBT";
+            this.btnRunSurveyBT.Size = new System.Drawing.Size(240, 166);
+            this.btnRunSurveyBT.TabIndex = 8;
+            this.btnRunSurveyBT.Text = "äúçì ñøé÷ä";
+            this.btnRunSurveyBT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRunSurveyBT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRunSurveyBT.UseVisualStyleBackColor = true;
+            this.btnRunSurveyBT.Click += new System.EventHandler(this.BtnRunSurveyBT_Click);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label20.ForeColor = System.Drawing.Color.Blue;
-            this.label20.Location = new System.Drawing.Point(188, 104);
+            this.label20.Location = new System.Drawing.Point(301, 229);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(116, 20);
+            this.label20.Size = new System.Drawing.Size(169, 29);
             this.label20.TabIndex = 14;
             this.label20.Text = "îñ\' úéáä (SRV)";
             // 
             // tbSrv
             // 
-            this.tbSrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.tbSrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbSrv.ForeColor = System.Drawing.Color.Red;
-            this.tbSrv.Location = new System.Drawing.Point(46, 104);
-            this.tbSrv.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSrv.Location = new System.Drawing.Point(21, 205);
             this.tbSrv.Name = "tbSrv";
-            this.tbSrv.Size = new System.Drawing.Size(137, 44);
+            this.tbSrv.Size = new System.Drawing.Size(258, 89);
             this.tbSrv.TabIndex = 13;
             this.tbSrv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -726,19 +920,19 @@ namespace LaserSurvey
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label18.ForeColor = System.Drawing.Color.Blue;
-            this.label18.Location = new System.Drawing.Point(228, 44);
+            this.label18.Location = new System.Drawing.Point(148, 20);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(76, 20);
+            this.label18.Size = new System.Drawing.Size(109, 29);
             this.label18.TabIndex = 12;
             this.label18.Text = "ð÷åãú OR";
             // 
             // tbOr
             // 
             this.tbOr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbOr.Location = new System.Drawing.Point(102, 41);
-            this.tbOr.Margin = new System.Windows.Forms.Padding(2);
+            this.tbOr.Location = new System.Drawing.Point(21, 17);
             this.tbOr.Name = "tbOr";
-            this.tbOr.Size = new System.Drawing.Size(81, 26);
+            this.tbOr.Size = new System.Drawing.Size(120, 35);
             this.tbOr.TabIndex = 11;
             this.tbOr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -747,556 +941,71 @@ namespace LaserSurvey
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label15.ForeColor = System.Drawing.Color.Blue;
-            this.label15.Location = new System.Drawing.Point(240, 13);
+            this.label15.Location = new System.Drawing.Point(452, 20);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(64, 20);
+            this.label15.Size = new System.Drawing.Size(91, 29);
             this.label15.TabIndex = 10;
             this.label15.Text = "îñ\' ùãä";
             // 
             // tbFieldId
             // 
             this.tbFieldId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbFieldId.Location = new System.Drawing.Point(102, 10);
-            this.tbFieldId.Margin = new System.Windows.Forms.Padding(2);
+            this.tbFieldId.Location = new System.Drawing.Point(323, 17);
             this.tbFieldId.Name = "tbFieldId";
             this.tbFieldId.ReadOnly = true;
-            this.tbFieldId.Size = new System.Drawing.Size(81, 26);
+            this.tbFieldId.Size = new System.Drawing.Size(120, 35);
             this.tbFieldId.TabIndex = 9;
             this.tbFieldId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btTransferData
-            // 
-            this.btTransferData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btTransferData.Image = ((System.Drawing.Image)(resources.GetObject("btTransferData.Image")));
-            this.btTransferData.Location = new System.Drawing.Point(18, 16);
-            this.btTransferData.Name = "btTransferData";
-            this.btTransferData.Size = new System.Drawing.Size(97, 98);
-            this.btTransferData.TabIndex = 27;
-            this.btTransferData.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btTransferData.UseVisualStyleBackColor = true;
-            this.btTransferData.Click += new System.EventHandler(this.LbImportBt_Click);
-            // 
-            // lstBT
-            // 
-            this.lstBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstBT.FormattingEnabled = true;
-            this.lstBT.Location = new System.Drawing.Point(318, 334);
-            this.lstBT.Margin = new System.Windows.Forms.Padding(2);
-            this.lstBT.Name = "lstBT";
-            this.lstBT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lstBT.Size = new System.Drawing.Size(141, 17);
-            this.lstBT.TabIndex = 17;
-            this.lstBT.Visible = false;
-            // 
-            // btnRunSurveyBT
-            // 
-            this.btnRunSurveyBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnRunSurveyBT.Image = ((System.Drawing.Image)(resources.GetObject("btnRunSurveyBT.Image")));
-            this.btnRunSurveyBT.Location = new System.Drawing.Point(121, 16);
-            this.btnRunSurveyBT.Name = "btnRunSurveyBT";
-            this.btnRunSurveyBT.Size = new System.Drawing.Size(97, 98);
-            this.btnRunSurveyBT.TabIndex = 8;
-            this.btnRunSurveyBT.UseVisualStyleBackColor = true;
-            this.btnRunSurveyBT.Click += new System.EventHandler(this.BtnRunSurveyBT_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.lbBtStatus);
-            this.panel2.Controls.Add(this.btnConnectNewBt);
-            this.panel2.Controls.Add(this.label27);
-            this.panel2.Controls.Add(this.tbNewBtCom);
-            this.panel2.Location = new System.Drawing.Point(473, 277);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(182, 140);
-            this.panel2.TabIndex = 21;
-            // 
-            // lbBtStatus
-            // 
-            this.lbBtStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbBtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lbBtStatus.Location = new System.Drawing.Point(13, 15);
-            this.lbBtStatus.Margin = new System.Windows.Forms.Padding(2);
-            this.lbBtStatus.Multiline = true;
-            this.lbBtStatus.Name = "lbBtStatus";
-            this.lbBtStatus.ReadOnly = true;
-            this.lbBtStatus.Size = new System.Drawing.Size(157, 22);
-            this.lbBtStatus.TabIndex = 21;
-            this.lbBtStatus.Text = "äñåø÷ îðåú÷";
-            this.lbBtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnConnectNewBt
-            // 
-            this.btnConnectNewBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnConnectNewBt.Location = new System.Drawing.Point(13, 55);
-            this.btnConnectNewBt.Name = "btnConnectNewBt";
-            this.btnConnectNewBt.Size = new System.Drawing.Size(157, 43);
-            this.btnConnectNewBt.TabIndex = 18;
-            this.btnConnectNewBt.Text = "äúçáø";
-            this.btnConnectNewBt.UseVisualStyleBackColor = true;
-            this.btnConnectNewBt.Click += new System.EventHandler(this.BtnConnectNewBt_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label27.Location = new System.Drawing.Point(13, 110);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(75, 20);
-            this.label27.TabIndex = 20;
-            this.label27.Text = "Com Port";
-            // 
-            // tbNewBtCom
-            // 
-            this.tbNewBtCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tbNewBtCom.Location = new System.Drawing.Point(107, 107);
-            this.tbNewBtCom.Margin = new System.Windows.Forms.Padding(2);
-            this.tbNewBtCom.Name = "tbNewBtCom";
-            this.tbNewBtCom.Size = new System.Drawing.Size(63, 26);
-            this.tbNewBtCom.TabIndex = 19;
-            this.tbNewBtCom.Text = "4";
-            this.tbNewBtCom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.dstConnectedPct);
-            this.tabPage1.Controls.Add(this.srvConnectedPct);
-            this.tabPage1.Controls.Add(this.pictureBox9);
-            this.tabPage1.Controls.Add(this.pictureBox5);
-            this.tabPage1.Controls.Add(this.pictureBox8);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.ImageIndex = 0;
-            this.tabPage1.Location = new System.Drawing.Point(4, 55);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage1.Size = new System.Drawing.Size(663, 502);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "ñåø÷ éùï";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.panel1.Controls.Add(this.label38);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(657, 28);
-            this.panel1.TabIndex = 34;
-            // 
-            // label38
-            // 
-            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label38.ForeColor = System.Drawing.Color.Blue;
-            this.label38.Location = new System.Drawing.Point(173, 4);
-            this.label38.Name = "label38";
-            this.label38.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label38.Size = new System.Drawing.Size(310, 20);
-            this.label38.TabIndex = 35;
-            this.label38.Text = "ðäì àú äçéáåøéí áéï äîçùá ìîëùéø äñøé÷ä";
-            // 
-            // dstConnectedPct
-            // 
-            this.dstConnectedPct.Image = ((System.Drawing.Image)(resources.GetObject("dstConnectedPct.Image")));
-            this.dstConnectedPct.Location = new System.Drawing.Point(164, 356);
-            this.dstConnectedPct.Name = "dstConnectedPct";
-            this.dstConnectedPct.Size = new System.Drawing.Size(50, 10);
-            this.dstConnectedPct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.dstConnectedPct.TabIndex = 28;
-            this.dstConnectedPct.TabStop = false;
-            this.dstConnectedPct.Visible = false;
-            // 
-            // srvConnectedPct
-            // 
-            this.srvConnectedPct.Image = ((System.Drawing.Image)(resources.GetObject("srvConnectedPct.Image")));
-            this.srvConnectedPct.Location = new System.Drawing.Point(420, 356);
-            this.srvConnectedPct.Name = "srvConnectedPct";
-            this.srvConnectedPct.Size = new System.Drawing.Size(50, 10);
-            this.srvConnectedPct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.srvConnectedPct.TabIndex = 20;
-            this.srvConnectedPct.TabStop = false;
-            this.srvConnectedPct.Visible = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(287, 331);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox9.TabIndex = 33;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(27, 312);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(98, 99);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 32;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(509, 299);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(126, 125);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 31;
-            this.pictureBox8.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.chkDistoCom);
-            this.groupBox1.Controls.Add(this.btnStopSearchDisto);
-            this.groupBox1.Controls.Add(this.nudDistoCom);
-            this.groupBox1.Controls.Add(this.dstCOMlbl);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.dstOffsetNum);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.dstConnectedLbl);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.dstSerialLbl);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.dstConnectBtn);
-            this.groupBox1.Location = new System.Drawing.Point(27, 40);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(230, 211);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "îã èååç ìééæø";
-            // 
-            // chkDistoCom
-            // 
-            this.chkDistoCom.AutoSize = true;
-            this.chkDistoCom.Location = new System.Drawing.Point(62, 22);
-            this.chkDistoCom.Name = "chkDistoCom";
-            this.chkDistoCom.Size = new System.Drawing.Size(121, 17);
-            this.chkDistoCom.TabIndex = 46;
-            this.chkDistoCom.Text = "äúçáø ìéöéàä îñ\'";
-            this.chkDistoCom.UseVisualStyleBackColor = true;
-            // 
-            // btnStopSearchDisto
-            // 
-            this.btnStopSearchDisto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStopSearchDisto.Image = ((System.Drawing.Image)(resources.GetObject("btnStopSearchDisto.Image")));
-            this.btnStopSearchDisto.Location = new System.Drawing.Point(104, 54);
-            this.btnStopSearchDisto.Name = "btnStopSearchDisto";
-            this.btnStopSearchDisto.Size = new System.Drawing.Size(39, 23);
-            this.btnStopSearchDisto.TabIndex = 45;
-            this.toolTip1.SetToolTip(this.btnStopSearchDisto, "äôñ÷ àú äçéôåù");
-            this.btnStopSearchDisto.UseVisualStyleBackColor = true;
-            this.btnStopSearchDisto.Visible = false;
-            this.btnStopSearchDisto.Click += new System.EventHandler(this.button8_Click_1);
-            // 
-            // nudDistoCom
-            // 
-            this.nudDistoCom.Location = new System.Drawing.Point(9, 21);
-            this.nudDistoCom.Name = "nudDistoCom";
-            this.nudDistoCom.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudDistoCom.Size = new System.Drawing.Size(47, 20);
-            this.nudDistoCom.TabIndex = 44;
-            // 
-            // dstCOMlbl
-            // 
-            this.dstCOMlbl.AutoSize = true;
-            this.dstCOMlbl.Location = new System.Drawing.Point(11, 59);
-            this.dstCOMlbl.Name = "dstCOMlbl";
-            this.dstCOMlbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dstCOMlbl.Size = new System.Drawing.Size(0, 13);
-            this.dstCOMlbl.TabIndex = 31;
-            // 
-            // label23
-            // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(69, 154);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(23, 13);
-            this.label23.TabIndex = 30;
-            this.label23.Text = "mm";
-            // 
-            // dstOffsetNum
-            // 
-            this.dstOffsetNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dstOffsetNum.Location = new System.Drawing.Point(14, 152);
-            this.dstOffsetNum.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.dstOffsetNum.Minimum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            -2147483648});
-            this.dstOffsetNum.Name = "dstOffsetNum";
-            this.dstOffsetNum.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dstOffsetNum.Size = new System.Drawing.Size(53, 20);
-            this.dstOffsetNum.TabIndex = 29;
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(155, 154);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(69, 13);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "úé÷åï îøç÷:";
-            // 
-            // dstConnectedLbl
-            // 
-            this.dstConnectedLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dstConnectedLbl.AutoSize = true;
-            this.dstConnectedLbl.Location = new System.Drawing.Point(116, 90);
-            this.dstConnectedLbl.Name = "dstConnectedLbl";
-            this.dstConnectedLbl.Size = new System.Drawing.Size(38, 13);
-            this.dstConnectedLbl.TabIndex = 24;
-            this.dstConnectedLbl.Text = "îðåú÷";
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(160, 90);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 13);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "îöá çéáåø:";
-            // 
-            // dstSerialLbl
-            // 
-            this.dstSerialLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dstSerialLbl.AutoSize = true;
-            this.dstSerialLbl.Location = new System.Drawing.Point(11, 156);
-            this.dstSerialLbl.Name = "dstSerialLbl";
-            this.dstSerialLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dstSerialLbl.Size = new System.Drawing.Size(0, 13);
-            this.dstSerialLbl.TabIndex = 22;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(150, 184);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "îñôø îëùéø:";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(149, 59);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 13);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "éöéàä èåøéú:";
-            // 
-            // dstConnectBtn
-            // 
-            this.dstConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dstConnectBtn.Location = new System.Drawing.Point(8, 85);
-            this.dstConnectBtn.Name = "dstConnectBtn";
-            this.dstConnectBtn.Size = new System.Drawing.Size(75, 23);
-            this.dstConnectBtn.TabIndex = 15;
-            this.dstConnectBtn.Text = "äúçáø";
-            this.dstConnectBtn.UseVisualStyleBackColor = true;
-            this.dstConnectBtn.Click += new System.EventHandler(this.dstConnectBtn_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.chkServoCom);
-            this.groupBox2.Controls.Add(this.nudServoCom);
-            this.groupBox2.Controls.Add(this.btnStopSearchServo);
-            this.groupBox2.Controls.Add(this.btnRefreshServoSpeed);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.nudServoRpm);
-            this.groupBox2.Controls.Add(this.label39);
-            this.groupBox2.Controls.Add(this.srvCOMlbl);
-            this.groupBox2.Controls.Add(this.srvInstrumentNum);
-            this.groupBox2.Controls.Add(this.label37);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.srvConnectedLbl);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.srvConnectBtn);
-            this.groupBox2.Location = new System.Drawing.Point(404, 40);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(231, 211);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "îðåò ñøáå";
-            // 
-            // chkServoCom
-            // 
-            this.chkServoCom.AutoSize = true;
-            this.chkServoCom.Location = new System.Drawing.Point(63, 22);
-            this.chkServoCom.Name = "chkServoCom";
-            this.chkServoCom.Size = new System.Drawing.Size(121, 17);
-            this.chkServoCom.TabIndex = 48;
-            this.chkServoCom.Text = "äúçáø ìéöéàä îñ\'";
-            this.chkServoCom.UseVisualStyleBackColor = true;
-            // 
-            // nudServoCom
-            // 
-            this.nudServoCom.Location = new System.Drawing.Point(10, 21);
-            this.nudServoCom.Name = "nudServoCom";
-            this.nudServoCom.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudServoCom.Size = new System.Drawing.Size(47, 20);
-            this.nudServoCom.TabIndex = 47;
-            // 
-            // btnStopSearchServo
-            // 
-            this.btnStopSearchServo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStopSearchServo.Image = ((System.Drawing.Image)(resources.GetObject("btnStopSearchServo.Image")));
-            this.btnStopSearchServo.Location = new System.Drawing.Point(106, 54);
-            this.btnStopSearchServo.Name = "btnStopSearchServo";
-            this.btnStopSearchServo.Size = new System.Drawing.Size(39, 23);
-            this.btnStopSearchServo.TabIndex = 43;
-            this.toolTip1.SetToolTip(this.btnStopSearchServo, "äôñ÷ àú äçéôåù");
-            this.btnStopSearchServo.UseVisualStyleBackColor = true;
-            this.btnStopSearchServo.Visible = false;
-            this.btnStopSearchServo.Click += new System.EventHandler(this.button8_Click_1);
-            // 
-            // btnRefreshServoSpeed
-            // 
-            this.btnRefreshServoSpeed.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshServoSpeed.Image")));
-            this.btnRefreshServoSpeed.Location = new System.Drawing.Point(10, 149);
-            this.btnRefreshServoSpeed.Name = "btnRefreshServoSpeed";
-            this.btnRefreshServoSpeed.Size = new System.Drawing.Size(22, 24);
-            this.btnRefreshServoSpeed.TabIndex = 34;
-            this.toolTip1.SetToolTip(this.btnRefreshServoSpeed, "øòðï îäéøåú");
-            this.btnRefreshServoSpeed.UseVisualStyleBackColor = true;
-            this.btnRefreshServoSpeed.Click += new System.EventHandler(this.btnRefreshServoSpeed_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 153);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Rpm";
-            // 
-            // nudServoRpm
-            // 
-            this.nudServoRpm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudServoRpm.Location = new System.Drawing.Point(39, 151);
-            this.nudServoRpm.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudServoRpm.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudServoRpm.Name = "nudServoRpm";
-            this.nudServoRpm.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudServoRpm.Size = new System.Drawing.Size(43, 20);
-            this.nudServoRpm.TabIndex = 39;
-            this.nudServoRpm.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label39
-            // 
-            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(151, 153);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(74, 13);
-            this.label39.TabIndex = 38;
-            this.label39.Text = "îäéøåú îðåò:";
-            // 
-            // srvCOMlbl
-            // 
-            this.srvCOMlbl.AutoSize = true;
-            this.srvCOMlbl.Location = new System.Drawing.Point(11, 59);
-            this.srvCOMlbl.Name = "srvCOMlbl";
-            this.srvCOMlbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.srvCOMlbl.Size = new System.Drawing.Size(0, 13);
-            this.srvCOMlbl.TabIndex = 37;
-            // 
-            // srvInstrumentNum
-            // 
-            this.srvInstrumentNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.srvInstrumentNum.AutoSize = true;
-            this.srvInstrumentNum.Location = new System.Drawing.Point(11, 155);
-            this.srvInstrumentNum.Name = "srvInstrumentNum";
-            this.srvInstrumentNum.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.srvInstrumentNum.Size = new System.Drawing.Size(0, 13);
-            this.srvInstrumentNum.TabIndex = 36;
-            // 
-            // label37
-            // 
-            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(151, 184);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(74, 13);
-            this.label37.TabIndex = 35;
-            this.label37.Text = "îñôø îëùéø:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(151, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "éöéàä èåøéú:";
-            // 
-            // srvConnectedLbl
-            // 
-            this.srvConnectedLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.srvConnectedLbl.AutoSize = true;
-            this.srvConnectedLbl.Location = new System.Drawing.Point(118, 91);
-            this.srvConnectedLbl.Name = "srvConnectedLbl";
-            this.srvConnectedLbl.Size = new System.Drawing.Size(38, 13);
-            this.srvConnectedLbl.TabIndex = 6;
-            this.srvConnectedLbl.Text = "îðåú÷";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(162, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "îöá çéáåø:";
-            // 
-            // srvConnectBtn
-            // 
-            this.srvConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.srvConnectBtn.Location = new System.Drawing.Point(10, 86);
-            this.srvConnectBtn.Name = "srvConnectBtn";
-            this.srvConnectBtn.Size = new System.Drawing.Size(75, 23);
-            this.srvConnectBtn.TabIndex = 4;
-            this.srvConnectBtn.Text = "äúçáø";
-            this.srvConnectBtn.UseVisualStyleBackColor = true;
-            this.srvConnectBtn.Click += new System.EventHandler(this.svoConnectBtn_Click);
+            // tbQuality
+            // 
+            this.tbQuality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbQuality.LargeChange = 1;
+            this.tbQuality.Location = new System.Drawing.Point(34, 380);
+            this.tbQuality.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbQuality.Maximum = 5;
+            this.tbQuality.Minimum = 1;
+            this.tbQuality.Name = "tbQuality";
+            this.tbQuality.Size = new System.Drawing.Size(482, 69);
+            this.tbQuality.TabIndex = 49;
+            this.tbQuality.Value = 5;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label13.Location = new System.Drawing.Point(21, 346);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 29);
+            this.label13.TabIndex = 51;
+            this.label13.Text = "îãåé÷";
+            // 
+            // label49
+            // 
+            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label49.Location = new System.Drawing.Point(251, 346);
+            this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(72, 29);
+            this.label49.TabIndex = 56;
+            this.label49.Text = "îåîìõ";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label11.Location = new System.Drawing.Point(475, 346);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 29);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "îäéø";
             // 
             // tabPage3
             // 
@@ -1312,24 +1021,25 @@ namespace LaserSurvey
             this.tabPage3.Controls.Add(this.groupBox6);
             this.tabPage3.ImageIndex = 1;
             this.tabPage3.Location = new System.Drawing.Point(4, 55);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(663, 502);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage3.Size = new System.Drawing.Size(1808, 853);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "ñ÷ø";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // nudBTtry
             // 
-            this.nudBTtry.Location = new System.Drawing.Point(331, 395);
-            this.nudBTtry.Margin = new System.Windows.Forms.Padding(1);
+            this.nudBTtry.Location = new System.Drawing.Point(496, 608);
+            this.nudBTtry.Margin = new System.Windows.Forms.Padding(2);
             this.nudBTtry.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudBTtry.Name = "nudBTtry";
-            this.nudBTtry.Size = new System.Drawing.Size(45, 20);
+            this.nudBTtry.Size = new System.Drawing.Size(68, 26);
             this.nudBTtry.TabIndex = 43;
             this.nudBTtry.Value = new decimal(new int[] {
             10,
@@ -1341,11 +1051,12 @@ namespace LaserSurvey
             // 
             this.lbSurveyLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSurveyLog.FormattingEnabled = true;
-            this.lbSurveyLog.Location = new System.Drawing.Point(152, 73);
-            this.lbSurveyLog.Margin = new System.Windows.Forms.Padding(1);
+            this.lbSurveyLog.ItemHeight = 20;
+            this.lbSurveyLog.Location = new System.Drawing.Point(1038, 112);
+            this.lbSurveyLog.Margin = new System.Windows.Forms.Padding(2);
             this.lbSurveyLog.Name = "lbSurveyLog";
             this.lbSurveyLog.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbSurveyLog.Size = new System.Drawing.Size(228, 303);
+            this.lbSurveyLog.Size = new System.Drawing.Size(340, 464);
             this.lbSurveyLog.TabIndex = 42;
             // 
             // lblTreeTime
@@ -1353,9 +1064,10 @@ namespace LaserSurvey
             this.lblTreeTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTreeTime.AutoSize = true;
             this.lblTreeTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblTreeTime.Location = new System.Drawing.Point(415, 383);
+            this.lblTreeTime.Location = new System.Drawing.Point(1432, 589);
+            this.lblTreeTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTreeTime.Name = "lblTreeTime";
-            this.lblTreeTime.Size = new System.Drawing.Size(16, 13);
+            this.lblTreeTime.Size = new System.Drawing.Size(27, 20);
             this.lblTreeTime.TabIndex = 40;
             this.lblTreeTime.Text = "---";
             // 
@@ -1364,9 +1076,10 @@ namespace LaserSurvey
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(431, 46);
+            this.label1.Location = new System.Drawing.Point(1456, 71);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 16);
+            this.label1.Size = new System.Drawing.Size(291, 25);
             this.label1.TabIndex = 38;
             this.label1.Text = "áçø àú äùãä áå îúáöòåú äñøé÷åú:";
             // 
@@ -1377,9 +1090,10 @@ namespace LaserSurvey
             this.tvProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tvProjects.FullRowSelect = true;
             this.tvProjects.HideSelection = false;
-            this.tvProjects.Location = new System.Drawing.Point(415, 73);
+            this.tvProjects.Location = new System.Drawing.Point(1432, 112);
+            this.tvProjects.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tvProjects.Name = "tvProjects";
-            this.tvProjects.Size = new System.Drawing.Size(228, 303);
+            this.tvProjects.Size = new System.Drawing.Size(340, 464);
             this.tvProjects.TabIndex = 37;
             this.tvProjects.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -1388,9 +1102,10 @@ namespace LaserSurvey
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Location = new System.Drawing.Point(4, 5);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(657, 28);
+            this.panel4.Size = new System.Drawing.Size(1800, 43);
             this.panel4.TabIndex = 36;
             // 
             // label3
@@ -1399,10 +1114,11 @@ namespace LaserSurvey
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(230, 4);
+            this.label3.Location = new System.Drawing.Point(1159, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(194, 20);
+            this.label3.Size = new System.Drawing.Size(274, 29);
             this.label3.TabIndex = 35;
             this.label3.Text = "äâãø îàôééðéí, äôòì ñøé÷ä";
             // 
@@ -1411,9 +1127,11 @@ namespace LaserSurvey
             this.groupBox4.Controls.Add(this.nudOrientaionPt);
             this.groupBox4.Controls.Add(this.label32);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Location = new System.Drawing.Point(20, 32);
+            this.groupBox4.Location = new System.Drawing.Point(30, 49);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(298, 47);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox4.Size = new System.Drawing.Size(447, 72);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             // 
@@ -1421,7 +1139,8 @@ namespace LaserSurvey
             // 
             this.nudOrientaionPt.BackColor = System.Drawing.Color.Chartreuse;
             this.nudOrientaionPt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.nudOrientaionPt.Location = new System.Drawing.Point(53, 14);
+            this.nudOrientaionPt.Location = new System.Drawing.Point(80, 22);
+            this.nudOrientaionPt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudOrientaionPt.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -1433,7 +1152,7 @@ namespace LaserSurvey
             0,
             0});
             this.nudOrientaionPt.Name = "nudOrientaionPt";
-            this.nudOrientaionPt.Size = new System.Drawing.Size(87, 26);
+            this.nudOrientaionPt.Size = new System.Drawing.Size(130, 35);
             this.nudOrientaionPt.TabIndex = 27;
             this.nudOrientaionPt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudOrientaionPt.Value = new decimal(new int[] {
@@ -1448,9 +1167,10 @@ namespace LaserSurvey
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label32.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label32.Location = new System.Drawing.Point(195, 16);
+            this.label32.Location = new System.Drawing.Point(292, 25);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(91, 20);
+            this.label32.Size = new System.Drawing.Size(127, 29);
             this.label32.TabIndex = 19;
             this.label32.Text = "ð÷åãú îëååï:";
             // 
@@ -1459,9 +1179,10 @@ namespace LaserSurvey
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(14, 16);
+            this.label7.Location = new System.Drawing.Point(21, 25);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 20);
+            this.label7.Size = new System.Drawing.Size(49, 29);
             this.label7.TabIndex = 18;
             this.label7.Text = "OR";
             // 
@@ -1469,9 +1190,10 @@ namespace LaserSurvey
             // 
             this.btnStartSurvey.ImageIndex = 0;
             this.btnStartSurvey.ImageList = this.imgsPlayStop;
-            this.btnStartSurvey.Location = new System.Drawing.Point(61, 237);
+            this.btnStartSurvey.Location = new System.Drawing.Point(92, 365);
+            this.btnStartSurvey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStartSurvey.Name = "btnStartSurvey";
-            this.btnStartSurvey.Size = new System.Drawing.Size(257, 39);
+            this.btnStartSurvey.Size = new System.Drawing.Size(386, 60);
             this.btnStartSurvey.TabIndex = 5;
             this.btnStartSurvey.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStartSurvey.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -1492,7 +1214,8 @@ namespace LaserSurvey
             this.nudBoreNum.Cursor = System.Windows.Forms.Cursors.Default;
             this.nudBoreNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudBoreNum.ForeColor = System.Drawing.Color.Blue;
-            this.nudBoreNum.Location = new System.Drawing.Point(20, 85);
+            this.nudBoreNum.Location = new System.Drawing.Point(30, 131);
+            this.nudBoreNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudBoreNum.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -1504,7 +1227,7 @@ namespace LaserSurvey
             0,
             0});
             this.nudBoreNum.Name = "nudBoreNum";
-            this.nudBoreNum.Size = new System.Drawing.Size(298, 154);
+            this.nudBoreNum.Size = new System.Drawing.Size(447, 230);
             this.nudBoreNum.TabIndex = 9;
             this.nudBoreNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ptInfoToolTip.SetToolTip(this.nudBoreNum, "îñôø ä÷ãç");
@@ -1533,9 +1256,11 @@ namespace LaserSurvey
             this.groupBox6.Controls.Add(this.pictUp);
             this.groupBox6.Controls.Add(this.minDistChkBox);
             this.groupBox6.Controls.Add(this.label25);
-            this.groupBox6.Location = new System.Drawing.Point(20, 280);
+            this.groupBox6.Location = new System.Drawing.Point(30, 431);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(298, 134);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox6.Size = new System.Drawing.Size(447, 206);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "äâãøåú";
@@ -1544,9 +1269,10 @@ namespace LaserSurvey
             // 
             this.label59.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(158, 99);
+            this.label59.Location = new System.Drawing.Point(237, 152);
+            this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(35, 13);
+            this.label59.Size = new System.Drawing.Size(53, 20);
             this.label59.TabIndex = 42;
             this.label59.Text = "50mm";
             // 
@@ -1556,11 +1282,12 @@ namespace LaserSurvey
             this.trackBar4.AutoSize = false;
             this.trackBar4.Enabled = false;
             this.trackBar4.LargeChange = 10;
-            this.trackBar4.Location = new System.Drawing.Point(29, 96);
+            this.trackBar4.Location = new System.Drawing.Point(44, 148);
+            this.trackBar4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trackBar4.Maximum = 500;
             this.trackBar4.Minimum = 50;
             this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(123, 20);
+            this.trackBar4.Size = new System.Drawing.Size(184, 31);
             this.trackBar4.SmallChange = 5;
             this.trackBar4.TabIndex = 41;
             this.trackBar4.TickStyle = System.Windows.Forms.TickStyle.None;
@@ -1571,9 +1298,10 @@ namespace LaserSurvey
             // 
             this.lblSamples.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSamples.AutoSize = true;
-            this.lblSamples.Location = new System.Drawing.Point(160, 23);
+            this.lblSamples.Location = new System.Drawing.Point(240, 35);
+            this.lblSamples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSamples.Name = "lblSamples";
-            this.lblSamples.Size = new System.Drawing.Size(13, 13);
+            this.lblSamples.Size = new System.Drawing.Size(18, 20);
             this.lblSamples.TabIndex = 40;
             this.lblSamples.Text = "0";
             // 
@@ -1582,11 +1310,12 @@ namespace LaserSurvey
             this.trackBar3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.trackBar3.AutoSize = false;
             this.trackBar3.LargeChange = 20;
-            this.trackBar3.Location = new System.Drawing.Point(28, 19);
+            this.trackBar3.Location = new System.Drawing.Point(42, 29);
+            this.trackBar3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trackBar3.Maximum = 500;
             this.trackBar3.Minimum = 5;
             this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(126, 20);
+            this.trackBar3.Size = new System.Drawing.Size(189, 31);
             this.trackBar3.SmallChange = 10;
             this.trackBar3.TabIndex = 39;
             this.trackBar3.TickStyle = System.Windows.Forms.TickStyle.None;
@@ -1597,9 +1326,10 @@ namespace LaserSurvey
             // 
             this.lblDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDown.AutoSize = true;
-            this.lblDown.Location = new System.Drawing.Point(11, 48);
+            this.lblDown.Location = new System.Drawing.Point(16, 74);
+            this.lblDown.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDown.Name = "lblDown";
-            this.lblDown.Size = new System.Drawing.Size(41, 13);
+            this.lblDown.Size = new System.Drawing.Size(53, 20);
             this.lblDown.TabIndex = 38;
             this.lblDown.Text = "ìøöôä";
             // 
@@ -1607,9 +1337,10 @@ namespace LaserSurvey
             // 
             this.lblUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUp.AutoSize = true;
-            this.lblUp.Location = new System.Drawing.Point(183, 48);
+            this.lblUp.Location = new System.Drawing.Point(274, 74);
+            this.lblUp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUp.Name = "lblUp";
-            this.lblUp.Size = new System.Drawing.Size(41, 13);
+            this.lblUp.Size = new System.Drawing.Size(55, 20);
             this.lblUp.TabIndex = 37;
             this.lblUp.Text = "ìú÷øä";
             // 
@@ -1617,10 +1348,11 @@ namespace LaserSurvey
             // 
             this.trackBar2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.trackBar2.AutoSize = false;
-            this.trackBar2.Location = new System.Drawing.Point(88, 44);
+            this.trackBar2.Location = new System.Drawing.Point(132, 68);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trackBar2.Maximum = 1;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(66, 20);
+            this.trackBar2.Size = new System.Drawing.Size(99, 31);
             this.trackBar2.TabIndex = 36;
             this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar2.ValueChanged += new System.EventHandler(this.trackBar2_ValueChanged);
@@ -1628,7 +1360,8 @@ namespace LaserSurvey
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 21);
+            this.pictureBox3.Location = new System.Drawing.Point(9, 32);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(16, 16);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1639,9 +1372,10 @@ namespace LaserSurvey
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(248, 48);
+            this.label24.Location = new System.Drawing.Point(372, 74);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(37, 13);
+            this.label24.Size = new System.Drawing.Size(43, 20);
             this.label24.TabIndex = 33;
             this.label24.Text = "ëéååï:";
             // 
@@ -1649,9 +1383,10 @@ namespace LaserSurvey
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(208, 74);
+            this.label19.Location = new System.Drawing.Point(312, 114);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 13);
+            this.label19.Size = new System.Drawing.Size(97, 20);
             this.label19.TabIndex = 32;
             this.label19.Text = "âåáä äñøé÷ä:";
             // 
@@ -1659,9 +1394,10 @@ namespace LaserSurvey
             // 
             this.lblElevation.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblElevation.AutoSize = true;
-            this.lblElevation.Location = new System.Drawing.Point(11, 74);
+            this.lblElevation.Location = new System.Drawing.Point(16, 114);
+            this.lblElevation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblElevation.Name = "lblElevation";
-            this.lblElevation.Size = new System.Drawing.Size(45, 13);
+            this.lblElevation.Size = new System.Drawing.Size(59, 20);
             this.lblElevation.TabIndex = 31;
             this.lblElevation.Text = "úçúåðä";
             // 
@@ -1669,10 +1405,11 @@ namespace LaserSurvey
             // 
             this.trackBar1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.trackBar1.AutoSize = false;
-            this.trackBar1.Location = new System.Drawing.Point(56, 70);
+            this.trackBar1.Location = new System.Drawing.Point(84, 108);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trackBar1.Maximum = 2;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(96, 20);
+            this.trackBar1.Size = new System.Drawing.Size(144, 31);
             this.trackBar1.TabIndex = 29;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
@@ -1681,9 +1418,10 @@ namespace LaserSurvey
             // 
             this.pictDown.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictDown.Image = ((System.Drawing.Image)(resources.GetObject("pictDown.Image")));
-            this.pictDown.Location = new System.Drawing.Point(58, 42);
+            this.pictDown.Location = new System.Drawing.Point(87, 65);
+            this.pictDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictDown.Name = "pictDown";
-            this.pictDown.Size = new System.Drawing.Size(24, 24);
+            this.pictDown.Size = new System.Drawing.Size(36, 37);
             this.pictDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictDown.TabIndex = 28;
             this.pictDown.TabStop = false;
@@ -1693,9 +1431,10 @@ namespace LaserSurvey
             // 
             this.pictUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictUp.Image = ((System.Drawing.Image)(resources.GetObject("pictUp.Image")));
-            this.pictUp.Location = new System.Drawing.Point(158, 42);
+            this.pictUp.Location = new System.Drawing.Point(237, 65);
+            this.pictUp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictUp.Name = "pictUp";
-            this.pictUp.Size = new System.Drawing.Size(24, 24);
+            this.pictUp.Size = new System.Drawing.Size(36, 37);
             this.pictUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictUp.TabIndex = 27;
             this.pictUp.TabStop = false;
@@ -1704,45 +1443,186 @@ namespace LaserSurvey
             // 
             this.minDistChkBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.minDistChkBox.AutoSize = true;
-            this.minDistChkBox.Location = new System.Drawing.Point(195, 98);
+            this.minDistChkBox.Location = new System.Drawing.Point(292, 151);
+            this.minDistChkBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.minDistChkBox.Name = "minDistChkBox";
-            this.minDistChkBox.Size = new System.Drawing.Size(89, 17);
+            this.minDistChkBox.Size = new System.Drawing.Size(121, 24);
             this.minDistChkBox.TabIndex = 20;
             this.minDistChkBox.Text = "îøç÷ îæòøé:";
             this.minDistChkBox.UseVisualStyleBackColor = true;
-            this.minDistChkBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.minDistChkBox.CheckedChanged += new System.EventHandler(this.chkAutoConnect_CheckedChanged);
             // 
             // label25
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(219, 23);
+            this.label25.Location = new System.Drawing.Point(328, 35);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(66, 13);
+            this.label25.Size = new System.Drawing.Size(85, 20);
             this.label25.TabIndex = 0;
             this.label25.Text = "îñ\' ãâéîåú:";
             // 
-            // tabPage6
+            // tabPage5
             // 
-            this.tabPage6.Controls.Add(this.panel5);
-            this.tabPage6.Controls.Add(this.pictureBox2);
-            this.tabPage6.Controls.Add(this.pictureBox1);
-            this.tabPage6.Controls.Add(this.btnStopSurvey);
-            this.tabPage6.Controls.Add(this.progressBar2);
-            this.tabPage6.Controls.Add(this.FinishTimeLbl);
-            this.tabPage6.Controls.Add(this.groupBox7);
-            this.tabPage6.Controls.Add(this.label46);
-            this.tabPage6.Controls.Add(this.drawPanel);
-            this.tabPage6.Controls.Add(this.label43);
-            this.tabPage6.Controls.Add(this.ElapsedTimeLbl);
-            this.tabPage6.ImageIndex = 2;
-            this.tabPage6.Location = new System.Drawing.Point(4, 55);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(663, 502);
-            this.tabPage6.TabIndex = 6;
-            this.tabPage6.Text = "äãîéä";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage5.Controls.Add(this.pnlBoxCanvas);
+            this.tabPage5.Controls.Add(this.lvDiary);
+            this.tabPage5.Controls.Add(this.btnExport);
+            this.tabPage5.Controls.Add(this.panel3);
+            this.tabPage5.ImageIndex = 4;
+            this.tabPage5.Location = new System.Drawing.Point(4, 55);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage5.Size = new System.Drawing.Size(1808, 853);
+            this.tabPage5.TabIndex = 7;
+            this.tabPage5.Text = "ðúåðéí";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Enter += new System.EventHandler(this.tabPage5_Enter);
+            // 
+            // pnlBoxCanvas
+            // 
+            this.pnlBoxCanvas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlBoxCanvas.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBoxCanvas.Controls.Add(this.pnlBoxDraw);
+            this.pnlBoxCanvas.Location = new System.Drawing.Point(1492, 57);
+            this.pnlBoxCanvas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlBoxCanvas.Name = "pnlBoxCanvas";
+            this.pnlBoxCanvas.Size = new System.Drawing.Size(300, 308);
+            this.pnlBoxCanvas.TabIndex = 51;
+            this.pnlBoxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBoxCanvas_Paint);
+            // 
+            // pnlBoxDraw
+            // 
+            this.pnlBoxDraw.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBoxDraw.Location = new System.Drawing.Point(0, 0);
+            this.pnlBoxDraw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlBoxDraw.Name = "pnlBoxDraw";
+            this.pnlBoxDraw.Size = new System.Drawing.Size(300, 308);
+            this.pnlBoxDraw.TabIndex = 0;
+            this.pnlBoxDraw.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBoxCanvas_Paint);
+            // 
+            // lvDiary
+            // 
+            this.lvDiary.ContextMenuStrip = this.cmsDiary;
+            this.lvDiary.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvDiary.HideSelection = false;
+            this.lvDiary.LargeImageList = this.imgsUpDown;
+            this.lvDiary.Location = new System.Drawing.Point(12, 57);
+            this.lvDiary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lvDiary.MultiSelect = false;
+            this.lvDiary.Name = "lvDiary";
+            this.lvDiary.ShowItemToolTips = true;
+            this.lvDiary.Size = new System.Drawing.Size(528, 442);
+            this.lvDiary.SmallImageList = this.imgsUpDown;
+            this.lvDiary.TabIndex = 50;
+            this.lvDiary.UseCompatibleStateImageBehavior = false;
+            this.lvDiary.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.lvDiary_AfterLabelEdit);
+            this.lvDiary.ItemActivate += new System.EventHandler(this.lvDiary_ItemActivate);
+            // 
+            // cmsDiary
+            // 
+            this.cmsDiary.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.cmsDiary.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.äôåêëéååïñøé÷äToolStripMenuItem,
+            this.ùðäîñôø÷ãçToolStripMenuItem,
+            this.îç÷ñøé÷äToolStripMenuItem});
+            this.cmsDiary.Name = "cmsDiary";
+            this.cmsDiary.Size = new System.Drawing.Size(238, 148);
+            this.cmsDiary.Opening += new System.ComponentModel.CancelEventHandler(this.cmsDiary_Opening);
+            // 
+            // äôåêëéååïñøé÷äToolStripMenuItem
+            // 
+            this.äôåêëéååïñøé÷äToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("äôåêëéååïñøé÷äToolStripMenuItem.Image")));
+            this.äôåêëéååïñøé÷äToolStripMenuItem.Name = "äôåêëéååïñøé÷äToolStripMenuItem";
+            this.äôåêëéååïñøé÷äToolStripMenuItem.Size = new System.Drawing.Size(237, 48);
+            this.äôåêëéååïñøé÷äToolStripMenuItem.Text = "äôåê ëéååï ñøé÷ä";
+            this.äôåêëéååïñøé÷äToolStripMenuItem.Click += new System.EventHandler(this.äôåêëéååïñøé÷äToolStripMenuItem_Click);
+            // 
+            // ùðäîñôø÷ãçToolStripMenuItem
+            // 
+            this.ùðäîñôø÷ãçToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ùðäîñôø÷ãçToolStripMenuItem.Image")));
+            this.ùðäîñôø÷ãçToolStripMenuItem.Name = "ùðäîñôø÷ãçToolStripMenuItem";
+            this.ùðäîñôø÷ãçToolStripMenuItem.Size = new System.Drawing.Size(237, 48);
+            this.ùðäîñôø÷ãçToolStripMenuItem.Text = "ùðä îñôø ÷ãç";
+            this.ùðäîñôø÷ãçToolStripMenuItem.Click += new System.EventHandler(this.ùðäîñôø÷ãçToolStripMenuItem_Click);
+            // 
+            // îç÷ñøé÷äToolStripMenuItem
+            // 
+            this.îç÷ñøé÷äToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("îç÷ñøé÷äToolStripMenuItem.Image")));
+            this.îç÷ñøé÷äToolStripMenuItem.Name = "îç÷ñøé÷äToolStripMenuItem";
+            this.îç÷ñøé÷äToolStripMenuItem.Size = new System.Drawing.Size(237, 48);
+            this.îç÷ñøé÷äToolStripMenuItem.Text = "îç÷ ñøé÷ä";
+            this.îç÷ñøé÷äToolStripMenuItem.Click += new System.EventHandler(this.îç÷ñøé÷äToolStripMenuItem_Click);
+            // 
+            // imgsUpDown
+            // 
+            this.imgsUpDown.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgsUpDown.ImageStream")));
+            this.imgsUpDown.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgsUpDown.Images.SetKeyName(0, "Stock Index Down_24x24.png");
+            this.imgsUpDown.Images.SetKeyName(1, "Stock Index Up_24x24.png");
+            // 
+            // btnExport
+            // 
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.Location = new System.Drawing.Point(12, 523);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(530, 118);
+            this.btnExport.TabIndex = 48;
+            this.btnExport.Text = "ñðëøåï äðúåðéí";
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ptInfoToolTip.SetToolTip(this.btnExport, "äòìä àú äñøé÷åú äçãùåú ìùøú");
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkGray;
+            this.panel3.Controls.Add(this.lblNewSurveys);
+            this.panel3.Location = new System.Drawing.Point(12, 5);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(530, 43);
+            this.panel3.TabIndex = 36;
+            // 
+            // lblNewSurveys
+            // 
+            this.lblNewSurveys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNewSurveys.AutoSize = true;
+            this.lblNewSurveys.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lblNewSurveys.ForeColor = System.Drawing.Color.Blue;
+            this.lblNewSurveys.Location = new System.Drawing.Point(258, 6);
+            this.lblNewSurveys.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNewSurveys.Name = "lblNewSurveys";
+            this.lblNewSurveys.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblNewSurveys.Size = new System.Drawing.Size(219, 29);
+            this.lblNewSurveys.TabIndex = 35;
+            this.lblNewSurveys.Text = "÷ééîåú ñøé÷åú çãùåú";
+            // 
+            // tpDrawing
+            // 
+            this.tpDrawing.Controls.Add(this.panel5);
+            this.tpDrawing.Controls.Add(this.pictureBox2);
+            this.tpDrawing.Controls.Add(this.pictureBox1);
+            this.tpDrawing.Controls.Add(this.btnStopSurvey);
+            this.tpDrawing.Controls.Add(this.progressBar2);
+            this.tpDrawing.Controls.Add(this.FinishTimeLbl);
+            this.tpDrawing.Controls.Add(this.groupBox7);
+            this.tpDrawing.Controls.Add(this.label46);
+            this.tpDrawing.Controls.Add(this.drawPanel);
+            this.tpDrawing.Controls.Add(this.label43);
+            this.tpDrawing.Controls.Add(this.ElapsedTimeLbl);
+            this.tpDrawing.ImageIndex = 2;
+            this.tpDrawing.Location = new System.Drawing.Point(4, 55);
+            this.tpDrawing.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpDrawing.Name = "tpDrawing";
+            this.tpDrawing.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpDrawing.Size = new System.Drawing.Size(1808, 853);
+            this.tpDrawing.TabIndex = 6;
+            this.tpDrawing.Text = "äãîéä";
+            this.tpDrawing.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -1758,9 +1638,10 @@ namespace LaserSurvey
             this.panel5.Controls.Add(this.label35);
             this.panel5.Controls.Add(this.label36);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Location = new System.Drawing.Point(4, 5);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(657, 28);
+            this.panel5.Size = new System.Drawing.Size(1800, 43);
             this.panel5.TabIndex = 48;
             // 
             // lbField
@@ -1769,9 +1650,10 @@ namespace LaserSurvey
             this.lbField.AutoSize = true;
             this.lbField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lbField.ForeColor = System.Drawing.Color.Blue;
-            this.lbField.Location = new System.Drawing.Point(320, 4);
+            this.lbField.Location = new System.Drawing.Point(1294, 6);
+            this.lbField.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbField.Name = "lbField";
-            this.lbField.Size = new System.Drawing.Size(19, 20);
+            this.lbField.Size = new System.Drawing.Size(29, 29);
             this.lbField.TabIndex = 50;
             this.lbField.Text = "--";
             // 
@@ -1781,9 +1663,10 @@ namespace LaserSurvey
             this.lbBore.AutoSize = true;
             this.lbBore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lbBore.ForeColor = System.Drawing.Color.Blue;
-            this.lbBore.Location = new System.Drawing.Point(500, 4);
+            this.lbBore.Location = new System.Drawing.Point(1564, 6);
+            this.lbBore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBore.Name = "lbBore";
-            this.lbBore.Size = new System.Drawing.Size(19, 20);
+            this.lbBore.Size = new System.Drawing.Size(29, 29);
             this.lbBore.TabIndex = 49;
             this.lbBore.Text = "--";
             // 
@@ -1793,9 +1676,10 @@ namespace LaserSurvey
             this.lblBoreNum.AutoSize = true;
             this.lblBoreNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblBoreNum.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblBoreNum.Location = new System.Drawing.Point(532, 1);
+            this.lblBoreNum.Location = new System.Drawing.Point(1612, 2);
+            this.lblBoreNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBoreNum.Name = "lblBoreNum";
-            this.lblBoreNum.Size = new System.Drawing.Size(0, 20);
+            this.lblBoreNum.Size = new System.Drawing.Size(0, 29);
             this.lblBoreNum.TabIndex = 17;
             // 
             // lblFieldName
@@ -1804,9 +1688,10 @@ namespace LaserSurvey
             this.lblFieldName.AutoSize = true;
             this.lblFieldName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblFieldName.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblFieldName.Location = new System.Drawing.Point(326, 1);
+            this.lblFieldName.Location = new System.Drawing.Point(1303, 2);
+            this.lblFieldName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFieldName.Name = "lblFieldName";
-            this.lblFieldName.Size = new System.Drawing.Size(0, 20);
+            this.lblFieldName.Size = new System.Drawing.Size(0, 29);
             this.lblFieldName.TabIndex = 19;
             // 
             // lblSmaplesSum
@@ -1814,10 +1699,11 @@ namespace LaserSurvey
             this.lblSmaplesSum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSmaplesSum.AutoSize = true;
             this.lblSmaplesSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblSmaplesSum.Location = new System.Drawing.Point(38, 4);
+            this.lblSmaplesSum.Location = new System.Drawing.Point(871, 6);
+            this.lblSmaplesSum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSmaplesSum.Name = "lblSmaplesSum";
             this.lblSmaplesSum.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSmaplesSum.Size = new System.Drawing.Size(18, 20);
+            this.lblSmaplesSum.Size = new System.Drawing.Size(26, 29);
             this.lblSmaplesSum.TabIndex = 23;
             this.lblSmaplesSum.Text = "0";
             // 
@@ -1827,9 +1713,10 @@ namespace LaserSurvey
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label40.ForeColor = System.Drawing.Color.Blue;
-            this.label40.Location = new System.Drawing.Point(570, 4);
+            this.label40.Location = new System.Drawing.Point(1669, 6);
+            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(81, 20);
+            this.label40.Size = new System.Drawing.Size(115, 29);
             this.label40.TabIndex = 16;
             this.label40.Text = "÷ãç îñôø:";
             // 
@@ -1838,10 +1725,11 @@ namespace LaserSurvey
             this.lblCurrentSample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentSample.AutoSize = true;
             this.lblCurrentSample.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblCurrentSample.Location = new System.Drawing.Point(128, 4);
+            this.lblCurrentSample.Location = new System.Drawing.Point(1006, 6);
+            this.lblCurrentSample.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentSample.Name = "lblCurrentSample";
             this.lblCurrentSample.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCurrentSample.Size = new System.Drawing.Size(18, 20);
+            this.lblCurrentSample.Size = new System.Drawing.Size(26, 29);
             this.lblCurrentSample.TabIndex = 22;
             this.lblCurrentSample.Text = "0";
             // 
@@ -1851,9 +1739,10 @@ namespace LaserSurvey
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label42.ForeColor = System.Drawing.Color.Blue;
-            this.label42.Location = new System.Drawing.Point(410, 4);
+            this.label42.Location = new System.Drawing.Point(1429, 6);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(42, 20);
+            this.label42.Size = new System.Drawing.Size(59, 29);
             this.label42.TabIndex = 18;
             this.label42.Text = "ùãä:";
             // 
@@ -1862,9 +1751,10 @@ namespace LaserSurvey
             this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label35.Location = new System.Drawing.Point(80, 4);
+            this.label35.Location = new System.Drawing.Point(934, 6);
+            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(43, 20);
+            this.label35.Size = new System.Drawing.Size(61, 29);
             this.label35.TabIndex = 21;
             this.label35.Text = "îúåê";
             // 
@@ -1873,16 +1763,18 @@ namespace LaserSurvey
             this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label36.Location = new System.Drawing.Point(164, 4);
+            this.label36.Location = new System.Drawing.Point(1060, 6);
+            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(53, 20);
+            this.label36.Size = new System.Drawing.Size(73, 29);
             this.label36.TabIndex = 20;
             this.label36.Text = "ãâéîä:";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(64, 354);
+            this.pictureBox2.Location = new System.Drawing.Point(96, 545);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1893,7 +1785,8 @@ namespace LaserSurvey
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 354);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 545);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1908,9 +1801,10 @@ namespace LaserSurvey
             this.btnStopSurvey.Enabled = false;
             this.btnStopSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.btnStopSurvey.Image = ((System.Drawing.Image)(resources.GetObject("btnStopSurvey.Image")));
-            this.btnStopSurvey.Location = new System.Drawing.Point(109, 345);
+            this.btnStopSurvey.Location = new System.Drawing.Point(974, 531);
+            this.btnStopSurvey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStopSurvey.Name = "btnStopSurvey";
-            this.btnStopSurvey.Size = new System.Drawing.Size(214, 56);
+            this.btnStopSurvey.Size = new System.Drawing.Size(321, 86);
             this.btnStopSurvey.TabIndex = 45;
             this.btnStopSurvey.Text = "äôñ÷ ñ÷ø";
             this.btnStopSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1921,18 +1815,20 @@ namespace LaserSurvey
             // progressBar2
             // 
             this.progressBar2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar2.Location = new System.Drawing.Point(3, 484);
+            this.progressBar2.Location = new System.Drawing.Point(4, 825);
+            this.progressBar2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(657, 15);
+            this.progressBar2.Size = new System.Drawing.Size(1800, 23);
             this.progressBar2.TabIndex = 44;
             // 
             // FinishTimeLbl
             // 
             this.FinishTimeLbl.AutoSize = true;
             this.FinishTimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.FinishTimeLbl.Location = new System.Drawing.Point(483, 378);
+            this.FinishTimeLbl.Location = new System.Drawing.Point(724, 582);
+            this.FinishTimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FinishTimeLbl.Name = "FinishTimeLbl";
-            this.FinishTimeLbl.Size = new System.Drawing.Size(71, 20);
+            this.FinishTimeLbl.Size = new System.Drawing.Size(103, 29);
             this.FinishTimeLbl.TabIndex = 43;
             this.FinishTimeLbl.Text = "00:00:00";
             // 
@@ -1951,9 +1847,11 @@ namespace LaserSurvey
             this.groupBox7.Controls.Add(this.label31);
             this.groupBox7.Controls.Add(this.label30);
             this.groupBox7.Controls.Add(this.label26);
-            this.groupBox7.Location = new System.Drawing.Point(13, 43);
+            this.groupBox7.Location = new System.Drawing.Point(20, 66);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(169, 286);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox7.Size = new System.Drawing.Size(254, 440);
             this.groupBox7.TabIndex = 39;
             this.groupBox7.TabStop = false;
             // 
@@ -1962,11 +1860,12 @@ namespace LaserSurvey
             this.tbFalseSamples.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFalseSamples.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbFalseSamples.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbFalseSamples.Location = new System.Drawing.Point(69, 249);
+            this.tbFalseSamples.Location = new System.Drawing.Point(104, 383);
+            this.tbFalseSamples.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbFalseSamples.Name = "tbFalseSamples";
             this.tbFalseSamples.ReadOnly = true;
             this.tbFalseSamples.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbFalseSamples.Size = new System.Drawing.Size(86, 26);
+            this.tbFalseSamples.Size = new System.Drawing.Size(127, 35);
             this.tbFalseSamples.TabIndex = 45;
             this.tbFalseSamples.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1975,9 +1874,10 @@ namespace LaserSurvey
             this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label29.Location = new System.Drawing.Point(51, 226);
+            this.label29.Location = new System.Drawing.Point(76, 348);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(108, 20);
+            this.label29.Size = new System.Drawing.Size(151, 29);
             this.label29.TabIndex = 43;
             this.label29.Text = "îãéãåú ùâåéåú:";
             // 
@@ -1986,9 +1886,10 @@ namespace LaserSurvey
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(12, 129);
+            this.label6.Location = new System.Drawing.Point(18, 198);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.Size = new System.Drawing.Size(71, 29);
             this.label6.TabIndex = 42;
             this.label6.Text = "öòãéí";
             // 
@@ -1997,11 +1898,12 @@ namespace LaserSurvey
             this.tbCurrentDist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbCurrentDist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbCurrentDist.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbCurrentDist.Location = new System.Drawing.Point(69, 187);
+            this.tbCurrentDist.Location = new System.Drawing.Point(104, 288);
+            this.tbCurrentDist.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbCurrentDist.Name = "tbCurrentDist";
             this.tbCurrentDist.ReadOnly = true;
             this.tbCurrentDist.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbCurrentDist.Size = new System.Drawing.Size(86, 26);
+            this.tbCurrentDist.Size = new System.Drawing.Size(127, 35);
             this.tbCurrentDist.TabIndex = 41;
             this.tbCurrentDist.Text = "----------";
             this.tbCurrentDist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2011,9 +1913,10 @@ namespace LaserSurvey
             this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label33.Location = new System.Drawing.Point(28, 190);
+            this.label33.Location = new System.Drawing.Point(42, 292);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(35, 20);
+            this.label33.Size = new System.Drawing.Size(49, 29);
             this.label33.TabIndex = 40;
             this.label33.Text = "î\"î";
             // 
@@ -2022,9 +1925,10 @@ namespace LaserSurvey
             this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label34.Location = new System.Drawing.Point(56, 164);
+            this.label34.Location = new System.Drawing.Point(84, 252);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(103, 20);
+            this.label34.Size = new System.Drawing.Size(144, 29);
             this.label34.TabIndex = 39;
             this.label34.Text = "îãéãä ðåëçéú:";
             // 
@@ -2033,11 +1937,12 @@ namespace LaserSurvey
             this.tbAbsTicks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAbsTicks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbAbsTicks.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbAbsTicks.Location = new System.Drawing.Point(69, 126);
+            this.tbAbsTicks.Location = new System.Drawing.Point(104, 194);
+            this.tbAbsTicks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbAbsTicks.Name = "tbAbsTicks";
             this.tbAbsTicks.ReadOnly = true;
             this.tbAbsTicks.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbAbsTicks.Size = new System.Drawing.Size(86, 26);
+            this.tbAbsTicks.Size = new System.Drawing.Size(127, 35);
             this.tbAbsTicks.TabIndex = 38;
             this.tbAbsTicks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2046,9 +1951,10 @@ namespace LaserSurvey
             this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label53.Location = new System.Drawing.Point(60, 103);
+            this.label53.Location = new System.Drawing.Point(90, 158);
+            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(99, 20);
+            this.label53.Size = new System.Drawing.Size(141, 29);
             this.label53.TabIndex = 36;
             this.label53.Text = "îé÷åí îåçìè:";
             // 
@@ -2057,11 +1963,12 @@ namespace LaserSurvey
             this.tbRelTicks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbRelTicks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbRelTicks.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbRelTicks.Location = new System.Drawing.Point(69, 65);
+            this.tbRelTicks.Location = new System.Drawing.Point(104, 100);
+            this.tbRelTicks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbRelTicks.Name = "tbRelTicks";
             this.tbRelTicks.ReadOnly = true;
             this.tbRelTicks.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbRelTicks.Size = new System.Drawing.Size(86, 26);
+            this.tbRelTicks.Size = new System.Drawing.Size(127, 35);
             this.tbRelTicks.TabIndex = 35;
             this.tbRelTicks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2070,11 +1977,12 @@ namespace LaserSurvey
             this.tbRelAngle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbRelAngle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tbRelAngle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tbRelAngle.Location = new System.Drawing.Point(69, 33);
+            this.tbRelAngle.Location = new System.Drawing.Point(104, 51);
+            this.tbRelAngle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbRelAngle.Name = "tbRelAngle";
             this.tbRelAngle.ReadOnly = true;
             this.tbRelAngle.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbRelAngle.Size = new System.Drawing.Size(86, 26);
+            this.tbRelAngle.Size = new System.Drawing.Size(127, 35);
             this.tbRelAngle.TabIndex = 34;
             this.tbRelAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2083,9 +1991,10 @@ namespace LaserSurvey
             this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label31.Location = new System.Drawing.Point(12, 68);
+            this.label31.Location = new System.Drawing.Point(18, 105);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(51, 20);
+            this.label31.Size = new System.Drawing.Size(71, 29);
             this.label31.TabIndex = 33;
             this.label31.Text = "öòãéí";
             // 
@@ -2094,9 +2003,10 @@ namespace LaserSurvey
             this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label30.Location = new System.Drawing.Point(10, 36);
+            this.label30.Location = new System.Drawing.Point(15, 55);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(53, 20);
+            this.label30.Size = new System.Drawing.Size(74, 29);
             this.label30.TabIndex = 32;
             this.label30.Text = "îòìåú";
             // 
@@ -2105,9 +2015,10 @@ namespace LaserSurvey
             this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label26.Location = new System.Drawing.Point(75, 10);
+            this.label26.Location = new System.Drawing.Point(112, 15);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(84, 20);
+            this.label26.Size = new System.Drawing.Size(122, 29);
             this.label26.TabIndex = 31;
             this.label26.Text = "îé÷åí éçñé:";
             // 
@@ -2115,9 +2026,10 @@ namespace LaserSurvey
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label46.Location = new System.Drawing.Point(577, 378);
+            this.label46.Location = new System.Drawing.Point(866, 582);
+            this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(70, 20);
+            this.label46.Size = new System.Drawing.Size(97, 29);
             this.label46.TabIndex = 42;
             this.label46.Text = "æîï ðåúø:";
             // 
@@ -2126,9 +2038,10 @@ namespace LaserSurvey
             this.drawPanel.BackColor = System.Drawing.Color.White;
             this.drawPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.drawPanel.Controls.Add(this.nDemo);
-            this.drawPanel.Location = new System.Drawing.Point(198, 48);
+            this.drawPanel.Location = new System.Drawing.Point(297, 74);
+            this.drawPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.drawPanel.Name = "drawPanel";
-            this.drawPanel.Size = new System.Drawing.Size(452, 281);
+            this.drawPanel.Size = new System.Drawing.Size(676, 430);
             this.drawPanel.TabIndex = 0;
             this.drawPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPanel_Paint);
             this.drawPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawPanel_MouseMove);
@@ -2136,19 +2049,21 @@ namespace LaserSurvey
             // nDemo
             // 
             this.nDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.nDemo.Location = new System.Drawing.Point(547, 239);
+            this.nDemo.Location = new System.Drawing.Point(820, 368);
+            this.nDemo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nDemo.Name = "nDemo";
             this.nDemo.ReadOnly = true;
-            this.nDemo.Size = new System.Drawing.Size(81, 30);
+            this.nDemo.Size = new System.Drawing.Size(122, 41);
             this.nDemo.TabIndex = 4;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label43.Location = new System.Drawing.Point(560, 345);
+            this.label43.Location = new System.Drawing.Point(840, 531);
+            this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(87, 20);
+            this.label43.Size = new System.Drawing.Size(121, 29);
             this.label43.TabIndex = 40;
             this.label43.Text = "æîï îöèáø:";
             // 
@@ -2156,169 +2071,519 @@ namespace LaserSurvey
             // 
             this.ElapsedTimeLbl.AutoSize = true;
             this.ElapsedTimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.ElapsedTimeLbl.Location = new System.Drawing.Point(483, 345);
+            this.ElapsedTimeLbl.Location = new System.Drawing.Point(724, 531);
+            this.ElapsedTimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ElapsedTimeLbl.Name = "ElapsedTimeLbl";
-            this.ElapsedTimeLbl.Size = new System.Drawing.Size(71, 20);
+            this.ElapsedTimeLbl.Size = new System.Drawing.Size(103, 29);
             this.ElapsedTimeLbl.TabIndex = 41;
             this.ElapsedTimeLbl.Text = "00:00:00";
             // 
-            // tabPage5
+            // tpOldScannerConn
             // 
-            this.tabPage5.Controls.Add(this.pnlBoxCanvas);
-            this.tabPage5.Controls.Add(this.lvDiary);
-            this.tabPage5.Controls.Add(this.btnExport);
-            this.tabPage5.Controls.Add(this.panel3);
-            this.tabPage5.ImageIndex = 4;
-            this.tabPage5.Location = new System.Drawing.Point(4, 55);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(663, 502);
-            this.tabPage5.TabIndex = 7;
-            this.tabPage5.Text = "ðúåðéí";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            this.tabPage5.Enter += new System.EventHandler(this.tabPage5_Enter);
+            this.tpOldScannerConn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tpOldScannerConn.Controls.Add(this.panel1);
+            this.tpOldScannerConn.Controls.Add(this.dstConnectedPct);
+            this.tpOldScannerConn.Controls.Add(this.srvConnectedPct);
+            this.tpOldScannerConn.Controls.Add(this.pictureBox9);
+            this.tpOldScannerConn.Controls.Add(this.pictureBox5);
+            this.tpOldScannerConn.Controls.Add(this.pictureBox8);
+            this.tpOldScannerConn.Controls.Add(this.groupBox1);
+            this.tpOldScannerConn.Controls.Add(this.groupBox2);
+            this.tpOldScannerConn.ImageIndex = 0;
+            this.tpOldScannerConn.Location = new System.Drawing.Point(4, 55);
+            this.tpOldScannerConn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpOldScannerConn.Name = "tpOldScannerConn";
+            this.tpOldScannerConn.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpOldScannerConn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tpOldScannerConn.Size = new System.Drawing.Size(1808, 853);
+            this.tpOldScannerConn.TabIndex = 0;
+            this.tpOldScannerConn.Text = "ñåø÷ éùï";
+            this.tpOldScannerConn.UseVisualStyleBackColor = true;
             // 
-            // pnlBoxCanvas
+            // panel1
             // 
-            this.pnlBoxCanvas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlBoxCanvas.BackColor = System.Drawing.Color.Transparent;
-            this.pnlBoxCanvas.Controls.Add(this.pnlBoxDraw);
-            this.pnlBoxCanvas.Location = new System.Drawing.Point(455, 37);
-            this.pnlBoxCanvas.Name = "pnlBoxCanvas";
-            this.pnlBoxCanvas.Size = new System.Drawing.Size(200, 200);
-            this.pnlBoxCanvas.TabIndex = 51;
-            this.pnlBoxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBoxCanvas_Paint);
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.Controls.Add(this.label38);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(4, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1800, 43);
+            this.panel1.TabIndex = 34;
             // 
-            // pnlBoxDraw
+            // label38
             // 
-            this.pnlBoxDraw.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBoxDraw.Location = new System.Drawing.Point(0, 0);
-            this.pnlBoxDraw.Name = "pnlBoxDraw";
-            this.pnlBoxDraw.Size = new System.Drawing.Size(200, 200);
-            this.pnlBoxDraw.TabIndex = 0;
-            this.pnlBoxDraw.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBoxCanvas_Paint);
+            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label38.ForeColor = System.Drawing.Color.Blue;
+            this.label38.Location = new System.Drawing.Point(1074, 6);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label38.Name = "label38";
+            this.label38.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label38.Size = new System.Drawing.Size(441, 29);
+            this.label38.TabIndex = 35;
+            this.label38.Text = "ðäì àú äçéáåøéí áéï äîçùá ìîëùéø äñøé÷ä";
             // 
-            // lvDiary
+            // dstConnectedPct
             // 
-            this.lvDiary.ContextMenuStrip = this.cmsDiary;
-            this.lvDiary.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvDiary.HideSelection = false;
-            this.lvDiary.LargeImageList = this.imgsUpDown;
-            this.lvDiary.Location = new System.Drawing.Point(8, 37);
-            this.lvDiary.MultiSelect = false;
-            this.lvDiary.Name = "lvDiary";
-            this.lvDiary.ShowItemToolTips = true;
-            this.lvDiary.Size = new System.Drawing.Size(353, 289);
-            this.lvDiary.SmallImageList = this.imgsUpDown;
-            this.lvDiary.TabIndex = 50;
-            this.lvDiary.UseCompatibleStateImageBehavior = false;
-            this.lvDiary.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.lvDiary_AfterLabelEdit);
-            this.lvDiary.ItemActivate += new System.EventHandler(this.lvDiary_ItemActivate);
+            this.dstConnectedPct.Image = ((System.Drawing.Image)(resources.GetObject("dstConnectedPct.Image")));
+            this.dstConnectedPct.Location = new System.Drawing.Point(246, 548);
+            this.dstConnectedPct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dstConnectedPct.Name = "dstConnectedPct";
+            this.dstConnectedPct.Size = new System.Drawing.Size(50, 10);
+            this.dstConnectedPct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.dstConnectedPct.TabIndex = 28;
+            this.dstConnectedPct.TabStop = false;
+            this.dstConnectedPct.Visible = false;
             // 
-            // cmsDiary
+            // srvConnectedPct
             // 
-            this.cmsDiary.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.cmsDiary.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.äôåêëéååïñøé÷äToolStripMenuItem,
-            this.ùðäîñôø÷ãçToolStripMenuItem,
-            this.îç÷ñøé÷äToolStripMenuItem});
-            this.cmsDiary.Name = "cmsDiary";
-            this.cmsDiary.Size = new System.Drawing.Size(184, 142);
-            this.cmsDiary.Opening += new System.ComponentModel.CancelEventHandler(this.cmsDiary_Opening);
+            this.srvConnectedPct.Image = ((System.Drawing.Image)(resources.GetObject("srvConnectedPct.Image")));
+            this.srvConnectedPct.Location = new System.Drawing.Point(630, 548);
+            this.srvConnectedPct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.srvConnectedPct.Name = "srvConnectedPct";
+            this.srvConnectedPct.Size = new System.Drawing.Size(50, 10);
+            this.srvConnectedPct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.srvConnectedPct.TabIndex = 20;
+            this.srvConnectedPct.TabStop = false;
+            this.srvConnectedPct.Visible = false;
             // 
-            // äôåêëéååïñøé÷äToolStripMenuItem
+            // pictureBox9
             // 
-            this.äôåêëéååïñøé÷äToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("äôåêëéååïñøé÷äToolStripMenuItem.Image")));
-            this.äôåêëéååïñøé÷äToolStripMenuItem.Name = "äôåêëéååïñøé÷äToolStripMenuItem";
-            this.äôåêëéååïñøé÷äToolStripMenuItem.Size = new System.Drawing.Size(183, 46);
-            this.äôåêëéååïñøé÷äToolStripMenuItem.Text = "äôåê ëéååï ñøé÷ä";
-            this.äôåêëéååïñøé÷äToolStripMenuItem.Click += new System.EventHandler(this.äôåêëéååïñøé÷äToolStripMenuItem_Click);
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(430, 509);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox9.TabIndex = 33;
+            this.pictureBox9.TabStop = false;
             // 
-            // ùðäîñôø÷ãçToolStripMenuItem
+            // pictureBox5
             // 
-            this.ùðäîñôø÷ãçToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ùðäîñôø÷ãçToolStripMenuItem.Image")));
-            this.ùðäîñôø÷ãçToolStripMenuItem.Name = "ùðäîñôø÷ãçToolStripMenuItem";
-            this.ùðäîñôø÷ãçToolStripMenuItem.Size = new System.Drawing.Size(183, 46);
-            this.ùðäîñôø÷ãçToolStripMenuItem.Text = "ùðä îñôø ÷ãç";
-            this.ùðäîñôø÷ãçToolStripMenuItem.Click += new System.EventHandler(this.ùðäîñôø÷ãçToolStripMenuItem_Click);
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(40, 480);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(147, 152);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 32;
+            this.pictureBox5.TabStop = false;
             // 
-            // îç÷ñøé÷äToolStripMenuItem
+            // pictureBox8
             // 
-            this.îç÷ñøé÷äToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("îç÷ñøé÷äToolStripMenuItem.Image")));
-            this.îç÷ñøé÷äToolStripMenuItem.Name = "îç÷ñøé÷äToolStripMenuItem";
-            this.îç÷ñøé÷äToolStripMenuItem.Size = new System.Drawing.Size(183, 46);
-            this.îç÷ñøé÷äToolStripMenuItem.Text = "îç÷ ñøé÷ä";
-            this.îç÷ñøé÷äToolStripMenuItem.Click += new System.EventHandler(this.îç÷ñøé÷äToolStripMenuItem_Click);
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(764, 460);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(189, 192);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 31;
+            this.pictureBox8.TabStop = false;
             // 
-            // imgsUpDown
+            // groupBox1
             // 
-            this.imgsUpDown.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgsUpDown.ImageStream")));
-            this.imgsUpDown.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgsUpDown.Images.SetKeyName(0, "Stock Index Down_24x24.png");
-            this.imgsUpDown.Images.SetKeyName(1, "Stock Index Up_24x24.png");
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.chkDistoCom);
+            this.groupBox1.Controls.Add(this.btnStopSearchDisto);
+            this.groupBox1.Controls.Add(this.nudDistoCom);
+            this.groupBox1.Controls.Add(this.dstCOMlbl);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.dstOffsetNum);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.dstConnectedLbl);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.dstSerialLbl);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.dstConnectBtn);
+            this.groupBox1.Location = new System.Drawing.Point(850, 62);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(345, 325);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "îã èååç ìééæø";
             // 
-            // btnExport
+            // chkDistoCom
             // 
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.Location = new System.Drawing.Point(8, 340);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(353, 77);
-            this.btnExport.TabIndex = 48;
-            this.btnExport.Text = "ñðëøåï äðúåðéí";
-            this.btnExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ptInfoToolTip.SetToolTip(this.btnExport, "äòìä àú äñøé÷åú äçãùåú ìùøú");
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            this.chkDistoCom.AutoSize = true;
+            this.chkDistoCom.Location = new System.Drawing.Point(93, 34);
+            this.chkDistoCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkDistoCom.Name = "chkDistoCom";
+            this.chkDistoCom.Size = new System.Drawing.Size(159, 24);
+            this.chkDistoCom.TabIndex = 46;
+            this.chkDistoCom.Text = "äúçáø ìéöéàä îñ\'";
+            this.chkDistoCom.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // btnStopSearchDisto
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkGray;
-            this.panel3.Controls.Add(this.lblNewSurveys);
-            this.panel3.Location = new System.Drawing.Point(8, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(353, 28);
-            this.panel3.TabIndex = 36;
+            this.btnStopSearchDisto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStopSearchDisto.Image = ((System.Drawing.Image)(resources.GetObject("btnStopSearchDisto.Image")));
+            this.btnStopSearchDisto.Location = new System.Drawing.Point(156, 83);
+            this.btnStopSearchDisto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnStopSearchDisto.Name = "btnStopSearchDisto";
+            this.btnStopSearchDisto.Size = new System.Drawing.Size(58, 35);
+            this.btnStopSearchDisto.TabIndex = 45;
+            this.toolTip1.SetToolTip(this.btnStopSearchDisto, "äôñ÷ àú äçéôåù");
+            this.btnStopSearchDisto.UseVisualStyleBackColor = true;
+            this.btnStopSearchDisto.Visible = false;
+            this.btnStopSearchDisto.Click += new System.EventHandler(this.button8_Click_1);
             // 
-            // lblNewSurveys
+            // nudDistoCom
             // 
-            this.lblNewSurveys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNewSurveys.AutoSize = true;
-            this.lblNewSurveys.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblNewSurveys.ForeColor = System.Drawing.Color.Blue;
-            this.lblNewSurveys.Location = new System.Drawing.Point(172, 4);
-            this.lblNewSurveys.Name = "lblNewSurveys";
-            this.lblNewSurveys.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblNewSurveys.Size = new System.Drawing.Size(153, 20);
-            this.lblNewSurveys.TabIndex = 35;
-            this.lblNewSurveys.Text = "÷ééîåú ñøé÷åú çãùåú";
+            this.nudDistoCom.Location = new System.Drawing.Point(14, 32);
+            this.nudDistoCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudDistoCom.Name = "nudDistoCom";
+            this.nudDistoCom.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.nudDistoCom.Size = new System.Drawing.Size(70, 26);
+            this.nudDistoCom.TabIndex = 44;
             // 
-            // tabPage4
+            // dstCOMlbl
             // 
-            this.tabPage4.Controls.Add(this.panel6);
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.groupBox13);
-            this.tabPage4.Controls.Add(this.groupBox14);
-            this.tabPage4.Controls.Add(this.groupBox11);
-            this.tabPage4.ImageIndex = 3;
-            this.tabPage4.Location = new System.Drawing.Point(4, 55);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(663, 502);
-            this.tabPage4.TabIndex = 5;
-            this.tabPage4.Text = "ùìéèä";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
-            this.tabPage4.Leave += new System.EventHandler(this.tabPage4_Leave);
+            this.dstCOMlbl.AutoSize = true;
+            this.dstCOMlbl.Location = new System.Drawing.Point(16, 91);
+            this.dstCOMlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dstCOMlbl.Name = "dstCOMlbl";
+            this.dstCOMlbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dstCOMlbl.Size = new System.Drawing.Size(0, 20);
+            this.dstCOMlbl.TabIndex = 31;
+            // 
+            // label23
+            // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(104, 237);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(35, 20);
+            this.label23.TabIndex = 30;
+            this.label23.Text = "mm";
+            // 
+            // dstOffsetNum
+            // 
+            this.dstOffsetNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dstOffsetNum.Location = new System.Drawing.Point(21, 234);
+            this.dstOffsetNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dstOffsetNum.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.dstOffsetNum.Minimum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            -2147483648});
+            this.dstOffsetNum.Name = "dstOffsetNum";
+            this.dstOffsetNum.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dstOffsetNum.Size = new System.Drawing.Size(80, 26);
+            this.dstOffsetNum.TabIndex = 29;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(232, 237);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(91, 20);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "úé÷åï îøç÷:";
+            // 
+            // dstConnectedLbl
+            // 
+            this.dstConnectedLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dstConnectedLbl.AutoSize = true;
+            this.dstConnectedLbl.Location = new System.Drawing.Point(174, 138);
+            this.dstConnectedLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dstConnectedLbl.Name = "dstConnectedLbl";
+            this.dstConnectedLbl.Size = new System.Drawing.Size(49, 20);
+            this.dstConnectedLbl.TabIndex = 24;
+            this.dstConnectedLbl.Text = "îðåú÷";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(240, 138);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(83, 20);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "îöá çéáåø:";
+            // 
+            // dstSerialLbl
+            // 
+            this.dstSerialLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dstSerialLbl.AutoSize = true;
+            this.dstSerialLbl.Location = new System.Drawing.Point(16, 240);
+            this.dstSerialLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dstSerialLbl.Name = "dstSerialLbl";
+            this.dstSerialLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dstSerialLbl.Size = new System.Drawing.Size(0, 20);
+            this.dstSerialLbl.TabIndex = 22;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(225, 283);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 20);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "îñôø îëùéø:";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(224, 91);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 20);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "éöéàä èåøéú:";
+            // 
+            // dstConnectBtn
+            // 
+            this.dstConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dstConnectBtn.Location = new System.Drawing.Point(12, 131);
+            this.dstConnectBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dstConnectBtn.Name = "dstConnectBtn";
+            this.dstConnectBtn.Size = new System.Drawing.Size(112, 35);
+            this.dstConnectBtn.TabIndex = 15;
+            this.dstConnectBtn.Text = "äúçáø";
+            this.dstConnectBtn.UseVisualStyleBackColor = true;
+            this.dstConnectBtn.Click += new System.EventHandler(this.dstConnectBtn_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.chkServoCom);
+            this.groupBox2.Controls.Add(this.nudServoCom);
+            this.groupBox2.Controls.Add(this.btnStopSearchServo);
+            this.groupBox2.Controls.Add(this.btnRefreshServoSpeed);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.nudServoRpm);
+            this.groupBox2.Controls.Add(this.label39);
+            this.groupBox2.Controls.Add(this.srvCOMlbl);
+            this.groupBox2.Controls.Add(this.srvInstrumentNum);
+            this.groupBox2.Controls.Add(this.label37);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.srvConnectedLbl);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.srvConnectBtn);
+            this.groupBox2.Location = new System.Drawing.Point(1416, 62);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(346, 325);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "îðåò ñøáå";
+            // 
+            // chkServoCom
+            // 
+            this.chkServoCom.AutoSize = true;
+            this.chkServoCom.Location = new System.Drawing.Point(94, 34);
+            this.chkServoCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkServoCom.Name = "chkServoCom";
+            this.chkServoCom.Size = new System.Drawing.Size(159, 24);
+            this.chkServoCom.TabIndex = 48;
+            this.chkServoCom.Text = "äúçáø ìéöéàä îñ\'";
+            this.chkServoCom.UseVisualStyleBackColor = true;
+            // 
+            // nudServoCom
+            // 
+            this.nudServoCom.Location = new System.Drawing.Point(15, 32);
+            this.nudServoCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudServoCom.Name = "nudServoCom";
+            this.nudServoCom.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.nudServoCom.Size = new System.Drawing.Size(70, 26);
+            this.nudServoCom.TabIndex = 47;
+            // 
+            // btnStopSearchServo
+            // 
+            this.btnStopSearchServo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStopSearchServo.Image = ((System.Drawing.Image)(resources.GetObject("btnStopSearchServo.Image")));
+            this.btnStopSearchServo.Location = new System.Drawing.Point(159, 83);
+            this.btnStopSearchServo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnStopSearchServo.Name = "btnStopSearchServo";
+            this.btnStopSearchServo.Size = new System.Drawing.Size(58, 35);
+            this.btnStopSearchServo.TabIndex = 43;
+            this.toolTip1.SetToolTip(this.btnStopSearchServo, "äôñ÷ àú äçéôåù");
+            this.btnStopSearchServo.UseVisualStyleBackColor = true;
+            this.btnStopSearchServo.Visible = false;
+            this.btnStopSearchServo.Click += new System.EventHandler(this.button8_Click_1);
+            // 
+            // btnRefreshServoSpeed
+            // 
+            this.btnRefreshServoSpeed.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshServoSpeed.Image")));
+            this.btnRefreshServoSpeed.Location = new System.Drawing.Point(15, 229);
+            this.btnRefreshServoSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRefreshServoSpeed.Name = "btnRefreshServoSpeed";
+            this.btnRefreshServoSpeed.Size = new System.Drawing.Size(33, 37);
+            this.btnRefreshServoSpeed.TabIndex = 34;
+            this.toolTip1.SetToolTip(this.btnRefreshServoSpeed, "øòðï îäéøåú");
+            this.btnRefreshServoSpeed.UseVisualStyleBackColor = true;
+            this.btnRefreshServoSpeed.Click += new System.EventHandler(this.btnRefreshServoSpeed_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(132, 235);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 20);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Rpm";
+            // 
+            // nudServoRpm
+            // 
+            this.nudServoRpm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudServoRpm.Location = new System.Drawing.Point(58, 232);
+            this.nudServoRpm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudServoRpm.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudServoRpm.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudServoRpm.Name = "nudServoRpm";
+            this.nudServoRpm.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.nudServoRpm.Size = new System.Drawing.Size(64, 26);
+            this.nudServoRpm.TabIndex = 39;
+            this.nudServoRpm.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label39
+            // 
+            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(226, 235);
+            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(96, 20);
+            this.label39.TabIndex = 38;
+            this.label39.Text = "îäéøåú îðåò:";
+            // 
+            // srvCOMlbl
+            // 
+            this.srvCOMlbl.AutoSize = true;
+            this.srvCOMlbl.Location = new System.Drawing.Point(16, 91);
+            this.srvCOMlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.srvCOMlbl.Name = "srvCOMlbl";
+            this.srvCOMlbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.srvCOMlbl.Size = new System.Drawing.Size(0, 20);
+            this.srvCOMlbl.TabIndex = 37;
+            // 
+            // srvInstrumentNum
+            // 
+            this.srvInstrumentNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.srvInstrumentNum.AutoSize = true;
+            this.srvInstrumentNum.Location = new System.Drawing.Point(16, 238);
+            this.srvInstrumentNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.srvInstrumentNum.Name = "srvInstrumentNum";
+            this.srvInstrumentNum.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.srvInstrumentNum.Size = new System.Drawing.Size(0, 20);
+            this.srvInstrumentNum.TabIndex = 36;
+            // 
+            // label37
+            // 
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(226, 283);
+            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(96, 20);
+            this.label37.TabIndex = 35;
+            this.label37.Text = "îñôø îëùéø:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(226, 91);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "éöéàä èåøéú:";
+            // 
+            // srvConnectedLbl
+            // 
+            this.srvConnectedLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.srvConnectedLbl.AutoSize = true;
+            this.srvConnectedLbl.Location = new System.Drawing.Point(177, 140);
+            this.srvConnectedLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.srvConnectedLbl.Name = "srvConnectedLbl";
+            this.srvConnectedLbl.Size = new System.Drawing.Size(49, 20);
+            this.srvConnectedLbl.TabIndex = 6;
+            this.srvConnectedLbl.Text = "îðåú÷";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(243, 140);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "îöá çéáåø:";
+            // 
+            // srvConnectBtn
+            // 
+            this.srvConnectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.srvConnectBtn.Location = new System.Drawing.Point(15, 132);
+            this.srvConnectBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.srvConnectBtn.Name = "srvConnectBtn";
+            this.srvConnectBtn.Size = new System.Drawing.Size(112, 35);
+            this.srvConnectBtn.TabIndex = 4;
+            this.srvConnectBtn.Text = "äúçáø";
+            this.srvConnectBtn.UseVisualStyleBackColor = true;
+            this.srvConnectBtn.Click += new System.EventHandler(this.svoConnectBtn_Click);
+            // 
+            // tpOldControl
+            // 
+            this.tpOldControl.Controls.Add(this.panel6);
+            this.tpOldControl.Controls.Add(this.button7);
+            this.tpOldControl.Controls.Add(this.groupBox13);
+            this.tpOldControl.Controls.Add(this.groupBox14);
+            this.tpOldControl.Controls.Add(this.groupBox11);
+            this.tpOldControl.ImageIndex = 3;
+            this.tpOldControl.Location = new System.Drawing.Point(4, 55);
+            this.tpOldControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpOldControl.Name = "tpOldControl";
+            this.tpOldControl.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpOldControl.Size = new System.Drawing.Size(1808, 853);
+            this.tpOldControl.TabIndex = 5;
+            this.tpOldControl.Text = "ùìéèä";
+            this.tpOldControl.UseVisualStyleBackColor = true;
+            this.tpOldControl.Enter += new System.EventHandler(this.tabPage4_Enter);
+            this.tpOldControl.Leave += new System.EventHandler(this.tabPage4_Leave);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.DarkGray;
             this.panel6.Controls.Add(this.label41);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Location = new System.Drawing.Point(4, 5);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(657, 28);
+            this.panel6.Size = new System.Drawing.Size(1800, 43);
             this.panel6.TabIndex = 37;
             // 
             // label41
@@ -2327,19 +2592,21 @@ namespace LaserSurvey
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label41.ForeColor = System.Drawing.Color.Blue;
-            this.label41.Location = new System.Drawing.Point(201, 4);
+            this.label41.Location = new System.Drawing.Point(1116, 6);
+            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
             this.label41.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label41.Size = new System.Drawing.Size(254, 20);
+            this.label41.Size = new System.Drawing.Size(356, 29);
             this.label41.TabIndex = 35;
             this.label41.Text = "ëàï ðéúï ùìåè éùéøåú áîðåò åáãéñèå";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(339, 300);
+            this.button7.Location = new System.Drawing.Point(508, 462);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button7.Name = "button7";
             this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button7.Size = new System.Drawing.Size(117, 24);
+            this.button7.Size = new System.Drawing.Size(176, 37);
             this.button7.TabIndex = 16;
             this.button7.Text = "Adjust...";
             this.button7.UseVisualStyleBackColor = true;
@@ -2350,9 +2617,11 @@ namespace LaserSurvey
             this.groupBox13.Controls.Add(this.label50);
             this.groupBox13.Controls.Add(this.label51);
             this.groupBox13.Enabled = false;
-            this.groupBox13.Location = new System.Drawing.Point(53, 82);
+            this.groupBox13.Location = new System.Drawing.Point(80, 126);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(243, 61);
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox13.Size = new System.Drawing.Size(364, 94);
             this.groupBox13.TabIndex = 14;
             this.groupBox13.TabStop = false;
             // 
@@ -2360,9 +2629,10 @@ namespace LaserSurvey
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label50.Location = new System.Drawing.Point(132, 17);
+            this.label50.Location = new System.Drawing.Point(198, 26);
+            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(115, 25);
+            this.label50.Size = new System.Drawing.Size(166, 36);
             this.label50.TabIndex = 2;
             this.label50.Text = "îé÷åí îåçìè:";
             // 
@@ -2371,9 +2641,10 @@ namespace LaserSurvey
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label51.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label51.Location = new System.Drawing.Point(7, 17);
+            this.label51.Location = new System.Drawing.Point(10, 26);
+            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(61, 25);
+            this.label51.Size = new System.Drawing.Size(85, 36);
             this.label51.TabIndex = 3;
             this.label51.Text = "-------";
             // 
@@ -2384,9 +2655,11 @@ namespace LaserSurvey
             this.groupBox14.Controls.Add(this.label47);
             this.groupBox14.Controls.Add(this.button5);
             this.groupBox14.Enabled = false;
-            this.groupBox14.Location = new System.Drawing.Point(18, 160);
+            this.groupBox14.Location = new System.Drawing.Point(27, 246);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(306, 72);
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox14.Size = new System.Drawing.Size(459, 111);
             this.groupBox14.TabIndex = 13;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "îãéãä";
@@ -2394,11 +2667,12 @@ namespace LaserSurvey
             // hndMeasureTB
             // 
             this.hndMeasureTB.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.hndMeasureTB.Location = new System.Drawing.Point(103, 17);
+            this.hndMeasureTB.Location = new System.Drawing.Point(154, 26);
+            this.hndMeasureTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.hndMeasureTB.Name = "hndMeasureTB";
             this.hndMeasureTB.ReadOnly = true;
             this.hndMeasureTB.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.hndMeasureTB.Size = new System.Drawing.Size(100, 39);
+            this.hndMeasureTB.Size = new System.Drawing.Size(148, 54);
             this.hndMeasureTB.TabIndex = 17;
             // 
             // label55
@@ -2406,26 +2680,29 @@ namespace LaserSurvey
             this.label55.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label55.Location = new System.Drawing.Point(209, 31);
+            this.label55.Location = new System.Drawing.Point(314, 48);
+            this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(40, 17);
+            this.label55.Size = new System.Drawing.Size(58, 25);
             this.label55.TabIndex = 31;
             this.label55.Text = "(mm)";
             // 
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(267, 33);
+            this.label47.Location = new System.Drawing.Point(400, 51);
+            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(33, 13);
+            this.label47.Size = new System.Drawing.Size(42, 20);
             this.label47.TabIndex = 15;
             this.label47.Text = "îãåã";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 27);
+            this.button5.Location = new System.Drawing.Point(18, 42);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 24);
+            this.button5.Size = new System.Drawing.Size(112, 37);
             this.button5.TabIndex = 14;
             this.button5.Text = "Measure";
             this.button5.UseVisualStyleBackColor = true;
@@ -2451,18 +2728,21 @@ namespace LaserSurvey
             this.groupBox11.Controls.Add(this.label17);
             this.groupBox11.Controls.Add(this.button1);
             this.groupBox11.Enabled = false;
-            this.groupBox11.Location = new System.Drawing.Point(339, 40);
+            this.groupBox11.Location = new System.Drawing.Point(508, 62);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(306, 232);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox11.Size = new System.Drawing.Size(459, 357);
             this.groupBox11.TabIndex = 12;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "úæåæä";
             // 
             // btnServoResetAlarms
             // 
-            this.btnServoResetAlarms.Location = new System.Drawing.Point(99, 66);
+            this.btnServoResetAlarms.Location = new System.Drawing.Point(148, 102);
+            this.btnServoResetAlarms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnServoResetAlarms.Name = "btnServoResetAlarms";
-            this.btnServoResetAlarms.Size = new System.Drawing.Size(63, 24);
+            this.btnServoResetAlarms.Size = new System.Drawing.Size(94, 37);
             this.btnServoResetAlarms.TabIndex = 21;
             this.btnServoResetAlarms.Text = "Reset";
             this.btnServoResetAlarms.UseVisualStyleBackColor = true;
@@ -2472,9 +2752,10 @@ namespace LaserSurvey
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(138, 28);
+            this.label9.Location = new System.Drawing.Point(207, 43);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 13);
+            this.label9.Size = new System.Drawing.Size(41, 20);
             this.label9.TabIndex = 20;
             this.label9.Text = "îöá:";
             // 
@@ -2482,15 +2763,17 @@ namespace LaserSurvey
             // 
             this.hndOnOfflbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.hndOnOfflbl.AutoSize = true;
-            this.hndOnOfflbl.Location = new System.Drawing.Point(99, 28);
+            this.hndOnOfflbl.Location = new System.Drawing.Point(148, 43);
+            this.hndOnOfflbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hndOnOfflbl.Name = "hndOnOfflbl";
-            this.hndOnOfflbl.Size = new System.Drawing.Size(21, 13);
+            this.hndOnOfflbl.Size = new System.Drawing.Size(31, 20);
             this.hndOnOfflbl.TabIndex = 19;
             this.hndOnOfflbl.Text = "Off";
             // 
             // nUDtune
             // 
-            this.nUDtune.Location = new System.Drawing.Point(131, 201);
+            this.nUDtune.Location = new System.Drawing.Point(196, 309);
+            this.nUDtune.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nUDtune.Maximum = new decimal(new int[] {
             120,
             0,
@@ -2503,7 +2786,7 @@ namespace LaserSurvey
             0});
             this.nUDtune.Name = "nUDtune";
             this.nUDtune.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nUDtune.Size = new System.Drawing.Size(35, 20);
+            this.nUDtune.Size = new System.Drawing.Size(52, 26);
             this.nUDtune.TabIndex = 18;
             this.nUDtune.Value = new decimal(new int[] {
             2,
@@ -2513,10 +2796,11 @@ namespace LaserSurvey
             // 
             // revTuneBtn
             // 
-            this.revTuneBtn.Location = new System.Drawing.Point(58, 197);
+            this.revTuneBtn.Location = new System.Drawing.Point(87, 303);
+            this.revTuneBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.revTuneBtn.Name = "revTuneBtn";
             this.revTuneBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.revTuneBtn.Size = new System.Drawing.Size(29, 24);
+            this.revTuneBtn.Size = new System.Drawing.Size(44, 37);
             this.revTuneBtn.TabIndex = 17;
             this.revTuneBtn.Text = ">>";
             this.revTuneBtn.UseVisualStyleBackColor = true;
@@ -2525,18 +2809,20 @@ namespace LaserSurvey
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(237, 203);
+            this.label52.Location = new System.Drawing.Point(356, 312);
+            this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(61, 13);
+            this.label52.Size = new System.Drawing.Size(75, 20);
             this.label52.TabIndex = 15;
             this.label52.Text = "ëéðåï òãéï";
             // 
             // fwdTuneBtn
             // 
-            this.fwdTuneBtn.Location = new System.Drawing.Point(12, 197);
+            this.fwdTuneBtn.Location = new System.Drawing.Point(18, 303);
+            this.fwdTuneBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fwdTuneBtn.Name = "fwdTuneBtn";
             this.fwdTuneBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fwdTuneBtn.Size = new System.Drawing.Size(29, 24);
+            this.fwdTuneBtn.Size = new System.Drawing.Size(44, 37);
             this.fwdTuneBtn.TabIndex = 14;
             this.fwdTuneBtn.Text = "<<";
             this.fwdTuneBtn.UseVisualStyleBackColor = true;
@@ -2545,17 +2831,19 @@ namespace LaserSurvey
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(224, 28);
+            this.label44.Location = new System.Drawing.Point(336, 43);
+            this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(76, 13);
+            this.label44.Size = new System.Drawing.Size(99, 20);
             this.label44.TabIndex = 13;
             this.label44.Text = "äôòìú äîðåò";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(15, 22);
+            this.button4.Location = new System.Drawing.Point(22, 34);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 24);
+            this.button4.Size = new System.Drawing.Size(112, 37);
             this.button4.TabIndex = 12;
             this.button4.Text = "Switch";
             this.button4.UseVisualStyleBackColor = true;
@@ -2564,7 +2852,8 @@ namespace LaserSurvey
             // nUDstep
             // 
             this.nUDstep.DecimalPlaces = 3;
-            this.nUDstep.Location = new System.Drawing.Point(99, 158);
+            this.nUDstep.Location = new System.Drawing.Point(148, 243);
+            this.nUDstep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nUDstep.Maximum = new decimal(new int[] {
             360,
             0,
@@ -2572,24 +2861,26 @@ namespace LaserSurvey
             0});
             this.nUDstep.Name = "nUDstep";
             this.nUDstep.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nUDstep.Size = new System.Drawing.Size(67, 20);
+            this.nUDstep.Size = new System.Drawing.Size(100, 26);
             this.nUDstep.TabIndex = 11;
             this.nUDstep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nUDstep_KeyPress);
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(177, 160);
+            this.label45.Location = new System.Drawing.Point(266, 246);
+            this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(121, 13);
+            this.label45.Size = new System.Drawing.Size(158, 20);
             this.label45.TabIndex = 10;
             this.label45.Text = "ñò îñôø öòãéí îåâãø";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 154);
+            this.button3.Location = new System.Drawing.Point(18, 237);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 24);
+            this.button3.Size = new System.Drawing.Size(112, 37);
             this.button3.TabIndex = 7;
             this.button3.Text = "MoveOnce";
             this.button3.UseVisualStyleBackColor = true;
@@ -2598,7 +2889,8 @@ namespace LaserSurvey
             // nUDpos
             // 
             this.nUDpos.DecimalPlaces = 3;
-            this.nUDpos.Location = new System.Drawing.Point(99, 114);
+            this.nUDpos.Location = new System.Drawing.Point(148, 175);
+            this.nUDpos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nUDpos.Maximum = new decimal(new int[] {
             360,
             0,
@@ -2606,24 +2898,26 @@ namespace LaserSurvey
             0});
             this.nUDpos.Name = "nUDpos";
             this.nUDpos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nUDpos.Size = new System.Drawing.Size(67, 20);
+            this.nUDpos.Size = new System.Drawing.Size(100, 26);
             this.nUDpos.TabIndex = 6;
             this.nUDpos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nUDpos_KeyPress);
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(197, 116);
+            this.label28.Location = new System.Drawing.Point(296, 178);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(103, 13);
+            this.label28.Size = new System.Drawing.Size(132, 20);
             this.label28.TabIndex = 5;
             this.label28.Text = "ñò ìð÷åãä îñåéîú";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(14, 110);
+            this.button2.Location = new System.Drawing.Point(21, 169);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 24);
+            this.button2.Size = new System.Drawing.Size(112, 37);
             this.button2.TabIndex = 4;
             this.button2.Text = "MoveTo";
             this.button2.UseVisualStyleBackColor = true;
@@ -2632,17 +2926,19 @@ namespace LaserSurvey
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(209, 72);
+            this.label17.Location = new System.Drawing.Point(314, 111);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(91, 13);
+            this.label17.Size = new System.Drawing.Size(117, 20);
             this.label17.TabIndex = 3;
             this.label17.Text = "ñò ìð÷åãú äáéú";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 66);
+            this.button1.Location = new System.Drawing.Point(22, 102);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 24);
+            this.button1.Size = new System.Drawing.Size(112, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
@@ -2661,48 +2957,56 @@ namespace LaserSurvey
             // 
             // toolStripStatusLabel1
             // 
+            this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(85, 19);
             this.toolStripStatusLabel1.Text = "Servo Position:";
             // 
             // tsslPos
             // 
+            this.tsslPos.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.tsslPos.Name = "tsslPos";
             this.tsslPos.Size = new System.Drawing.Size(22, 19);
             this.tsslPos.Text = "---";
             // 
             // toolStripStatusLabel2
             // 
+            this.toolStripStatusLabel2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 19);
             this.toolStripStatusLabel2.Text = "|";
             // 
             // tsslOnOff
             // 
+            this.tsslOnOff.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.tsslOnOff.Name = "tsslOnOff";
             this.tsslOnOff.Size = new System.Drawing.Size(22, 19);
             this.tsslOnOff.Text = "---";
             // 
             // toolStripStatusLabel3
             // 
+            this.toolStripStatusLabel3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(10, 19);
             this.toolStripStatusLabel3.Text = "|";
             // 
             // tsslInPos
             // 
+            this.tsslInPos.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.tsslInPos.Name = "tsslInPos";
             this.tsslInPos.Size = new System.Drawing.Size(22, 19);
             this.tsslInPos.Text = "---";
             // 
             // toolStripStatusLabel4
             // 
+            this.toolStripStatusLabel4.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(10, 19);
             this.toolStripStatusLabel4.Text = "|";
             // 
             // tspbSurvey
             // 
+            this.tspbSurvey.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.tspbSurvey.Name = "tspbSurvey";
             this.tspbSurvey.Size = new System.Drawing.Size(150, 18);
             // 
@@ -2713,6 +3017,7 @@ namespace LaserSurvey
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.dstConStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.dstConStatus.Enabled = false;
+            this.dstConStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.dstConStatus.Name = "dstConStatus";
             this.dstConStatus.Size = new System.Drawing.Size(244, 45);
             this.dstConStatus.Text = "Disto Connected";
@@ -2724,6 +3029,7 @@ namespace LaserSurvey
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.srvConStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.srvConStatus.Enabled = false;
+            this.srvConStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.srvConStatus.Name = "srvConStatus";
             this.srvConStatus.Size = new System.Drawing.Size(249, 45);
             this.srvConStatus.Text = "Servo Connected";
@@ -2736,18 +3042,21 @@ namespace LaserSurvey
             this.srvOnStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.srvOnStatus.Enabled = false;
             this.srvOnStatus.Image = ((System.Drawing.Image)(resources.GetObject("srvOnStatus.Image")));
+            this.srvOnStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.srvOnStatus.Name = "srvOnStatus";
             this.srvOnStatus.Size = new System.Drawing.Size(239, 45);
             this.srvOnStatus.Text = "Servo Locked";
             // 
             // tsProgressbar
             // 
+            this.tsProgressbar.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.tsProgressbar.Name = "tsProgressbar";
             this.tsProgressbar.Size = new System.Drawing.Size(267, 45);
             this.tsProgressbar.Visible = false;
             // 
             // tsProgressInfo
             // 
+            this.tsProgressInfo.Margin = new System.Windows.Forms.Padding(0, 3, 0, 2);
             this.tsProgressInfo.Name = "tsProgressInfo";
             this.tsProgressInfo.Size = new System.Drawing.Size(42, 45);
             this.tsProgressInfo.Text = "--";
@@ -2787,12 +3096,13 @@ namespace LaserSurvey
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(671, 561);
+            this.ClientSize = new System.Drawing.Size(1816, 912);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RightToLeftLayout = true;
@@ -2805,36 +3115,23 @@ namespace LaserSurvey
             this.tabControl1.ResumeLayout(false);
             this.tabEmbed.ResumeLayout(false);
             this.tabEmbed.PerformLayout();
+            this.pnl_settings.ResumeLayout(false);
+            this.pnl_settings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbFilter)).EndInit();
-            this.pnlGoj.ResumeLayout(false);
-            this.pnlGoj.PerformLayout();
-            this.pPbBack.ResumeLayout(false);
+            this.pnlJog.ResumeLayout(false);
+            this.pnlJog.PerformLayout();
             this.pBatteryVoltage.ResumeLayout(false);
             this.pBatteryVoltage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbScanning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPipe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbScanning)).EndInit();
+            this.pnl_conn.ResumeLayout(false);
+            this.pnl_conn.PerformLayout();
+            this.pnl_survey.ResumeLayout(false);
+            this.pnl_survey.PerformLayout();
+            this.pnl_survey2.ResumeLayout(false);
+            this.pnl_survey2.PerformLayout();
+            this.pPbBack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbQuality)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dstConnectedPct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.srvConnectedPct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDistoCom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dstOffsetNum)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudServoCom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudServoRpm)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBTtry)).EndInit();
@@ -2853,8 +3150,13 @@ namespace LaserSurvey
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUp)).EndInit();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.pnlBoxCanvas.ResumeLayout(false);
+            this.cmsDiary.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.tpDrawing.ResumeLayout(false);
+            this.tpDrawing.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -2863,12 +3165,24 @@ namespace LaserSurvey
             this.groupBox7.PerformLayout();
             this.drawPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nDemo)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.pnlBoxCanvas.ResumeLayout(false);
-            this.cmsDiary.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
+            this.tpOldScannerConn.ResumeLayout(false);
+            this.tpOldScannerConn.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dstConnectedPct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.srvConnectedPct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDistoCom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dstOffsetNum)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServoCom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServoRpm)).EndInit();
+            this.tpOldControl.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.groupBox13.ResumeLayout(false);
@@ -2887,7 +3201,7 @@ namespace LaserSurvey
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tpOldScannerConn;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -2918,7 +3232,7 @@ namespace LaserSurvey
         private System.Windows.Forms.NumericUpDown dstOffsetNum;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tpOldControl;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox11;
@@ -2945,7 +3259,7 @@ namespace LaserSurvey
         private System.Windows.Forms.CheckBox minDistChkBox;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage tpDrawing;
         private System.Windows.Forms.Timer SurveyTimer;
         private System.Windows.Forms.Panel drawPanel;
         private System.Windows.Forms.NumericUpDown nDemo;
@@ -3066,23 +3380,18 @@ namespace LaserSurvey
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox tbNewBtCom;
         private System.Windows.Forms.Button btnConnectNewBt;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton rbDownward;
-        private System.Windows.Forms.RadioButton rbUpward;
-        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Panel pnl_conn;
         private System.Windows.Forms.Button btTransferData;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TrackBar tbQuality;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnl_survey;
         private System.Windows.Forms.Button btnPipe;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.NumericUpDown tbPipe;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Timer timerResetTransfer;
         private System.Windows.Forms.TextBox lbBtStatus;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label54;
         private System.Windows.Forms.PictureBox pbScanning;
         private System.Windows.Forms.TextBox tbBatteryV;
         private System.Windows.Forms.Panel pBatteryVoltage;
@@ -3094,12 +3403,26 @@ namespace LaserSurvey
         private System.Windows.Forms.Panel pnlBoxDraw;
         private System.Windows.Forms.Button btnTenSteps;
         private System.Windows.Forms.Button btnStep;
-        private System.Windows.Forms.Panel pnlGoj;
+        private System.Windows.Forms.Panel pnlJog;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn45Steps;
         private System.Windows.Forms.Label lbFilerMm;
         private System.Windows.Forms.TrackBar tbFilter;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbBtStatus;
+        private System.Windows.Forms.Panel pnlBtStatus1;
+        private System.Windows.Forms.Panel pnlBtStatus2;
+        private System.Windows.Forms.CheckBox chkShowOldGUI;
+        private System.Windows.Forms.Panel pnl_settings;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel pnl_survey2;
+        private System.Windows.Forms.ComboBox cmbLayer;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.ComboBox cmbDirection;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label lbPortFound;
+        private System.Windows.Forms.CheckBox chkAutoConnect;
     }
 }
 
